@@ -1,5 +1,67 @@
 
+# Table of contents
+
+- [Zowe scenario 1: Expose a Spring Boot application as a RESTful API](#zowe-scenario-1-expose-a-spring-boot-application-as-a-restful-api)
+	- [Overview](#overview)
+	- [Steps](#steps)
+		- [Prerequisite](#prerequisite)
+		- [Steps](#steps)
+- [Zowe scenario 2: Onboard the Spring Boot REST API in the Zowe API Mediation Layer](#zowe-scenario-2-onboard-the-spring-boot-rest-api-in-the-zowe-api-mediation-layer)
+	- [Overview](#overview)
+	- [1. Add Zowe API enablers to your service](#1-add-zowe-api-enablers-to-your-service)
+	- [2. Add API Layer onboarding configuration](#2-add-api-layer-onboarding-configuration)
+	- [3. Setup key store with the service certificate](#3-setup-key-store-with-the-service-certificate)
+	- [4. Externalize API Layer configuration parameters](#4-externalize-api-layer-configuration-parameters)
+	- [5. Test your service](#5-test-your-service)
+		- [Validate that your API instance is still working](#validate-that-your-api-instance-is-still-working)
+		- [Validate that your API instance is discoverable](#validate-that-your-api-instance-is-discoverable)
+- [Zowe scenario 3: Part 1 -  Stand up a local version of the Example Zowe Application Server](#zowe-scenario-3-part-1-stand-up-a-local-version-of-the-example-zowe-application-server)
+	- [Overview](#overview)
+	- [1. Acquire the source code](#1-acquire-the-source-code)
+	- [2. Acquire external components](#2-acquire-external-components)
+	- [3. Set the server configuration](#3-set-the-server-configuration)
+	- [4. Build application plug-ins](#4-build-application-plug-ins)
+	- [5. Deploy server configuration files](#5-deploy-server-configuration-files)
+	- [6. Run the server](#6-run-the-server)
+	- [7. Connect in a browser](#7-connect-in-a-browser)
+		- [Deploy example](#deploy-example)
+	- [Application plug-in configuration](#application-plug-in-configuration)
+		- [Plugins directory example](#plugins-directory-example)
+	- [ZSS Configuration](#zss-configuration)
+		- [Connecting Zowe Application Server to ZSS](#connecting-zowe-application-server-to-zss)
+- [Zowe scenario 3: Part 2 - Add a new application plug-in to the Zowe WebUI](#zowe-scenario-3-part-2-add-a-new-application-plug-in-to-the-zowe-webui)
+	- [Overview](#overview)
+	- [1. Constructing an application skeleton](#1-constructing-an-application-skeleton)
+		- [Defining your first plug-in](#defining-your-first-plug-in)
+		- [Constructing a Simple Angular UI](#constructing-a-simple-angular-ui)
+		- [Packaging Your Web application plug-in](#packaging-your-web-application-plug-in)
+		- [Adding Your application plug-in to the Zowe Desktop](#adding-your-application-plug-in-to-the-zowe-desktop)
+	- [2. Building your first dataservice](#2-building-your-first-dataservice)
+		- [Working with ExpressJS](#working-with-expressjs)
+		- [Adding your Dataservice to the Plugin Definition](#adding-your-dataservice-to-the-plugin-definition)
+	- [3. Adding your first Widget](#3-adding-your-first-widget)
+		- [Adding your Dataservice to the application plug-in](#adding-your-dataservice-to-the-application-plug-in)
+		- [Introducing ZLUX Grid](#introducing-zlux-grid)
+	- [4. Adding Zowe App-to-App Communication](#4-adding-zowe-app-to-app-communication)
+		- [Adding the Starter application](#adding-the-starter-application)
+		- [Enabling Communication](#enabling-communication)
+		- [Calling back to the Starter application](#calling-back-to-the-starter-application)
+- [Zowe scenario 4: Add a new plug-in to Zowe CLI](#zowe-scenario-4-add-a-new-plug-in-to-zowe-cli)
+	- [Overview](#overview)
+	- [1. Cloning the sample plug-in source](#1-cloning-the-sample-plug-in-source)
+	- [2. Changing package.json](#2-changing-packagejson)
+	- [Adjusting Imperative CLI Framework configuration](#adjusting-imperative-cli-framework-configuration)
+	- [3. Adding third-party packages](#3-adding-third-party-packages)
+	- [Creating a Node.js programmatic API](#creating-a-nodejs-programmatic-api)
+	- [4. Exporting your API](#4-exporting-your-api)
+	- [5. Defining commands](#5-defining-commands)
+	- [6. Trying your command](#6-trying-your-command)
+	- [7. Bringing together new tools!](#7-bringing-together-new-tools)
+	- [Next steps](#next-steps)
+
 # Zowe scenario 1: Expose a Spring Boot application as a RESTful API
+
+(Original article: https://github.com/zowe/spring-boot-jzos-sample)
 
 ## Overview
 
@@ -24,7 +86,7 @@ Knowledge of the following development technologies is beneficial:
 
 Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by creating the API project.
 
-## Task: 
+## Steps
 
 ### Prerequisite
 - Build requires Maven installed on local machine
@@ -54,14 +116,16 @@ The shell script builds the required to specify the classpath and set environmen
 -  An available port number
 
 
-# Zowe scenario 2: Onboard the RESTful API in the Zowe API Mediation Layer
+# Zowe scenario 2: Onboard the Spring Boot REST API in the Zowe API Mediation Layer
+
+(Original article: https://zowe.github.io/docs-site/latest/extend/extend-apiml/api-mediation-onboard-a-sprint-boot-rest-api-service.html#prepare-an-existing-spring-boot-rest-api-for-onboarding)
 
 ## Overview
 
 The API Mediation Layer provides a single point of access for mainframe service REST APIs. The layer offers enterprise, cloud-like features such as high-availability, scalability, dynamic API discovery, consistent security, a single sign-on experience, and documentation. The API Mediation Layer facilitates secure communication across loosely coupled microservices through the API Gateway. The API Mediation Layer includes an API Catalog that provides an interface to view all discovered microservices, their associated APIs, and Swagger documentation in a user-friendly manner. The Discovery Service makes it possible to determine the location and status of microservice instances running inside the ecosystem.
 
 This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you will know how to:
-- Add Zowe API enabler annotations to your service code and update the build scripts. 
+- Add Zowe API enabler annotations to your service code and update the build scripts.
 - Update your service configuration file to include MFaaS API Layer specific settings.
 - Setup key store with the service certificate.
 - Externalize the API Layer site-specific configuration settings.
@@ -71,7 +135,7 @@ No previous knowledge of API Mediation Layer is needed, but some awareness of AP
 
 Please wait a moment while your development environment loads (it takes a minute or so).
 
-## Add Zowe API enablers to your service
+## 1. Add Zowe API enablers to your service
 The first step to onboard a REST API with the Zowe ecosystem is to add enabler annotations to your service code. Enablers prepare your service for discovery and swagger documentation retrieval.
 
 1. Add the following annotations to the main class of your Spring Boot, or add these annotations to an extra Spring configuration class:
@@ -186,7 +250,7 @@ The first step to onboard a REST API with the Zowe ecosystem is to add enabler a
 Congratulations! You have successfully added enabler annotations to your service code! In the next task, you will build your service to include the code pieces that make it discoverable in the API Mediation Layer and to add Swagger documentation.
 
 
-## Add API Layer onboarding configuration
+## 2. Add API Layer onboarding configuration
  As an API service developer, you set multiple configuration settings in your application.yml that correspond to the API Layer. These settings enable an API to be discoverable and included in the API catalog. Some of the settings in the application.yml are internal and are set by the API service developer. Some settings are externalized and set by the customer system administrator. Those external settings are service parameters and are in the format: ${environment.*}.
 
 **Follow these steps:**
@@ -465,7 +529,7 @@ Congratulations! You have successfully added enabler annotations to your service
 
         **Tip:** You have three options to make your endpoints discoverable and exposed: `basePackage`, `apiPattern`, or none (if you do not specify a parameter). If `basePackage` or `apiPattern` are not defined, all endpoints in the Spring Boot app are exposed.
 
-## Setup key store with the service certificate
+## 3. Setup key store with the service certificate
 
 To register with the API Mediation Layer, a service is required to have a certificate that is trusted by API Mediation Layer.
 
@@ -497,7 +561,7 @@ To register with the API Mediation Layer, a service is required to have a certif
 **Note:** You need to define both key store and trust store even if your server is not using HTTPS port.
 
 
-## Externalize API Layer configuration parameters
+## 4. Externalize API Layer configuration parameters
 
 The following list summarizes the API Layer parameters that are set by the customer system administrator:
 
@@ -532,7 +596,7 @@ The `discoveryLocations` (public URL of the discovery service) value is found in
 MFS_EUREKA="http://eureka:password@141.202.65.33:10011/eureka/")
 ```      
 
-## Test your service
+## 5. Test your service
 
 To test that your API instance is working and is discoverable, use the following validation tests:
 
@@ -566,6 +630,8 @@ To test that your API instance is working and is discoverable, use the following
  5. Check that you can still access your API service endpoints directly outside of the gateway.
 
 # Zowe scenario 3: Part 1 -  Stand up a local version of the Example Zowe Application Server
+
+(Original article: https://zowe.github.io/docs-site/latest/extend/extend-desktop/zlux-app-server.html#server-layout)
 
 ## Overview
 
@@ -769,9 +835,11 @@ When running the Zowe Application Server, simply specify a few flags to declare 
 
 
 
-
-
 # Zowe scenario 3: Part 2 - Add a new application plug-in to the Zowe WebUI
+
+(Original article: https://zowe.github.io/docs-site/latest/extend/extend-desktop/zlux-workshop-user-browser.html)
+
+## Overview
 
 This scenario walks you through the process of adding new apps to the Zowe WebUI, and teaches you how to communicate with other parts of Zowe. By the end of this scenario, you will know how to:
 
@@ -782,9 +850,9 @@ No previous knowledge of Zowe WebUI is needed.
 
 Please wait a moment while your development environment loads (it takes a minute or so).
 
-## Constructing an application skeleton
+## 1. Constructing an application skeleton
 
-Download the skeleton code from the [project repository](https://github.com/zowe/workshop-user-browser-app). Next, move the project into the `zlux` source folder created in the prerequisite tutorial.
+Download the skeleton code from the [project repository](https://github.com/zowe/workshop-user-browser-app). Next, move the project into the `zlux` source folder created in the previous scenario.
 
 If you look within this repository, you'll see that a few boilerplate files already exist to help you get your first application plug-in running quickly. The structure of this repository follows the guidelines for Zowe application plug-in filesystem layout, which you can read more about [on the wiki](https://github.com/zowe/zlux/wiki/ZLUX-App-filesystem-structure).
 
@@ -1034,7 +1102,7 @@ Now you're ready to run the server and see your application plug-in.
 
 Do you see the Hello World message from [this earlier step?](#constructing-a-simple-angular-ui). If so, you're in good shape! Now, let's add some content to the application plug-in.
 
-## Building your first dataservice
+## 2. Building your first dataservice
 
 An application plug-in can have one or more [Dataservices](https://github.com/zowe/zlux/wiki/ZLUX-Dataservices). A Dataservice is a REST or Websocket endpoint that can be added to the Zowe Application Server.
 
@@ -1217,7 +1285,7 @@ There's a few interesting attributes about the Dataservice we have specified her
 4. [Restart the server](#adding-your-app-to-the-desktop) (as was done when adding the App initially) to load this new Dataservice. This is not always needed but done here for educational purposes.
 5. Access `https://host:port/ZLUX/plugins/org.openmainframe.zowe.workshop-user-browser/services/table/` to see the Dataservice in action. It should return all of the rows in the user table, as you did a GET to the root / URL that we just coded.
 
-## Adding your first Widget
+## 3. Adding your first Widget
 
 Now that you can get this data from the server's new REST API, we need to make improvements to the web content of the application plug-in to visualize this. This means not only calling this API from the application plug-in, but presenting it in a way that is easy to read and extract information from.
 
@@ -1380,7 +1448,7 @@ The previous section, [Adding your Dataservice to the application](#adding-your-
 
 If you are still running `npm run-script start` in a command prompt, it should now show that the application has been successfully built, and that means we are ready to see the results. Reload your browser's webpage and open the user browser application once more. Do you see the list of users in columns and rows that can be sorted and selected? If so, great, you've built a simple yet useful application within Zowe! Let's move on to the last portion of the application tutorial where we hook the Starter application and the User Browser application together to accomplish a task.
 
-## Adding Zowe App-to-App Communication
+## 4. Adding Zowe App-to-App Communication
 
 Applications in Zowe can be useful and provide insight all by themselves, but a big advantage to using the Zowe Desktop is that applications can track and share context by user interaction. By having the foreground application request the application best suited for a task, the requested application can perform the task with context regarding the task data and purpose and you can accomplish a complex task by simple and intuitive means.
 
@@ -1577,19 +1645,17 @@ And we'll invoke this through a button click action, which we will add into the 
 Check that the application builds successfully, and if so, you've built the application for the tutorial! Try it out:
 
 1. Open the Starter application.
-1. Click the "Find Users from Lookup Directory" button.
-   1. You should see a filtered list of users in your user application.
-1. Click the "Filter Results to Those Nearby" button on the Starter application.
-   1. You should now see the list be filtered further to include only one geography.
+1. Click the "Find Users from Lookup Directory" button. You should see a filtered list of users in your user application.
+1. Click the "Filter Results to Those Nearby" button on the Starter application. You should now see the list be filtered further to include only one geography.
 1. Select some users to send back to the Starter application.
-1. Click the "Submit Selected Users" button on the User Browser application.
+1. Click the "Submit Selected Users" button on the User Browser application. The Starter application should print a confirmation message that indicates success.
 
-   1. The Starter application should print a confirmation message that indicates success.
-
-And that's it! Looking back at the beginning of this document, you should notice that we've covered all aspects of application building - REST APIs, persistent settings storage, Creating Angular applications and using Widgets within them, as well as having one application communicate with another. Hopefully you have learned a lot about application building from this experience, but if you have questions or want to learn more, please reach out to those in the Foundation so that we can assist.
+And that's it! Looking back at the beginning of this document, you should notice that we've covered all aspects of application building - REST APIs, persistent settings storage, Creating Angular applications and using Widgets within them, as well as having one application communicate with another.
 
 
 # Zowe scenario 4: Add a new plug-in to Zowe CLI
+
+(Original article: https://zowe.github.io/docs-site/latest/extend/extend-cli/cli-developing-a-plugin.html)
 
 ## Overview
 This senario demonstrates how to create a brand new Zowe CLI plug-in that uses Zowe CLI Node.js programmatic APIs.
@@ -1601,7 +1667,7 @@ your plugin's output to a third-party utility for a side-by-side diff of data se
 
 Completed source for this tutorial can be found on the `develop-a-plugin` branch of the zowe-cli-sample-plugin repository.
 
-### Cloning the sample plug-in source
+## 1. Cloning the sample plug-in source
  Clone the sample repo, delete the irrelevant source, and create a brand new plug-in. Follow these steps:
 
 1. `cd` into your `zowe-tutorial` folder
@@ -1614,7 +1680,7 @@ Completed source for this tutorial can be found on the `develop-a-plugin` branch
 8. `git add .`
 9. `git commit -m "initial"`
 
-### Changing package.json
+## 2. Changing package.json
 Use a unique `npm` name for your plugin. Change `package.json` name field as follows:
 
 ```typescript
@@ -1623,7 +1689,7 @@ Use a unique `npm` name for your plugin. Change `package.json` name field as fol
 
 Issue the command `npm install` against the local repository.
 
-### Adjusting Imperative CLI Framework configuration
+## Adjusting Imperative CLI Framework configuration
 Change `imperative.ts` to contain the following:
 ```typescript
 import { IImperativeConfig } from "@brightside/imperative";
@@ -1641,7 +1707,7 @@ export = config;
 ```
 Here we adjusted the description and other fields in the `imperative` JSON configuration to be relevant to this plug-in.
 
-### Adding third-party packages
+## 3. Adding third-party packages
 
 We'll use the following packages to create a programmatic API:
 
@@ -1649,7 +1715,7 @@ We'll use the following packages to create a programmatic API:
 - `npm install -D @types/diff`
 
 
-### Creating a Node.js programmatic API
+## Creating a Node.js programmatic API
 In `files-util/src/api`, create a file named `DataSetDiff.ts`. The content of `DataSetDiff.ts` should be the following:
 ```typescript
 import { AbstractSession } from "@brightside/imperative";
@@ -1702,16 +1768,15 @@ export class DataSetDiff {
 }
 ```
 
-### Exporting your API
+## 4. Exporting your API
 In `files-util/src`, change `index.ts` to contain the following:
 ```typescript
 export * from "./api/DataSetDiff";
 ```
 
-## Checkpoint
 At this point, you should be able to rebuild the plug-in without errors via `npm run build`. You included third party dependencies, created a programmatic API, and customized this new plug-in project. Next, you'll define the command to invoke your programmatic API.
 
-### Defining commands
+## 5. Defining commands
 In `files-util/src/cli`, create a folder named `diff`. Within the `diff` folder, create a file `Diff.definition.ts`. Its content should be as follows:
 ```typescript
 import { ICommandDefinition } from "@brightside/imperative";
@@ -1783,7 +1848,7 @@ export default class DataSetsDiffHandler implements ICommandHandler {
 
 ```
 
-## Trying your command
+## 6. Trying your command
 Be sure to build your plug-in via `npm run build`.
 
 Install your plug-in into Zowe CLI via `zowe plugins install`.
@@ -1796,7 +1861,7 @@ The raw diff output is displayed as a command response:
 
 ![Raw Diff Output](../../images/guides/CLI/diffOutput.png)
 
-## Bringing together new tools!
+## 7. Bringing together new tools!
 The advantage of Zowe CLI and of the CLI approach in mainframe development is that it allows for combining different developer tools for new and interesting uses.
 
 [diff2html](https://diff2html.xyz/) is a free tool to generate HTML side-by-side diffs to help see actual differences in diff output.
