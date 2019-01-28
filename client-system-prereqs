@@ -1,0 +1,10 @@
+# Prerequisites on the zTrial Windows system
+
+
+## Scenario 3: 
+
+- Web Browser (typically Firefox in zTrial, for accessing the Zowe Desktop)
+- Git (or can be optional if the GitHub code is fetched beforehand on the Windows system)
+- JDK (for bulding apps)
+- ant, ant-contrib (for bulding apps)
+- NPM 
