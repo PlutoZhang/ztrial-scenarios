@@ -4,11 +4,12 @@ This scenario guides you through the steps in roughly 30 minutes. By the end of 
 
 - Log in to the Zowe Desktop
 - Use Zowe Command Line Interface (Zowe CLI) to submit a job
-- Use Job Entry Subsystem (JES) explorer to query JES jobs with filters, and view the related status.
-- Use TN3270 in Zowe desktop to monitor regions and modify a threshold for short-on-storage `(just an example, a common task when using 3270 emulators. A simple task presented would help customers learn the similar but cloud-like operations)`
-- Using the MVS Explorer to submit data sets to JES
+- Use Job Entry Subsystem (JES) explorer to query the job with filters, and view the related status.
+- Use TN3270 in Zowe desktop to view the job and (purge the job)
+- Use the Zowe CLI to create data sets and upload to mainframe
+- Use the MVS Explorer to view the data sets
 
-Important: Get started with this scenario to learn how to navigate on the Zowe Desktop and complete mainframe tasks using underlying REST APIs. Then, you can complete other scenarios to use different applications to work together and even create your own applications to suit your needs.
+Important: Get started with this scenario to learn how to navigate on the Zowe Desktop and complete mainframe tasks. Then, you can complete the second scenario to use different applications to work together and even create your own applications to suit your needs.
 
 If you haven't started the scenario, complete the following steps:
 1. Double-click Z Trial Wizard.exe on the desktop.
@@ -54,23 +55,22 @@ Note: Zowe CLI contains a help system that is embedded directly into the command
 
 Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filters, and view the related status.
 
-# Using Job Entry Subsystem (JES) explorer to query JES jobs with filters, and viewing the related status
+# Using Job Entry Subsystem (JES) explorer to query the JES job with filters, and viewing its related status
 
 ## About this task
 
 ## Procedures
 1. In the bottom application draw of Zowe Desktop, you can see several explorer server icons. Click the JES Explorer icon, the JES jobs are displayed.
-1. .... (Choose one proper task to query JES jobs filters, and view the related steps, files, and status. You can also purge jobs from this view.)
+1. .... (query JES jobs filters, and view the related steps, files, and status.)
 1. .......
 
 ## What to do next
-Next, you'll use the TN3270 application plug-in in Zowe Desktop to monitor regions and rectify the problem.
+Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the job that you created. 
 
-# Using TN3270 in Zowe desktop to monitor regions
+# Using TN3270 in Zowe desktop to view the job and (maybe purge the job)
 
 ## About this task
-You'll use the TN3270 application plug-in to monitor your regions when they go short on storage and rectify the problem.
-
+You'll use the TN3270 application plug-in to view the job that you just created. 
 ## Procedures
 1. ...
 1. ...
@@ -78,10 +78,25 @@ You'll use the TN3270 application plug-in to monitor your regions when they go s
 
 ## What to do next
 
-# Using the MVS Explorer to submit data sets to JES
+
+# Use the Zowe CLI to create data sets and upload to mainframe
 
 ## About this task
-You'll use the MVS Explorer to submit data sets that contain JCL to JES.
+
+You'll use Zowe CLI to create data sets and upload to mainframe...
+
+## Procedures
+
+1. ...
+1. ...
+1. ...
+
+## What to do next
+
+# Using the MVS Explorer to view the data sets
+
+## About this task
+You'll use the MVS Explorer to view the data sets. 
 
 ## Procedures
 1. In the bottom application draw of Zowe Desktop, you can see several explorer server icons. Click the MVS Explorer icon, the MVS explorer is displayed.
@@ -97,7 +112,7 @@ Congratulations! You've successfully got hands-on experience with Zowe! ......
 # Next Steps
 Ready to become a Zowe extender user? Try to explore how you could extend Zowe......
 
-# Try the extending Zowe scenario
+# Try the Extending Zowe scenario
 ...... link to the next scenario to be pasted here
 
 # Go deeper with Zowe
