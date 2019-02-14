@@ -63,6 +63,8 @@ Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filte
 1. .... (Choose one proper task to query JES jobs filters, and view the related steps, files, and status. You can also purge jobs from this view.)
 1. .......
 
+## Results
+
 ## What to do next
 Next, you'll use the TN3270 application plug-in in Zowe Desktop to monitor regions and rectify the problem.
 
