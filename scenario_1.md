@@ -1,15 +1,17 @@
 # Overview
 
-This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
+- **Zowe newbies**? Get started with **Scenario One** to learn how to navigate on the Zowe Desktop and complete simple mainframe tasks.  
+
+- **Advanced beginners** familiar with each Zowe component? You could directly go to **Scenario Two** (to add the link) to explore how to use different applications to work together and extend Zowe to create your own APIs and applications.  
+
+Scenario one guides you through the guided demonstration in roughly 30 minutes. By the end of the session, you'll know how to:  
 
 - Log in to the Zowe Desktop
-- Use Zowe Command Line Interface (Zowe CLI) to submit a job
-- Use Job Entry Subsystem (JES) explorer to query the job with filters, and view the related status.
+- Use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES)
+- Use JES explorer to query jobs with filters, and view the related status
 - Use TN3270 in Zowe desktop to view the job and (purge the job)
 - Use the Zowe CLI to create data sets and upload to mainframe
 - Use the MVS Explorer to view the data sets
-
-Important: Get started with this scenario to learn how to navigate on the Zowe Desktop and complete mainframe tasks. Then, you can complete the second scenario to use different applications to work together and even create your own applications to suit your needs.
 
 If you haven't started the scenario, complete the following steps:
 1. Double-click Z Trial Wizard.exe on the desktop.
@@ -27,27 +29,21 @@ On the login page of the Zowe Desktop, enter your username and password and you 
 https://myhost:httpsPort/ZLUX/plugins/com.rs.mvd/web/index.html (URL to be replaced with an accessible one)
 1.	On the login page of the Zowe Desktop, enter XXX in the Username field.
 1.	Enter XXX in the Password field.
-1.	Press Enter.
+1.	Press Enter.    
 The Zowe Desktop is opened.
 
 ## What to do next
-The next step is to use Zowe Command Line Interface ( Zowe CLI) to sumbit a job in Zowe Desktop. let's do it now.
+The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES).
 
-
-# Using Zowe Command Line Interface (Zowe CLI) to submit a job
-
-Zowe Command Line Interface (Zowe CLI) is a command-line interface that allows users to interact with z/OS from a variety of other platforms, such as cloud or distributed systems, to submit jobs, issue TSO and z/OS console commands, integrate z/OS actions into scripts, and produce responses as JSON documents. With this extensible and scriptable interface, you can tie in mainframes to distributed DevOps pipelines and build in automation.
+# Use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES)
 
 ## About this task
-You will use the Zowe CLI component to submit a job...
+You will use the MVS explorer to submit JCL...
 
 ## Procedure
-Note: Zowe CLI contains a help system that is embedded directly into the command-line interface. When you want help with Zowe CLI, you can issue the following help command that provides you with information about the product, syntax, and usage:
-
-`zowe - - help`
-1. xxx
-1. xxx
-1. xxx
+1. XXX
+2. XXX  
+3. XXX  
 
 ## Results
 
@@ -65,12 +61,12 @@ Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filte
 1. .......
 
 ## What to do next
-Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the job that you created. 
+Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the job that you created.
 
 # Using TN3270 in Zowe desktop to view the job and (maybe purge the job)
 
 ## About this task
-You'll use the TN3270 application plug-in to view the job that you just created. 
+You'll use the TN3270 application plug-in to view the job that you just created.
 ## Procedures
 1. ...
 1. ...
@@ -83,20 +79,26 @@ You'll use the TN3270 application plug-in to view the job that you just created.
 
 ## About this task
 
+Zowe Command Line Interface (Zowe CLI) is a command-line interface that allows users to interact with z/OS from a variety of other platforms, such as cloud or distributed systems, to submit jobs, issue TSO and z/OS console commands, integrate z/OS actions into scripts, and produce responses as JSON documents. With this extensible and scriptable interface, you can tie in mainframes to distributed DevOps pipelines and build in automation.
+
 You'll use Zowe CLI to create data sets and upload to mainframe...
 
 ## Procedures
 
-1. ...
-1. ...
-1. ...
+Note: Zowe CLI contains a help system that is embedded directly into the command-line interface. When you want help with Zowe CLI, you can issue the following help command that provides you with information about the product, syntax, and usage:
+
+`zowe - - help`
+
+1. xxx
+1. xxx
+1. xxx
 
 ## What to do next
 
 # Using the MVS Explorer to view the data sets
 
 ## About this task
-You'll use the MVS Explorer to view the data sets. 
+You'll use the MVS Explorer to view the data sets.
 
 ## Procedures
 1. In the bottom application draw of Zowe Desktop, you can see several explorer server icons. Click the MVS Explorer icon, the MVS explorer is displayed.
@@ -110,7 +112,7 @@ Congratulations! You've successfully got hands-on experience with Zowe! ......
 
 
 # Next Steps
-Ready to become a Zowe extender user? Try to explore how you could extend Zowe......
+Ready to become a Zowe extender? Try to explore how you could extend Zowe to create your own APIs and applications.
 
 # Try the Extending Zowe scenario
 ...... link to the next scenario to be pasted here
