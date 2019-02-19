@@ -10,7 +10,6 @@ This scenario walks you through the Zowe interfaces including the Zowe Desktop a
 
 This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
 - Log in to the Zowe Desktop
-- Use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES)
 - Use JES explorer to query jobs with filters, and view the related status
 - Use TN3270 in the Zowe Desktop to view the job and (purge the job)
 - Use the Zowe CLI to create data sets and upload to mainframe
@@ -41,23 +40,7 @@ The Zowe Desktop is opened.
 
 
 ### What to do next
-The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES).
-
-## Submitting data sets in MVS Explorer
-
-### About this task
-You will use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES).
-
-### Procedure
-1. XXX
-2. XXX  
-3. XXX  
-
-### Results
-
-### What to do next
-
-Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filters, and view the related status.
+The next step is to use the JES Explorer to query the jobs with filters and view its related status.
 
 ## Querying the JES job and viewing its related status in JES explorer
 
@@ -70,7 +53,7 @@ You will use Job Entry Subsystem (JES) explorer to query the JES job with filter
 1. Scroll down to find the JES Explorer and right-click to open it.  
 The JES Explorer is displayed.
 1. Click the Job Filters column to expand the filter criteria. You can filter jobs on various criteria by Owner, Prefix, Job ID, and Status.  
-![JOB FILTERS ICON](pics/Screen Shot 2019-02-19 at 2.05.19 PM.png)
+![JOB FILTERS ICON](pics/2-2.png)
 1. To query the jobs starting with _Zowe_ and in an active status, enter _Zowe*_ in the Prefix field and select ACTIVE from the Status drop-down field, and click **APPLY**.  
 **Note:** Wildcard is supported. Valid wildcard characters are asterisk (*), percent sign (%), and question mark (?).
 1. From the job filter results, click the job **ZOWECRF:STC29575[ACTIVE]** that you want.  
