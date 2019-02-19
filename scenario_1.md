@@ -1,5 +1,18 @@
 # Scenario 1: Getting started with Zowe
 
+1. [Overview](#overview)
+2. [Logging in to the Zowe Desktop](#logging-in-to-the-zowe-desktop)
+3. [Editing a data set in MVS Explorer](#editing-a-data-set-in-mvs-explorer)
+4. [Querying JES jobs and viewing related status in JES Explorer](#querying-jes-jobs-and-viewing-related-status-in-jes-explorer)
+5. [What to do next](#what-to-do-next)
+6. [Using TN3270 in Zowe Desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
+7. [Using the Zowe CLI to edit JCL and upload to mainframe](#using-the-zowe-cli-to-edit-jcl-and-upload-to-mainframe)
+8. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
+9. [Next Steps](#next-steps)
+- [Try the Extending Zowe scenario](#try-the-extending-zowe-scenario)
+- [Go deeper with Zowe](#go-deeper-with-zowe)
+
+<!-- /TOC -->
 
 ## Overview
 
@@ -95,7 +108,7 @@ want.  <!--Will need to update the job name to match the name in the zTrial wiza
     The output data sets for this job are listed.
 
 1. Click **JESJCL** to open the JESJCL data set. The contents of this data set are displayed. You can also select other data sets to view their contents.  
-    **Tip**: You can hover over the text to display a hover help window.
+    **Tip**: You can hover over the text to display a hover help window.  
     <img src="pics/2-3.png" width="400">
 
 
@@ -123,7 +136,7 @@ You'll use the TN3270 application plug-in to view the same job that you filtered
 
 1. To start ISPF, enter _ISPF_ and press **enter**.  The ISPF Primary Option Menu is displayed.  
 
-2. To use SDSF to view output from a job, type _S_ at the Option prompt and press **enter**.
+2. To use SDSF to view output from a job, type _S_ at the Option prompt and press **enter**.  
     <img src="pics/3-2.png" width="200">
 
 3. To view the jobs in an active status, type _DA_ at the command input prompt and press **enter**.  
