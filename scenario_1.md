@@ -4,11 +4,10 @@
 2. [Logging in to the Zowe Desktop](#logging-in-to-the-zowe-desktop)
 3. [Editing a data set in MVS Explorer](#editing-a-data-set-in-mvs-explorer)
 4. [Querying JES jobs and viewing related status in JES Explorer](#querying-jes-jobs-and-viewing-related-status-in-jes-explorer)
-5. [What to do next](#what-to-do-next)
-6. [Using TN3270 in Zowe Desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
-7. [Using the Zowe CLI to edit JCL and upload to mainframe](#using-the-zowe-cli-to-edit-jcl-and-upload-to-mainframe)
-8. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
-9. [Next Steps](#next-steps)
+5. [Using TN3270 in Zowe Desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
+6. [Using the Zowe CLI to edit JCL and upload to mainframe](#using-the-zowe-cli-to-edit-jcl-and-upload-to-mainframe)
+7. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
+8. [Next Steps](#next-steps)
 - [Try the Extending Zowe scenario](#try-the-extending-zowe-scenario)
 - [Go deeper with Zowe](#go-deeper-with-zowe)
 
@@ -26,11 +25,10 @@ This scenario walks you through the Zowe interfaces including the Zowe Desktop a
 
 This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
 - Log in to the Zowe Desktop
-- Use the MVS Explorer to edit data sets
-- Use JES explorer to query jobs with filters, and view the related status
-- Use TN3270 in the Zowe Desktop to view the job
-- Use the Zowe CLI to create data sets and upload to mainframe
-- Use the MVS Explorer to view the data sets
+- View and edit data sets by using the MVS Explorer
+- Query jobs with filters and view the related status by using the JES Explorer
+- View jobs by using TN3270 in the Zowe Desktop
+- Create data sets and upload to mainframe by using Zowe Command Line Interface (CLI)
 
 <!--If you haven't started the scenario, complete the following steps:
 1. Double-click Z Trial Wizard.exe on the desktop.
@@ -121,7 +119,7 @@ Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the same
 ## Using TN3270 in Zowe Desktop to view the job
 You'll use the TN3270 application plug-in to view the same job that you filtered out in the previous task. This TN3270 plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server runs.
 
-## Procedures
+## Procedure
 1. From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270 application plug-in.
     <img src="pics/3-1.png" width="400">
 
@@ -166,8 +164,12 @@ Zowe CLI is a command-line interface that allows you to interact with z/OS from 
 
     The message `Data set downloaded successfully` indicates that the data set is downloaded.
 1. Enter `code cblrun.jcl`.
-2. Make the required edits.
-3.
+2. Make the required edits and save. <!--Need to define what changes users should make-->
+3. Open the terminal.
+4. Upload your changes to mainframe by entering the following command: 
+    ```
+    zowe files upload ftds "cblrun.jcl" "solsu01.mimpds.cntl(cblrun)"
+    ```
 
 ### What to do next
 
