@@ -68,7 +68,8 @@ The MVS Explorer view allows you to browse the MVS file system by creating filte
 ### Procedure
 1. Click the Start menu on Zowe Desktop.
 2. Locate the **MVS Explorer** application and click to open it. You can also right-click and select **Open** from the menu. The file opens in the editor.
-3. Locate and click the data set member `CRAIG.TEST.DATA`.  <!--The data set name need to be updated later to match what's actually on zTrial image.-->
+3. Locate and click the data set member `CRAIG.TEST.DATA`.  
+    <!--The data set name need to be updated later to match what's actually on zTrial image.-->
     <img src="./images/zowe-mvs-dataset-locate.png" width="400">
 4. Edit the data set.
 5. Click **SAVE** to save your edits.  
