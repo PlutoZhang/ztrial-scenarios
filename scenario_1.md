@@ -1,22 +1,21 @@
 # Scenario 1: Getting started with Zowe
 
-- [Scenario 1: Getting started with Zowe](#scenario-1-getting-started-with-zowe)
-	1. [Overview](#overview)
-	2. [Logging in to the Zowe Desktop](#logging-in-to-the-zowe-desktop)
-	3. [Editing a data set](#editing-a-data-set)
-	4. [Querying the JES job and viewing its related status in JES explorer](#querying-the-jes-job-and-viewing-its-related-status-in-jes-explorer)
-	5. [Using TN3270 in Zowe desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
-	6. [Use the Zowe CLI to create data sets and upload to mainframe](#use-the-zowe-cli-to-create-data-sets-and-upload-to-mainframe)
-	7. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
-	8. [Next Steps](#next-steps)
-	- [Try the Extending Zowe scenario](#try-the-extending-zowe-scenario)
-	- [Go deeper with Zowe](#go-deeper-with-zowe)
+1. [Overview](#overview)
+2. [Logging in to the Zowe Desktop](#logging-in-to-the-zowe-desktop)
+3. [Editing a data set](#editing-a-data-set)
+4. [Querying the JES job and viewing its related status in JES explorer](#querying-the-jes-job-and-viewing-its-related-status-in-jes-explorer)
+5. [Using TN3270 in Zowe desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
+6. [Use the Zowe CLI to create data sets and upload to mainframe](#use-the-zowe-cli-to-create-data-sets-and-upload-to-mainframe)
+7. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
+8. [Next Steps](#next-steps)
+- [Try the Extending Zowe scenario](#try-the-extending-zowe-scenario)
+- [Go deeper with Zowe](#go-deeper-with-zowe)
 
 ## Overview
 
 Zowe offers modern interfaces that enables you to interact with z/OS in a way that is similar to what you experience on cloud platforms today. Like Mac or Windows, Zowe comes with a set of APIs and OS capabilities that applications build on and includes some applications out of the box.
 
-![Zowe architecture](./images/zowe-architecture.png)
+<img src="./images/zowe-architecture.png" width="400">
 
 This scenario walks you through the Zowe interfaces including the Zowe Desktop and Zowe CLI through several simple tasks to help you get familiar with Zowe.
 - If you are new to Zowe, start with this scenario to explore the base Zowe features and functions.
@@ -48,7 +47,7 @@ Access and navigate the Zowe Desktop to view the Zowe applications.
     - **Username**: TBD
     - **Password**: TBD
     <!--Should we prevision this for users? Any risk on providing the credentials to users?-->
-    ![Zowe login](./images/zowe-desktop-login.jpg)
+    <img src="./images/zowe-desktop-login.jpg" width="200">
 1.	Press Enter.
 
 ### Results
@@ -56,7 +55,7 @@ Upon authentication of your user name and password, the desktop opens.
 
 Several applications are pinned to the task bar. Click the Start menu and you will see a list of applications that are installed by default. You can pin other applications to the task bar by right-clicking the on the application icon and selecting **Pin to taskbar**.
 
-![Zowe desktop](./images/zowe-desktop.png)
+<img src="./images/zowe-desktop.png" width="400">
 
 ### What to do next
 The next step is to use the MVS Explorer to make changes to data sets.
@@ -70,10 +69,10 @@ The MVS Explorer view allows you to browse the MVS file system by creating filte
 1. Click the Start menu on Zowe Desktop.
 2. Locate the **MVS Explorer** application and click to open it. You can also right-click and select **Open** from the menu. The file opens in the editor.
 3. Locate and click the data set member `CRAIG.TEST.DATA`. <!--The data set name need to be updated later to match what's actually on zTrial image.-->
-    ![Locate a Zowe data set in MVS Explorer view](./images/zowe-mvs-dataset-locate.png)
+    <img src="./images/zowe-mvs-dataset-locate.png" width="400">
 4. Edit the data set.
-5. Click **SAVE** to save your edits.
-    ![Save the edits](./images/zowe-mvs-dataset-save.png)
+5. Click **SAVE** to save your edits.  
+    <img src="./images/zowe-mvs-dataset-save.png" width="400">
 
 ### Results
 
