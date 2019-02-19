@@ -5,7 +5,7 @@
 Zowe offers modern interfaces that enables you to interact with z/OS in a way that is similar to what you experience on cloud platforms today. Like Mac or Windows, Zowe comes with a set of APIs and OS capabilities that applications build on and includes some applications out of the box.
 
 This scenario walks you through the Zowe interfaces including the Zowe Desktop and Zowe CLI through several simple tasks to help you get familiar with Zowe.
-- If you are new to Zowe, start with this scenario to explore the base Zowe features and functions. 
+- If you are new to Zowe, start with this scenario to explore the base Zowe features and functions.
 - If you are familiar with Zowe, you can skip this scenario and directly go to **Scenario 2** which guides you to extend Zowe by creating your own APIs and applications.
 
 This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
@@ -41,7 +41,7 @@ The Zowe Desktop is opened.
 
 
 ### What to do next
-The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES). 
+The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES).
 
 ## Submitting data sets in MVS Explorer
 
@@ -65,22 +65,46 @@ Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filte
 You will use Job Entry Subsystem (JES) explorer to query the JES job with filters and view its related status.
 
 ### Procedure
-1. In the bottom application draw of Zowe Desktop, you can see several explorer server icons. Click the JES Explorer icon, the JES jobs are displayed.
-1. .... (query JES jobs filters, and view the related steps, files, and status.)
-1. .......
+
+1. Click the **Start** menu.![start menu](pics/2-1.png)
+1. Scroll down to find the JES Explorer and right-click to open it.  
+The JES Explorer is displayed.
+1. Click the Job Filters column to expand the filter criteria. You can filter jobs on various criteria by Owner, Prefix, Job ID, and Status.  
+![JOB FILTERS ICON](pics/Screen Shot 2019-02-19 at 2.05.19 PM.png)
+1. To query the jobs starting with _Zowe_ and in an active status, enter _Zowe*_ in the Prefix field and select ACTIVE from the Status drop-down field, and click **APPLY**.  
+**Note:** Wildcard is supported. Valid wildcard characters are asterisk (*), percent sign (%), and question mark (?).
+1. From the job filter results, click the job **ZOWECRF:STC29575[ACTIVE]** that you want.  
+The output data sets for this job are listed.
+1. Click **JESJCL** to open the JESJCL data set. The contents of this data set are displayed. You can also select other data sets to view their contents.  
+**Tip**: You can hover over the text to display a hover help window.![hover help](pics/2-3.png)
+
+
+### Results
+You've used the JES Explorer to query the JES jobs with filters and viewed the related steps, files, and status.
 
 ## What to do next
-Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the job that you created.
+Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the same job that you viewed in this task.
 
 # Using TN3270 in Zowe desktop to view the job
 
 ## About this task
-You'll use the TN3270 application plug-in to view the job that you just created. This TN3270 plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server runs.
+You'll use the TN3270 application plug-in to view the same job that you filtered out in the previous task. This TN3270 plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server runs.
 
 ## Procedures
-1. ...
-1. ...
-1. ...
+1. From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270 application plug-in.  ![tn270 icon](pics/3-1.png)
+The TN3270 panel is displayed which offers selections to access various mainframe services.
+1. To connect to the MVS3BTS MVS service, enter _MVS3BTSO_ and press **enter**.  
+1. Enter the user ID that you use to log on to TSO. Enter _craigf_ in the USERID field and press **enter**.
+1. On the TSO/E LOGON panel, enter the password in the **Password** field and press **enter**.  
+You successfully log on to TSO.
+1. To start ISPF, enter _ISPF_ and press **enter**.  
+The ISPF Primary Option Menu is displayed.  
+2. To use SDSF to view output from a job, type _S_ at the Option prompt and press **enter**. ![command s](pics/3-2.png)
+3. To view the jobs in an active status, type _DA_ at the command input prompt and press **enter**.  
+The jobs that are running are displayed.
+4. To query the jobs starting with ZOWECRF, type `PREFIX ZOWECRF` at the commond input prompt and press **enter**.  
+The jobs that are both in an active status and start with ZOWECRF are displayed.
+9. To view the contents of the job, type `S` next to the Jobname ZOWECRF and press enter.  ![type s to view](pics/3-3.png)
 
 ## What to do next
 
