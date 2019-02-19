@@ -49,17 +49,16 @@ You will use Job Entry Subsystem (JES) explorer to query the JES job with filter
 
 ### Procedure
 
-1. Click the **Start** menu.![start menu](pics/2-1.png)
+1. Click the **Start** menu. <img src="pics/2-1.png" width="400">
 1. Scroll down to find the JES Explorer and right-click to open it.  
 The JES Explorer is displayed.
-1. Click the Job Filters column to expand the filter criteria. You can filter jobs on various criteria by Owner, Prefix, Job ID, and Status.  
-![JOB FILTERS ICON](pics/2-2.png)
+1. Click the Job Filters column to expand the filter criteria. You can filter jobs on various criteria by Owner, Prefix, Job ID, and Status. <img src="pics/2-2.png" width="400">
 1. To query the jobs starting with _Zowe_ and in an active status, enter _Zowe*_ in the Prefix field and select ACTIVE from the Status drop-down field, and click **APPLY**.  
 **Note:** Wildcard is supported. Valid wildcard characters are asterisk (*), percent sign (%), and question mark (?).
 1. From the job filter results, click the job **ZOWECRF:STC29575[ACTIVE]** that you want.  
 The output data sets for this job are listed.
 1. Click **JESJCL** to open the JESJCL data set. The contents of this data set are displayed. You can also select other data sets to view their contents.  
-**Tip**: You can hover over the text to display a hover help window.![hover help](pics/2-3.png)
+**Tip**: You can hover over the text to display a hover help window.<img src="pics/2-3.png" width="400">
 
 
 ### Results
@@ -74,7 +73,7 @@ Next, you'll use the TN3270 application plug-in in Zowe Desktop to view the same
 You'll use the TN3270 application plug-in to view the same job that you filtered out in the previous task. This TN3270 plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server runs.
 
 ## Procedures
-1. From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270 application plug-in.  ![tn270 icon](pics/3-1.png)
+1. From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270 application plug-in. <img src="pics/3-1.png" width="400">
 The TN3270 panel is displayed which offers selections to access various mainframe services.
 1. To connect to the MVS3BTS MVS service, enter _MVS3BTSO_ and press **enter**.  
 1. Enter the user ID that you use to log on to TSO. Enter _craigf_ in the USERID field and press **enter**.
@@ -82,12 +81,13 @@ The TN3270 panel is displayed which offers selections to access various mainfram
 You successfully log on to TSO.
 1. To start ISPF, enter _ISPF_ and press **enter**.  
 The ISPF Primary Option Menu is displayed.  
-2. To use SDSF to view output from a job, type _S_ at the Option prompt and press **enter**. ![command s](pics/3-2.png)
+2. To use SDSF to view output from a job, type _S_ at the Option prompt and press **enter**. 
+<img src="pics/3-2.png" width="200">
 3. To view the jobs in an active status, type _DA_ at the command input prompt and press **enter**.  
 The jobs that are running are displayed.
 4. To query the jobs starting with ZOWECRF, type `PREFIX ZOWECRF` at the commond input prompt and press **enter**.  
 The jobs that are both in an active status and start with ZOWECRF are displayed.
-9. To view the contents of the job, type `S` next to the Jobname ZOWECRF and press enter.  ![type s to view](pics/3-3.png)
+9. To view the contents of the job, type `S` next to the Jobname ZOWECRF and press enter. <img src="pics/3-3.png" width="200">
 
 ## What to do next
 
