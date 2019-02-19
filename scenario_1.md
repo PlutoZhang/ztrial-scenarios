@@ -4,6 +4,8 @@
 
 Zowe offers modern interfaces that enables you to interact with z/OS in a way that is similar to what you experience on cloud platforms today. Like Mac or Windows, Zowe comes with a set of APIs and OS capabilities that applications build on and includes some applications out of the box.
 
+![Zowe architecture](./images/zowe-architecture.png)
+
 This scenario walks you through the Zowe interfaces including the Zowe Desktop and Zowe CLI through several simple tasks to help you get familiar with Zowe.
 - If you are new to Zowe, start with this scenario to explore the base Zowe features and functions. 
 - If you are familiar with Zowe, you can skip this scenario and directly go to **Scenario 2** which guides you to extend Zowe by creating your own APIs and applications.
@@ -31,14 +33,13 @@ On the login page of the Zowe Desktop, enter your username and password and you 
 ### Procedure
 1.	In the taskbar, click the icon of Firefox to start the browser.
 1.	In Firefox, enter the following URL in the address bar to access the login page:
-https://myhost:httpsPort/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html (URL to be replaced with an accessible one)
+`https://myhost:httpsPort/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html` (URL to be replaced with an accessible one)
 1.	On the login page of the Zowe Desktop, enter XXX in the Username field.
 1.	Enter XXX in the Password field.
 1.	Press Enter.    
-The Zowe Desktop is opened.
 
 ### Results
-
+The Zowe Desktop is opened.
 
 ### What to do next
 The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES). 
