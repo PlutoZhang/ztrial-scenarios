@@ -26,39 +26,50 @@ This scenario guides you through the steps in roughly 30 minutes. By the end of 
 As an introductory scenario, no previous knowledge of Zowe is needed. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by logging in to the Zowe Desktop.
 
 ## Logging in to the Zowe Desktop
-
-### About this task
-On the login page of the Zowe Desktop, enter your username and password and you will see the desktop with Zowe applications.
+Access and navigate the Zowe Desktop to view the Zowe applications.
 
 ### Procedure
 1.	In the taskbar, click the icon of Firefox to start the browser.
-1.	In Firefox, enter the following URL in the address bar to access the login page:
+1.	Enter the following URL in the address bar to access the login page:
 `https://myhost:httpsPort/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html` (URL to be replaced with an accessible one)
-1.	On the login page of the Zowe Desktop, enter XXX in the Username field.
-1.	Enter XXX in the Password field.
-1.	Press Enter.    
+1.	On the login page of the Zowe Desktop, enter your mainframe credentials. 
+    - **Username**: TBD
+    - **Password**: TBD
+    <!--Should we prevision this for users? Any risk on providing the credentials to users?-->
+    ![Zowe login](./images/zowe-desktop-login.jpg)
+1.	Press Enter. 
 
 ### Results
-The Zowe Desktop is opened.
+Upon authentication of your user name and password, the desktop opens. 
+
+Several applications are pinned to the task bar. Click the Start menu and you will see a list of applications that are installed by default. You can pin other applications to the task bar by right-clicking the on the application icon and selecting **Pin to taskbar**.
+
+![Zowe desktop](./images/zowe-desktop.png)
 
 ### What to do next
-The next step is to use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES). 
+The next step is to use the MVS Explorer to make changes to data sets.
 
-## Submitting data sets in MVS Explorer
+## Editing a data set
+Use the MVS Explorer to edit a data set and save the changes. 
 
-### About this task
-You will use the MVS Explorer to submit data sets that contain JCL to Job Entry Subsystem (JES).
+The MVS Explorer view allows you to browse the MVS file system by creating filters against data set names.
 
 ### Procedure
-1. XXX
-2. XXX  
-3. XXX  
+1. Click the Start menu on Zowe Desktop. 
+2. Locate the **MVS Explorer** application and click to open it. You can also right-click and select **Open** from the menu. The file opens in the editor. 
+3. Locate and click the data set member `CRAIG.TEST.DATA`. <!--The data set name need to be updated later to match what's actually on zTrial image.-->
+    ![Locate a Zowe data set in MVS Explorer view](./images/zowe-mvs-dataset-locate.png)
+4. Edit the data set. 
+5. Click **SAVE** to save your edits.
+    ![Save the edits](./images/zowe-mvs-dataset-save.png)
 
 ### Results
 
+Your edits are saved! 
+
 ### What to do next
 
-Next, you'll use Job Entry Subsystem (JES) explorer to query JES jobs with filters, and view the related status.
+Next, you'll use the JES Explorer to query JES jobs with filters and view the related status.
 
 ## Querying the JES job and viewing its related status in JES explorer
 
