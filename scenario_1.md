@@ -171,7 +171,7 @@ Zowe CLI is a command-line interface that allows you to interact with z/OS from 
 1. Make the required edits and click **SAVE** to save your edits.<!--Need to define what changes users should make-->
 1. Open the terminal and upload your changes to mainframe by entering the following command:
     ```
-    zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JC"
+    zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JCL"
     ```
 ### Results
 You've used the Zowe CLI to edit JCL and upload to mainframe.
