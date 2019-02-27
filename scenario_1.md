@@ -158,23 +158,21 @@ Zowe CLI is a command-line interface that allows you to interact with z/OS from 
 
 1. Launch Zowe CLI from a bash terminal.
 1. To list the data sets of _CRAIG.DEMO_, enter the following command:    
-```
-zowe zos-files list data-set "CRAIG.DEMO.*"
-```
+    ```
+    zowe zos-files list data-set "CRAIG.DEMO.*"
+    ```
     The following data sets are listed. (to add a screencapture for the command result.)
 1. To download all the data set members of _CRAIG.DEMO.JCL_, enter the following command:    
     ```
-zowe zos-files download  all-members "CRAIG.DEMO.JCL"
+    zowe zos-files download  all-members "CRAIG.DEMO.JCL"
     ```
-
     The message `Data set downloaded successfully` indicates that the data set members are downloaded.
 1. Locate the data set member named _ztrial_ and use the text editor to open this member.
-2. Make the required edits and click **SAVE** to save your edits.
-<!--Need to define what changes users should make-->
-3. Open the terminal.
-4. Upload your changes to mainframe by entering the following command:
+1. Make the required edits and click **SAVE** to save your edits.<!--Need to define what changes users should make-->
+1. Open the terminal.
+1. Upload your changes to mainframe by entering the following command:
     ```
-zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JC"
+    zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JC"
     ```
 ### Results
 You've used the Zowe CLI to edit JCL and upload to mainframe.
