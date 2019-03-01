@@ -157,21 +157,26 @@ Zowe CLI is a command-line interface that allows you to interact with z/OS from 
 ### Procedures
 
 1. Launch Zowe CLI from a bash terminal.
-1. Enter the following commands to download a data set.
+1. To list the data sets of _CRAIG.DEMO_, enter the following command:    
     ```
-    zowe zos-jobs download ds "solsu01.mimpds.cntl(cblrun)" -f cblrun.jcl
+    zowe zos-files list data-set "CRAIG.DEMO.*"
     ```
-
-    The message `Data set downloaded successfully` indicates that the data set is downloaded.
-1. Enter `code cblrun.jcl`.
-2. Make the required edits and save. <!--Need to define what changes users should make-->
-3. Open the terminal.
-4. Upload your changes to mainframe by entering the following command: 
+    The following data sets are listed. (to add a screencapture for the command result.)
+1. To download all the data set members of _CRAIG.DEMO.JCL_, enter the following command:    
     ```
-    zowe files upload ftds "cblrun.jcl" "solsu01.mimpds.cntl(cblrun)"
+    zowe zos-files download  all-members "CRAIG.DEMO.JCL"
     ```
-
+    The message `Data set downloaded successfully` indicates that the data set members are downloaded.
+1. Locate the data set member named _ztrial_ and use the text editor to open this member.
+1. Make the required edits and click **SAVE** to save your edits.<!--Need to define what changes users should make-->
+1. Open the terminal and upload your changes to mainframe by entering the following command:
+    ```
+    zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JCL"
+    ```
+### Results
+You've used the Zowe CLI to edit JCL and upload to mainframe.
 ### What to do next
+You'll use the MVS Explorer to view the JCL that you updated in this procedure.
 
 ## Using the MVS Explorer to view the data sets
 
