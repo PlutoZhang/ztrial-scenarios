@@ -6,7 +6,7 @@
 4. [Querying JES jobs and viewing related status in JES Explorer](#querying-jes-jobs-and-viewing-related-status-in-jes-explorer)
 5. [Using TN3270 in Zowe Desktop to view the job](#using-tn3270-in-zowe-desktop-to-view-the-job)
 6. [Using the Zowe CLI to edit JCL and upload to mainframe](#using-the-zowe-cli-to-edit-jcl-and-upload-to-mainframe)
-7. [Using the MVS Explorer to view the data sets](#using-the-mvs-explorer-to-view-the-data-sets)
+7. [Using the MVS Explorer to view the data sets](#view-the-data-set-changes-in-mvs-explorer) 
 8. [Next Steps](#next-steps)
 - [Try the Extending Zowe scenario](#try-the-extending-zowe-scenario)
 - [Go deeper with Zowe](#go-deeper-with-zowe)
