@@ -68,13 +68,15 @@ The MVS Explorer view allows you to browse the MVS file system by creating filte
 
 ### Procedure
 1. Click the Start menu on Zowe Desktop.
-2. Scroll down to find the **MVS Explorer** icon and click to open it. You can also right-click and select **Open** from the menu. The file opens in the editor.
-3. Locate and click the data set member `CRAIG.TEST.DATA`.  
+1. Scroll down to find the **MVS Explorer** icon. Right-click and select **Pin to taskbar** to pin this application to the desktop for later use. 
+1. Click to open the MVS Explorer. 
+1. In the search field, enter `CRAIG` to filter target data set member. 
+1. Locate and click the data set member `CRAIG.TEST.DATA`.  
     <!--The data set name need to be updated later to match what's actually on zTrial image.-->  
 
     <img src="./images/zowe-mvs-dataset-locate.png" width="400">
-4. Edit the data set.
-5. Click **SAVE** to save your edits.  
+1. Edit the data set.
+1. Click **SAVE** to save your edits.  
     <img src="./images/zowe-mvs-dataset-save.png" width="400">
 
 ### Results
@@ -156,42 +158,46 @@ Zowe CLI is a command-line interface that allows you to interact with z/OS from 
 
 ### Procedures
 
-1. Launch Zowe CLI from a bash terminal.
-1. To list the data sets of _CRAIG.DEMO_, enter the following command:    
+1. Launch the Command Prompt. 
+    1. Click the Windows logo in the bottom-left corner of the screen. 
+    2. Inside the search field, enter `command` or `cmd`. Then, click or tap on the Command Prompt result.
+1. To list the data sets of _CRAIG.DEMO_, enter the following command:    <!--Need to update the data set name here when zTrial environemnt is set up. >
     ```
     zowe zos-files list data-set "CRAIG.DEMO.*"
     ```
     The following data sets are listed. (to add a screencapture for the command result.)
 1. To download all the data set members of _CRAIG.DEMO.JCL_, enter the following command:    
     ```
-    zowe zos-files download  all-members "CRAIG.DEMO.JCL"
+    zowe zos-files download all-members "CRAIG.DEMO.JCL"
     ```
-    The message `Data set downloaded successfully` indicates that the data set members are downloaded.
-1. Locate the data set member named _ztrial_ and use the text editor to open this member.
-1. Make the required edits and click **SAVE** to save your edits.<!--Need to define what changes users should make-->
-1. Open the terminal and upload your changes to mainframe by entering the following command:
+    The message `Data set downloaded successfully` indicates that the data set members are downloaded. [-- Need to add a screen capture here when zTrial environment is set up.]
+1. Use the text editor to open the data set member named _ztrial_ by entering the following command:
+   ```code CRAIG/DEMO/JCL/ztrial.txt```
+1. Add the words `zTrial demo` at the end of the file and click **SAVE** to save your edits.<!--Need to define what changes users should make-->
+1. Open the command prompt and upload your changes to mainframe by entering the following command:
     ```
     zowe zos-files upload file-to-data-set CRAIG/DEMO/JCL/ztrial.txt "CRAIG.DEMO.JCL"
     ```
-### Results
-You've used the Zowe CLI to edit JCL and upload to mainframe.
-### What to do next
-You'll use the MVS Explorer to view the JCL that you updated in this procedure.
 
-## Using the MVS Explorer to view the data sets
+    The message `Data set is uploaded successfully` indicates that you've sucessfully uploaded your changes.
+
+### Results
+Congratulations! You've used the Zowe CLI to edit JCL and upload to mainframe.
+
+### What to do next
+You'll use the MVS Explorer to view the updates that you made to the JCL in this procedure.
+
+## View the data set changes in MVS Explorer
 
 ### About this task
-You'll use the MVS Explorer to view the data sets.
+You'll use the MVS Explorer to view the data set changes in the previous step.
 
 ### Procedures
-1. In the bottom application draw of Zowe Desktop, you can see several explorer server icons. Click the MVS Explorer icon, the MVS explorer is displayed.
-1. Use the high-level qualifier filter to browse the MVS file system (data set and members) and...
-1. ...
-
+1. Click the MVS explorer application icon from the taskbar.
+1. Locate and click the data set member `CRAIG.DEMO.JCL` and check the changes you just made by using Zowe CLI.
 
 ### What to do next
-Congratulations! You've successfully got hands-on experience with Zowe! ......
-
+Congratulations! You've successfully got hands-on experience with Zowe! 
 
 ## Next Steps
 Ready to become a Zowe extender? Try to explore how you could extend Zowe to create your own APIs and applications.
@@ -200,4 +206,4 @@ Ready to become a Zowe extender? Try to explore how you could extend Zowe to cre
 ...... link to the next scenario to be pasted here
 
 ## Go deeper with Zowe
-Enjoyed this scenario? Now that you're familiar with each Zowe component, why not try to learn more about the product information and the value it delivers. For more information, see Zowe on Open Mainframe Project (https://www.openmainframeproject.org/projects/zowe).
+Enjoyed this scenario? Now that you're familiar with each Zowe component, why not try to learn more about the project and the value it delivers. For more information, see Zowe on Open Mainframe Project (https://www.openmainframeproject.org/projects/zowe).
