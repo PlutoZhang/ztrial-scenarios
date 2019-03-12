@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="© Copyright IBM Corporation 2019" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 2019" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Editing a data set in MVS Explorer" />
+<meta name="abstract" content="Use the MVS Explorer to edit a data set member and save the changes." />
+<meta name="Description" content="Use the MVS Explorer to edit a data set member and save the changes." />
+<meta name="DC.Relation" scheme="URI" content="4_tn3270.html" />
+<meta name="DC.Relation" scheme="URI" content="6_cli.html" />
+<meta name="DC.Date" scheme="iso8601" content="2019-03-12" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ims_create_api" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="Prev" href="4_tn3270.html" />
+<link rel="Next" href="6_cli.html" />
+<title>Editing a data set in MVS Explorer</title>
+</head>
+<body id="ims_create_api"><div role="main">
+<h1 class="title topictitle1">Editing a data set in MVS Explorer</h1>
+<div class="body taskbody"><p class="shortdesc">Use the MVS Explorer to edit a data set member and save the changes.</p>
+<div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd919e9">About this task</h2></div><p class="p">The MVS Explorer view allows you to browse the MVS file system by creating filters against data
+set names.</p>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd919e12">Procedure</h2></div><ol class="ol steps" id="ims_create_api__steps_kwd_wc1_1hb"><li class="li step stepexpand"><span class="ph cmd">Click the Start menu on Zowe Desktop.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Scroll down to find the <span class="ph uicontrol">MVS Explorer</span> icon. Right-click and select
+<span class="ph uicontrol">Pin to taskbar</span> to pin this application to the desktop for later use.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Click the <span class="ph uicontrol">MVS Explorer</span> icon on the task bar.</span> The MVS Explorer opens. The <span class="ph uicontrol">Filter</span> field is pre-filled with the filter
+string <samp class="ph codeph">TRTRADM</samp>. All the data sets matching this filter are displayed. You can
+expand a data set name and see the members in it. <p class="p"><img class="image" src="image/zowe-mvs-filter.png" width="300" alt="The filter in MVS Explorer" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Locate and click the data set member <samp class="ph codeph">APPLY1</samp> in
+<samp class="ph codeph">TSTRADM.SMPE.JCL</samp>.</span> <p class="p"><img class="image" id="ims_create_api__image_w5n_nd1_1hb" src="image/zowe-mvs-dataset-locate.png" width="300" alt="The location of the data set member" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Edit the data set by adding <samp class="ph codeph">NOTIFY=TSTRADM</samp>.</span> <p class="p"><img class="image" src="image/zowe-mvs-dataset-edit.png" width="600" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Click <strong class="ph b">SAVE</strong> to save your edits.</span></li>
+</ol>
+<div class="section result" id="ims_create_api__result_sb4_4mt_zgb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd919e73">Results</h2></div>Your edits are saved!</div>
+<div class="section postreq" id="ims_create_api__postreq_pdd_qmt_zgb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd919e75">What to do next</h2></div>Next, you’ll use Zowe CLI to view and remove the changes you just
+made.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="4_tn3270.html" title="You will use the TN3270 application plug-in to view the same job that you filtered out in the previous task.">Using TN3270 in Zowe Desktop to view the job</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a class="link" href="6_cli.html" title="Use Zowe CLI to download the data set that you edited using MVS Explorer in the previous step, make changes to it, and upload the changes to mainframe.">Using the Zowe CLI to edit a data set</a></div>
+</div>
+</div></div></body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="© Copyright IBM Corporation 2019" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 2019" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Querying JES jobs and viewing related status in JES Explorer" />
+<meta name="abstract" content="Use the Job Entry Subsystem (JES) Explorer to query JES jobs with filters and view the related status." />
+<meta name="Description" content="Use the Job Entry Subsystem (JES) Explorer to query JES jobs with filters and view the related status." />
+<meta name="DC.Relation" scheme="URI" content="2_login.html" />
+<meta name="DC.Relation" scheme="URI" content="4_tn3270.html" />
+<meta name="DC.Date" scheme="iso8601" content="2019-03-12" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ims_create_api" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="Prev" href="2_login.html" />
+<link rel="Next" href="4_tn3270.html" />
+<title>Querying JES jobs and viewing related status in JES Explorer</title>
+</head>
+<body id="ims_create_api"><div role="main">
+<h1 class="title topictitle1">Querying JES jobs and viewing related status in JES Explorer</h1>
+<div class="body taskbody"><p class="shortdesc">Use the Job Entry Subsystem (JES) Explorer to query JES jobs with filters and view the
+related status.</p>
+<div class="section context" id="ims_create_api__context_ncv_221_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd370e9">About this task</h2></div></div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd370e10">Procedure</h2></div><ol class="ol steps" id="ims_create_api__steps_uqv_f21_1hb"><li class="li step stepexpand"><span class="ph cmd">Click the Start menu on Zowe Desktop.</span> <p class="p"><img class="image" id="ims_create_api__image_j2l_s21_1hb" src="image/2-1.png" width="250" alt="the start menu of Zowe desktop" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Scroll down to find the JES Explorer icon and click to open it.</span> The JES Explorer is displayed.</li>
+<li class="li step stepexpand"><span class="ph cmd">Click the <span class="ph uicontrol">Job Filters</span> column to expand the filter criteria. You can
+filter jobs on various criteria by Owner, Prefix, Job ID, and Status. By default, the jobs are
+filtered by Owner.</span> <p class="p"><img class="image" id="ims_create_api__image_emn_x21_1hb" src="image/2-2.png" width="200" alt="Job filters in JES" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To query the jobs starting with ZOWE and in an active status, enter <span class="keyword cmdname">ZOWE*</span> in
+the <span class="ph uicontrol">Prefix</span> field and select <span class="ph uicontrol">ACTIVE</span> from the
+<span class="ph uicontrol">Status</span> drop-down list, and click <span class="ph uicontrol">APPLY</span>.</span> <div class="note note"><span class="notetitle">Note:</span> Wildcard is supported. Valid wildcard characters are asterisk (*), percent sign (%), and
+question mark (?).</div>
+
+<img class="image" src="image/zowe-jes-filter.png" width="300" /></li>
+<li class="li step stepexpand"><span class="ph cmd">From the job filter results, click the job
+<span class="ph uicontrol">ZOWECRF:STC01414[ACTIVE]</span>.</span> The data sets for this job are listed.</li>
+<li class="li step stepexpand"><span class="ph cmd"> Click <span class="ph uicontrol">JESJCL</span> to open the JESJCL data set.</span> The contents
+of this data set are displayed. You can also select other data sets to view their contents. <div class="note tip"><span class="tiptitle">Tip:</span> You can hover over the text to display a hover help window.<p class="p"><img class="image" id="ims_create_api__image_pvr_z21_1hb" src="image/2-3.png" width="400" alt="hover help" /></p>
+</div>
+</li>
+</ol>
+<div class="section result" id="ims_create_api__result_sb4_4mt_zgb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd370e80">Results</h2></div>You used the JES Explorer to query the JES jobs with filters and
+viewed the related steps, files, and status.</div>
+<div class="section postreq" id="ims_create_api__postreq_gt3_cf1_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd370e82">What to do next</h2></div>Next, you'll use the TN3270 application plug-in in Zowe Desktop to
+view the same job that you viewed in this task.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="2_login.html" title="Access and navigate the Zowe Desktop to view the Zowe applications.">Logging in to the Zowe Desktop</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a class="link" href="4_tn3270.html" title="You will use the TN3270 application plug-in to view the same job that you filtered out in the previous task.">Using TN3270 in Zowe Desktop to view the job</a></div>
+</div>
+</div></div></body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="© Copyright IBM Corporation 2019" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 2019" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Using TN3270 in Zowe Desktop to view the job" />
+<meta name="abstract" content="You will use the TN3270 application plug-in to view the same job that you filtered out in the previous task." />
+<meta name="Description" content="You will use the TN3270 application plug-in to view the same job that you filtered out in the previous task." />
+<meta name="DC.Relation" scheme="URI" content="3_jes.html" />
+<meta name="DC.Relation" scheme="URI" content="5_mvs_edit.html" />
+<meta name="DC.Date" scheme="iso8601" content="2019-03-12" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ims_create_api" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="Prev" href="3_jes.html" />
+<link rel="Next" href="5_mvs_edit.html" />
+<title>Using TN3270 in Zowe Desktop to view the job</title>
+</head>
+<body id="ims_create_api"><div role="main">
+<h1 class="title topictitle1">Using TN3270 in Zowe Desktop to view the job</h1>
+<div class="body taskbody"><p class="shortdesc">You will use the TN3270 application plug-in to view the same job that you filtered out in
+the previous task. </p>
+<div class="section context" id="ims_create_api__context_ncv_221_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd618e9">About this task</h2></div> Zowe not only provides new modern applications to interact with
+z/OS but also integrates traditional tool TN3270 that you are familiar with. This TN3270 application
+plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server
+runs.</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd618e11">Procedure</h2></div><ol class="ol steps" id="ims_create_api__steps_vfc_sg1_1hb"><li class="li step stepexpand"><span class="ph cmd">From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270
+application plug-in.</span> <p class="p"><img class="image" id="ims_create_api__image_sdg_4h1_1hb" src="image/3-1.png" width="400" alt="TN3270 application plug-in" /></p>
+
+<p class="p">The TN3270 panel is displayed which offers selections to access various mainframe services.</p>
+ <img class="image" src="image/zowe-tn3270-welcome.png" width="500" /></li>
+<li class="li step stepexpand"><span class="ph cmd">Enter the following command and press enter to log on to TSO.</span> <pre class="pre codeblock"><code>LOGON TSTRADM</code></pre>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">On the <span class="ph uicontrol">TSO/E LOGON</span> panel, enter the password <samp class="ph codeph">TSTRADM</samp> in
+the <span class="ph uicontrol">Password</span> field and press enter.</span> You successfully log on to TSO. <p class="p"><img class="image" src="image/zowe-tn3270-logon.png" width="500" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To start ISPF, enter <samp class="ph codeph">ISPF</samp> and press enter. The <span class="ph uicontrol">ISPF Primary
+Option Menu</span> is displayed.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">To use SDSF to view output from a job, type <samp class="ph codeph">S</samp> at the
+<span class="ph uicontrol">Option</span> prompt and press enter.</span> <p class="p"><img class="image" id="ims_create_api__image_mt5_rh1_1hb" src="image/3-2.png" width="200" alt="command to view job output" /></p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To view the jobs in an active status, type <samp class="ph codeph">DA</samp> at the command input
+prompt and press enter. </span> The jobs that are running are displayed.</li>
+<li class="li step stepexpand"><span class="ph cmd">To query the jobs starting with <span class="ph filepath">ZOWECRF</span>, type <samp class="ph codeph">PREFIX
+ZOWECRF</samp> at the command input prompt and press enter. The jobs that are both in an active
+status and start with <span class="ph filepath">ZOWECRF</span> are displayed.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">To view the contents of the job, type <samp class="ph codeph">S</samp> next to the jobname
+<span class="ph filepath">ZOWECRF</span> and press enter.</span> <p class="p"><img class="image" id="ims_create_api__image_e2g_wh1_1hb" src="image/3-3.png" width="200" alt="Command to view the job contents" /></p>
+</li>
+</ol>
+<div class="section result" id="ims_create_api__result_kbs_fh1_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd618e104">Results</h2></div></div>
+<div class="section postreq" id="ims_create_api__postreq_oj3_fh1_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd618e105">What to do next</h2></div>In the next step, you will use the MVS Explorer to make changes to
+a data set.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="3_jes.html" title="Use the Job Entry Subsystem (JES) Explorer to query JES jobs with filters and view the related status.">Querying JES jobs and viewing related status in JES Explorer</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a class="link" href="5_mvs_edit.html" title="Use the MVS Explorer to edit a data set member and save the changes.">Editing a data set in MVS Explorer</a></div>
+</div>
+</div></div></body>
+</html>

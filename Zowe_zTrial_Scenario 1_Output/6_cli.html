@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="© Copyright IBM Corporation 2019" />
+<meta name="DC.Rights.Owner" content="© Copyright IBM Corporation 2019" />
+<meta name="security" content="public" />
+<meta name="Robots" content="index,follow" />
+<meta name="DC.Type" content="task" />
+<meta name="DC.Title" content="Using the Zowe CLI to edit a data set" />
+<meta name="abstract" content="Use Zowe CLI to download the data set that you edited using MVS Explorer in the previous step, make changes to it, and upload the changes to mainframe." />
+<meta name="Description" content="Use Zowe CLI to download the data set that you edited using MVS Explorer in the previous step, make changes to it, and upload the changes to mainframe." />
+<meta name="DC.Relation" scheme="URI" content="5_mvs_edit.html" />
+<meta name="DC.Relation" scheme="URI" content="7_mvs_view.html" />
+<meta name="DC.Date" scheme="iso8601" content="2019-03-12" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ims_create_api" />
+<meta name="DC.Language" content="en-us" />
+<meta name="IBM.Country" content="ZZ" />
+<!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css" />
+<link rel="Prev" href="5_mvs_edit.html" />
+<link rel="Next" href="7_mvs_view.html" />
+<title>Using the Zowe CLI to edit a data set</title>
+</head>
+<body id="ims_create_api"><div role="main">
+<h1 class="title topictitle1">Using the Zowe CLI to edit a data set</h1>
+<div class="body taskbody"><p class="shortdesc">Use Zowe CLI to download the data set that you edited using MVS Explorer in the previous
+step, make changes to it, and upload the changes to mainframe.</p>
+<div class="section context" id="ims_create_api__context_ncv_221_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd1155e9">About this task</h2></div>Zowe CLI is a command-line interface that allows you to interact
+with z/OS from a variety of other platforms, such as cloud or distributed systems, to submit jobs,
+issue TSO and z/OS console commands, integrate z/OS actions into scripts, and produce responses as
+JSON documents. With this extensible and scriptable interface, you can tie in mainframes to
+distributed DevOps pipelines and build in automation.</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd1155e11">Procedure</h2></div><ol class="ol steps" id="ims_create_api__steps_qqm_pq1_1hb"><li class="li step stepexpand"><span class="ph cmd">Launch the Command Prompt.</span> <ol type="a" class="ol substeps" id="ims_create_api__substeps_dkp_5q1_1hb"><li class="li substep"><span class="ph cmd">Click the <span class="ph uicontrol">Windows</span> logo in the bottom-left corner of the
+screen.</span></li>
+<li class="li substep"><span class="ph cmd">Inside the <span class="ph uicontrol">Search</span> field, enter <samp class="ph codeph">command</samp> or
+<samp class="ph codeph">cmd</samp>. Then, click or tap on the Command Prompt result.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To list the data sets of <span class="ph filepath">TSTRADM</span>, enter the following command: </span> <pre class="pre codeblock"><code>zowe zos-files list data-set "TSTRADM.*"</code></pre>
+
+<p class="p">The following data sets are listed. </p>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">To download all the data set members of <span class="ph filepath">TSTRADM.SMPE.JCL</span>, enter the
+following command: </span> <pre class="pre codeblock"><code>zowe zos-files download all-members "TSTRADM.SMPE.JCL"</code></pre>
+</li>
+<li class="li step stepexpand"><span class="ph cmd">Use the text editor to open the data set member named <span class="ph filepath">APPLY1</span> by entering
+the following command: </span> <pre class="pre codeblock"><code>code TSTRADM/SMPE/JCL/APPLY1.JCL</code></pre>
+ The file opens in an editor.</li>
+<li class="li step stepexpand"><span class="ph cmd">Remove the change <samp class="ph codeph">,NOTIFY=TSTRADM</samp> that you added in a previous step and save
+your edits.</span></li>
+<li class="li step stepexpand"><span class="ph cmd">Open the command prompt again and upload your changes to mainframe by entering the following
+command: </span> <pre class="pre codeblock"><code>zowe zos-files upload file-to-data-set TSTRADM/SMPE/JCL/APPLY1.JCL "TSTRADM.SMPE.JCL"</code></pre>
+
+<p class="p">The message <samp class="ph codeph">Data set is uploaded successfully</samp> indicates that you’ve successfully
+uploaded your changes.</p>
+</li>
+</ol>
+<div class="section result" id="ims_create_api__result_kbs_fh1_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd1155e83">Results</h2></div>Congratulations! You’ve used the Zowe CLI to edit a data set member
+and upload the changes to mainframe.</div>
+<div class="section postreq" id="ims_create_api__postreq_l5y_sr1_1hb"><div class="tasklabel"><h2 class="sectiontitle tasklabel" id="taskd1155e85">What to do next</h2></div>You will open the MVS Explorer again to view the updates that you
+made to the data set in this procedure.</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="5_mvs_edit.html" title="Use the MVS Explorer to edit a data set member and save the changes.">Editing a data set in MVS Explorer</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a class="link" href="7_mvs_view.html" title="Use the MVS Explorer to view the data set changes in the previous step.">View the data set changes in MVS Explorer</a></div>
+</div>
+</div></div></body>
+</html>
