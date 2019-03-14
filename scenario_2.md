@@ -12,21 +12,62 @@ No previous knowledge of Zowe or API design is needed. Please wait a moment whil
 
 ## Step 1: Adding a REST API service to the API Mediation Layer
 
-You will add some missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works. 
+In this step, you will add some missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works. 
 
-<!--Requirements on the client system: -->
+An API will be running in the API Catalog which has some missing features. You will view the current API and then update the code by inserting a code block and then redeploying it. You can then see the new endpoint.
+
+<!--Requirements on the client system: VSCode, npm-->
 
 **Procedure**
 
-1. Identify the APIs you want to expose.
-1. Define the routing of your API.
-1. Define your service and API in YAML format.
-1. Add your service to the API Mediation Layer.
-1. Validate that your service is running and you can access the service endpoints.
-1. Add your service definition to the API Mediation Layer running as part of the Zowe runtime installation.
+1. Visit the Swagger doc. <!--Is it the doc in the API Catalog? How can users access that, by logging in to the API Catalog and click the API Catalog app? Which Swagger doc should users open?-->
+1. Open Firefox and enter the following URL in the address field. <!--What's the purpose of doing this? To test if the endpoint works? Users will see that it fails, right?-->
+    ```http://localhost:3000/accounts/1/cars```
+
+    The following error message is disaplayed, which indicats that the API is not working.
+    <img src="./images/scenario2-api-test-error.png" width="200">
+
+1. Open VSCode from the desktop. <!--How can users open VSCode in the Windows image? That will need to be preinstalled.-->
+
+1. From the VSCode taskbar, select **Terminal** -> **New Terminal**.  The terminal panel will be opened at the bottom of the editor window. 
+    
+    <img src="./images/scenario2-vscode-terminal-open.png" width="200">
+
+1. Enter `npm start`.
+1. Enter `npm test`. You will see that one test fails. 
+    
+    <img src="./images/scenario2-api-test-fail.png" width="200">
+
+    This is because there are missing code in the configuration file. Next let's locate the file with missing code, fetch the code and add it to the file.
+    
+1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** -> **server** -> **routes** -> **accountsCars.route.js**. The content of the **accountsCars.route.js** file is displayed. 
+
+    <img src="./images/scenario2-api-folder-locate.png" width="200">
+
+    You will see that some code is missing in this file.
+
+    <img src="./images/scenario2-missing-code-file.png" width="300">
+
+1. Insert the following code to the file and press Ctrl+S to save the changes.
+
+    ```
+    router.route('/cars')
+    .get(accountsCarsController.getAll);
+
+    router.route('/cars/:_id')
+    .get(accountsCarsController.get);
+    ```
+    <img src="./images/scenario2-missing-code-insert.png" width="300">
+
+1. Redeploy the API. <!--How to do it?-->
+1. In the TERMINAL window, enter the `npm start` command. 
+1. Open Firefox again and enter the following URL in the address field.
+    ```http://localhost:3000/accounts/1/cars```
+
+    The API content is displayed, which indicates that you can access the service endpoints.
+    <img src="./images/scenario2-api-test-success.png" width="350">
 
 **Next step**
-
 
 
 ## Step 2: Creating and deploying an application on Zowe Desktop
