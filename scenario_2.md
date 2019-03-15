@@ -8,11 +8,11 @@ In this scenario, you will learn how to extend Zowe to add your own API or appli
 - Extend Zowe Web UI by creating and deploying an application plug-in on Zowe Desktop
 - Extend Zowe CLI by creating a Zowe CLI plug-in to access the API
 
-No previous knowledge of Zowe or API design is needed but some knowledge of API and Command Line will be helpful. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by extending the API.
+No previous knowledge of Zowe is needed but some knowledge of API and command line will be helpful. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by extending the API.
 
 ## Step 1: Extend the Zowe API
 
-In this step, you will add some missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works. 
+In this step, you will add the missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works. 
 
 The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API which has some missing features will be running in the API Catalog of the API Mediation Layer. You will view the current API, add the missing code for the feature, redeploy it and then test that the API service endpoint works.
 
@@ -79,27 +79,74 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
     >**Questions:** Should users also go to API Catalog to verify that it's working?
 
 ### **Next step**
-
+In the next step, a sample application that uses the sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
 
 ## Step 2: Creating and deploying an application on Zowe Desktop
 
-You will complete a sample application and deploy the application on Zowe Desktop. 
+In this step, you will combine some provided code snippets with the skeleton code to build a sample React application that works on the Zowe Desktop.
 
-In this step, you will combine some provided code snippets with the skeleton code to build a complete application that displays on the Zowe Desktop.
-
-A react app which hooks up to the API will be available but won't have the new endpoint working yet. Now the API has been updated we can find the code block using the MVS explorer and then redeploying it.
-
-<!--Requirements on the client system: -->
+<!--Requirements on the client system: We need to -->
 
 ### **Procedure**
 
+1. Locate and test the React application. 
+    1. Start Firefox. 
+    1. In the address field, enter the following URL to access the Zowe Desktop. 
+        ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
+    1. Enter the following username and password.
+        - User name: TSTRADM
+        - Password: TSTRADM
 
-**Next step**
+         The Zowe Desktop opens. 
+    1. Click the Start menu and scroll down to locate the React application. Right-click on the React application and select **Pin to taskbar** for later use. 
+    1. Click to open the React app from the taskbar.  
+        You can click through the links and you will see that some function is not working. This is because there are missing values in the configuration file of this application. 
 
+        <img src="./images/scenario2-ui-react-app.png" width="200">
+
+        Next, let's test this application using the VSCode terminal. 
+    1. Open the VSCode terminal. 
+    1. Click **File** > **Open Folder** to open the `sample-trial-react-app` folder. 
+        >**Questions:** Should we provision this for users instead of letting them locate the folder by themselves? If yes, we might need to consolidate a list of folders and upload to the Windows image. Also need to prepare the files to have missing code beforehand.
+    1. Enter the `npm test` command. You will see that the test fails. 
+2. Add the missing code. 
+    1. In VSCode Explorer, click **src** > **Cars.js**. This file contains the missing values. 
+
+        <img src="./images/scenario2-ui-config-file-locate.png" width="200">
+
+        You will see that the code for a feature is missing in this file.
+
+        >**Comment:** Need to determine the file and the missing code for users to add. 
+
+        Next, let's fetch the missing code to be added. 
+
+        >**Comment/questions:** Can we just document the missing code for users to copy/paste instead of guiding them to use MVS to retrieve the missing code? Users in this scenario should already be familiar with MVS though.
+
+    1. Insert the following code to the configuration file and press `Ctrl+S` to save the changes.
+        
+        >**Comment:** Add the code here and add a screenshot to show the correct location. 
+
+3. Redeploy the changes. 
+     >**Questions:** Need more details here about how to redeploy.
+
+4.  Verify that the React application works correctly now. 
+    1. From the taskbar, open the React application. 
+    1. Verify that the previously failed page works correctly now. 
+         
+         >**Comments/Notes:**  Need to design the story and error details here and in previous step. For example, a certain account cannot be retrieved? 
+
+    1. Open VSCode terminal and enter `npm test` to check the result.
+
+### Result
+Congratulations! You added the missing values, deployed the changes, and verified that the application works correctly. 
+
+### **Next step**
+
+In the next step, You will work on a Zowe CLI plug-in based on the same Node.js API.
 
 ## Step 3: Extending a Zowe CLI plug-in
 
-You will extend an existing Zowe CLI plug-in by introducing the Node.js programmatic API in scenario 1, and create a command definition with a handler. 
+You will extend an existing Zowe CLI plug-in by introducing the Node.js programmatic API in scenario 1. 
 
 <!--Requirements on the client system: -->
 
