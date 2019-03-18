@@ -4,7 +4,8 @@
 2. [Extend the Zowe API](#step-1-extend-the-zowe-api)
 3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-
+5. [Next Steps](#next-steps)
+6. [Go deeper with Zowe](#go-deeper-with-zowe)
 
 > (Internal) Requirements on the client/Windows system: 
 > - **Prepare the source file folders (API, UI, CLI)** and upload to the Windows image. A certain file in each folder will have missing code blocks and comment that users need to insert the code blocks.
@@ -21,7 +22,7 @@ In this scenario, you will learn how to extend Zowe to add your own API or appli
 
 No previous knowledge of Zowe is needed but some knowledge of API and command line will be helpful. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by extending the API.
 
-## Step 1: Extend the Zowe API
+## Step 1: Extending the Zowe API
 
 In this step, you will add the missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works.
 
@@ -168,11 +169,46 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
 <!--Requirements on the client system: -->
 
-**Procedure**
+### **Procedure**
+1. Open Visual Studio Code from the desktop.
+1. From the **Menu Bar**, open the terminal by using the **View** > **Terminal** menu command.  
+    Below the editor region, the terminal panel is started in the current working directory, **ZTRIAL-CLI**.
+1. Run the following CLI command to check whether the data set _average-horse-power_ can be accessed.  
+    `zowe ztrial-plugin cars average-horse-power`  
+    You'll see that a command syntax error is prompted.
+1. Enter `npm test` to execute the tests. You will get the following output, which says that one test fails.  
+    <img src="./images/scenario2-cli-test-fail.png" width="300">  
+    This is because there are missing codes in the configuration file. Next, let's locate the file to add the missing codes.
+1. From the Workspace **ZTRIAL-CLI**, click **src** > **api** > **Car.ts (temp name)** to open the **Car.ts** typescript file. The contents of the **Car.ts** is displayed in the editor region.   
+    You will see that the code for a feature is missing in this file.
+1. Download the missing code and insert to the **Car.ts** file.
+    1. To get the missing code snippet, use the Zowe CLI plugin to download. In the terminal panel, enter the following command:  
+         >**To be done:the command to be added`  
+    
+        The dataset is successfully downloaded.
 
-1. Defining command syntax
-1. Defining command handler
-1.
-1.
+    2. View the content of the dataset and find the missing code block, and then insert it into the **Car.ts** file and press `Ctrl+S` to save the changes.
+1. Redeploy the API.
+    1. In the terminal panel, enter `npm run build` to build a new package.
+    >**To be done:** more details.
+    2. Enter `zowe plugins install ./` to install the plug-in.
+    >**To be done:** the name of the plug-in.  
+1. Verify that this API works correctly now.
+    1. In the terminal panel, run the following CLI command to check whether the data set _average-horse-power_ can be accessed:  
+    `zowe ztrial-plugin cars average-horse-power-for-account 4`  
+    You'll see an error-free result with no command syntax error.
+    2. Enter `npm test` to execute the tests. You will see the following all-pass output.  
+        >**To be done:** more details and screenshots to be added.
 
-**Next step**
+### **Results**  
+
+Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
+
+# Next Steps
+Thanks for your time in exploring the Zowe scenarios!
+# Go deeper with Zowe
+Zowe is an open source project that is created to host technologies that benefit the Z platform from all members of the Z community, including Integrated Software Vendors, System Integrators, and z/OS consumers.
+
+Zowe, like Mac or Windows, comes with a set of APIs and OS capabilities that applications build on and also includes some applications out of the box.
+
+If you have any interest, visit Zowe (https://zowe.github.io) on Open Mainframe Project to learn more about the capabilities of Zowe and the value it delivers.
