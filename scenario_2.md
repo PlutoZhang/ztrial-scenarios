@@ -4,13 +4,16 @@
 2. [Extend the Zowe API](#step-1-extend-the-zowe-api)
    - [**Procedure**](#procedure)
    - [**Next step**](#next-step)
- 3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
+3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
     - [**Procedure**](#procedure-1)
-    - [Result](#result)
+    - [**Result**](#result)
     - [**Next step**](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-        
-
+    - [**Procedure**](#procedure-2)
+    - [**Result**](#result-1)
+    - [**Next step**](#next-step-2)
+5. [Next Steps](#next-steps)
+6. [Go deeper with Zowe](#go-deeper-with-zowe)
 ## Overview
 
 In this scenario, you will learn how to extend Zowe to add your own API or application. This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
@@ -162,10 +165,45 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 <!--Requirements on the client system: -->
 
 **Procedure**
+1. Open Visual Studio Code from the desktop.
+1. From the **Menu Bar**, open the terminal by using the **View** > **Terminal** menu command.  
+    Below the editor region, the terminal panel is started in the current working directory, **ZTRIAL-CLI**.
+1. Run the following CLI command to check whether the data set _average-horse-power_ can be accessed.  
+    `zowe ztrial-plugin cars average-horse-power`  
+    You'll see that a command syntax error is prompted.
+1. Enter `npm test` to execute the tests. You will get the following output, which says that one test fails.  
+    <img src="./images/scenario2-cli-test-fail.png" width="300">  
+    This is because there are missing codes in the configuration file. Next, let's locate the file to add the missing codes.
+1. From the Workspace **ZTRIAL-CLI**, click **src** > **api** > **Car.ts (temp name)** to open the **Car.ts** typescript file. The contents of the **Car.ts** is displayed in the editor region.   
+    You will see that the code for a feature is missing in this file.
+1. Download the missing code and insert to the **Car.ts** file.
+    1. To get the missing code snippet, use the Zowe CLI plugin to download. In the terminal panel, enter the following command:  
+  >**To be done:the command to be added`  
 
-1. Defining command syntax
-1. Defining command handler
-1.
-1.
+    The dataset is successfully downloaded.
 
-**Next step**
+    2. View the content of the dataset and find the missing code block, and then insert it into the **Car.ts** file and press `Ctrl+S` to save the changes.
+1. Redeploy the API.
+    1. In the terminal panel, enter `npm run build` to build a new package.
+    >**To be done:** more details.
+    2. Enter `zowe plugins install ./` to install the plug-in.
+    >**To be done:** the name of the plug-in.  
+
+1. Verify that this API works correctly now.
+    1. In the terminal panel, run the following CLI command to check whether the data set _average-horse-power_ can be accessed:  
+    `zowe ztrial-plugin cars average-horse-power-for-account 4`  
+    You'll see an error-free result with no command syntax error.
+    2. Enter `npm test` to execute the tests. You will see the following all-pass output.
+  >**To be done:** more details and screenshots to be added.
+
+**Results**  
+    Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
+
+# Next Steps#
+Thanks for your time in exploring the Zowe scenarios!
+# Go deeper with Zowe#
+Zowe is an open source project that is created to host technologies that benefit the Z platform from all members of the Z community, including Integrated Software Vendors, System Integrators, and z/OS consumers.
+
+Zowe, like Mac or Windows, comes with a set of APIs and OS capabilities that applications build on and also includes some applications out of the box.
+
+If you have any interest, visit Zowe (https://zowe.github.io) on Open Mainframe Project to learn more about the capabilities of Zowe and the value it delivers.
