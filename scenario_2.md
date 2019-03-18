@@ -1,18 +1,17 @@
 # Scenario 2: Extending Zowe
 
 1. [Overview](#overview)
-2. [Extend the Zowe API](#step-1-extending-the-zowe-api)
-   - [**Procedure**](#procedure)
-   - [**Next step**](#next-step)
+2. [Extend the Zowe API](#step-1-extend-the-zowe-api)
 3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
-    - [**Procedure**](#procedure-1)
-    - [**Result**](#result)
-    - [**Next step**](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-    - [**Procedure**](#procedure-2)
-    - [**Results**](#results)
 5. [Next Steps](#next-steps)
 6. [Go deeper with Zowe](#go-deeper-with-zowe)
+
+> (Internal) Requirements on the client/Windows system: 
+> - **Prepare the source file folders (API, UI, CLI)** and upload to the Windows image. A certain file in each folder will have missing code blocks and comment that users need to insert the code blocks.
+> - Need to install **Visual Studio Code** on the Windows image. 
+> - **npm** is required to run the test command.
+
 ## Overview
 
 In this scenario, you will learn how to extend Zowe to add your own API or application. This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
@@ -29,22 +28,30 @@ In this step, you will add the missing code to expose an API in API Medidation L
 
 The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API which has some missing features will be running in the API Catalog of the API Mediation Layer. You will view the current API, add the missing code for the feature, redeploy it and then test that the API service endpoint works.
 
-<!--Requirements on the client system: VSCode, npm-->
 
-### **Procedure**
+### Procedure
 
-1. Visit the Swagger doc.
+1. View the service information and API documentation in the API Catalog.
+    1. Start Firefox.
+    1. In the address field, enter the following URL to access the Zowe Desktop.
+        ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
+    1. Enter the following username and password.
+        - User name: TSTRADM
+        - Password: TSTRADM
 
-    >**Questions:** Is it the doc in the API Catalog? How can users access that, by logging in to the API Catalog and click the API Catalog app? Will this Node.js API be prebuilt in zTrial so users can access? Which Swagger doc should users open?
+         The Zowe Desktop opens.
+    1. Click the Start menu on the lower eft corner of the Zowe Desktop and scroll down to find the API Catalog application. Click to open it. 
+    1. Enter the following credentials to log in to the API Catalog. 
+        - User name: TBD
+        - Password: TBD
+    1. Enter the following URL in the address field.  
+       ```http://localhost:3000/accounts/1/cars```
 
-1. Open Firefox and enter the following URL in the address field.  
-    >**Questions:** What's the purpose of doing this? To test if the endpoint works?
+       The following error message is displayed, which indicates that the API edpoint is not working.
 
-    ```http://localhost:3000/accounts/1/cars```
+       <img src="./images/scenario2-api-test-error.png" width="200">
 
-    The following error message is displayed, which indicates that the API edpoint is not working.
-
-    <img src="./images/scenario2-api-test-error.png" width="200">
+    <!--Questions:** Is it the doc in the API Catalog? How can users access that, by logging in to the API Catalog and click the API Catalog app? Will this Node.js API be prebuilt in zTrial so users can access? Which Swagger doc should users open?-->
 
 1. Open Visual Studio Code from the desktop.
     >**Questions:** How can users open VSCode in the zTrial Windows image? Think that will need to be preinstalled. We need to clarify the path to access VSCode in zTrial here.
@@ -65,6 +72,8 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
     <img src="./images/scenario2-missing-code-file.png" width="300">
 
+    Next, let's fetch the missing code and add it to this file.
+
 1. Insert the following code to the file and press `Ctrl+S` to save the changes.
     >**Questions:** Where should users find the missing code? Currently we just put it here so users can copy and paste. This might also be the quickest way to get the code.
 
@@ -81,26 +90,23 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
     >**Questions:** How to do this? Need more clarification here.
 
 1. In the TERMINAL panel, enter the `npm start` command.
-1. Open Firefox again and enter the following URL in the address field.
+1. Open the API Catalog in Zowe Desktop again and re-enter the following URL in the address field.
 
     ```http://localhost:3000/accounts/1/cars```
 
-    You should get the following response, which indicates that you can access the API endpoints.
+    You should get the following response, which indicates that you can access the API endpoints now.
 
     <img src="./images/scenario2-api-test-success.png" width="350">
 
-    >**Questions:** Should users also go to API Catalog to verify that it's working?
 
-### **Next step**
-In the next step, a sample application that uses the sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
+### Next step
+In the next step, a sample application that uses this sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
 
 ## Step 2: Extending Zowe Application Framework
 
 In this step, you will combine some provided code snippets with the skeleton code to build a sample React application that works on the Zowe Desktop.
 
-<!--Requirements on the client system: We need to -->
-
-### **Procedure**
+### Procedure
 
 1. Locate and test the React application.
     1. Start Firefox.
@@ -120,7 +126,7 @@ In this step, you will combine some provided code snippets with the skeleton cod
         Next, let's test this application using the VSCode terminal.
     1. Open the VSCode terminal.
     1. Click **File** > **Open Folder** to open the `sample-trial-react-app` folder.
-        >**Questions:** Should we provision this for users instead of letting them locate the folder by themselves? If yes, we might need to consolidate a list of folders and upload to the Windows image. Also need to prepare the files to have missing code beforehand.
+        >**Notes/Comments:** Craig - I think we will need to get the folder uploaded to the windows machine, along with a few others. I will add a separate branch in each repository for CLI, UI and API. This branch will have missing code blocks.
     1. Enter the `npm test` command. You will see that the test fails.
 2. Add the missing code.
     1. In VSCode Explorer, click **src** > **Cars.js**. This file contains the missing values.
@@ -129,11 +135,11 @@ In this step, you will combine some provided code snippets with the skeleton cod
 
         You will see that the code for a feature is missing in this file.
 
-        >**Comment:** Need to determine the file and the missing code for users to add.
+        >**Comment:** Need to determine the file and the missing code for users to add. Add a screenshot later.
 
         Next, let's fetch the missing code to be added.
 
-        >**Comment/questions:** Can we just document the missing code for users to copy/paste instead of guiding them to use MVS to retrieve the missing code? Users in this scenario should already be familiar with MVS though.
+        >**Comment/questions:** Consider documenting the missing code for users to copy/paste instead of guiding them to use MVS to retrieve the missing code here. Users in this scenario should already be familiar with MVS.
 
     1. Insert the following code to the configuration file and press `Ctrl+S` to save the changes.
 
@@ -153,7 +159,7 @@ In this step, you will combine some provided code snippets with the skeleton cod
 ### Result
 Congratulations! You added the missing values, deployed the changes, and verified that the application works correctly.
 
-### **Next step**
+### Next step
 
 In the next step, You will work on a Zowe CLI plug-in based on the same Node.js API.
 
