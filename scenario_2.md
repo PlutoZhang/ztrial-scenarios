@@ -178,8 +178,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     You will see that the code for a feature is missing in this file.
 1. Download the missing code and insert to the **Car.ts** file.
     1. To get the missing code snippet, use the Zowe CLI plugin to download. In the terminal panel, enter the following command:  
-  >**To be done:the command to be added`  
-
+         >**To be done:the command to be added`  
     The dataset is successfully downloaded.
 
     2. View the content of the dataset and find the missing code block, and then insert it into the **Car.ts** file and press `Ctrl+S` to save the changes.
@@ -188,7 +187,6 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     >**To be done:** more details.
     2. Enter `zowe plugins install ./` to install the plug-in.
     >**To be done:** the name of the plug-in.  
-
 1. Verify that this API works correctly now.
     1. In the terminal panel, run the following CLI command to check whether the data set _average-horse-power_ can be accessed:  
     `zowe ztrial-plugin cars average-horse-power-for-account 4`  
