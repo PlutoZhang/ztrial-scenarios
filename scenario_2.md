@@ -9,7 +9,7 @@
     - [**Result**](#result)
     - [**Next step**](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-    - [**Procedure**](#procedure)
+    - [**Procedure**](#procedure-2)
     - [**Results**](#results)
 5. [Next Steps](#next-steps)
 6. [Go deeper with Zowe](#go-deeper-with-zowe)
