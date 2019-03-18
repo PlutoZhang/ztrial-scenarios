@@ -1,7 +1,7 @@
 # Scenario 2: Extending Zowe
 
 1. [Overview](#overview)
-2. [Extend the Zowe API](#step-1-extend-the-zowe-api)
+2. [Extend the Zowe API](#step-1-extending-the-zowe-api)
    - [**Procedure**](#procedure)
    - [**Next step**](#next-step)
 3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
