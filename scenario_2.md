@@ -163,7 +163,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
 <!--Requirements on the client system: -->
 
-**Procedure**
+## **Procedure**
 1. Open Visual Studio Code from the desktop.
 1. From the **Menu Bar**, open the terminal by using the **View** > **Terminal** menu command.  
     Below the editor region, the terminal panel is started in the current working directory, **ZTRIAL-CLI**.
@@ -194,7 +194,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     2. Enter `npm test` to execute the tests. You will see the following all-pass output.  
         >**To be done:** more details and screenshots to be added.
 
-**Results**  
+## **Results**  
     Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
 
 # Next Steps
