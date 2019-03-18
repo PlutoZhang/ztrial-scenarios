@@ -180,7 +180,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     1. To get the missing code snippet, use the Zowe CLI plugin to download. In the terminal panel, enter the following command:  
          >**To be done:the command to be added`  
     
-    The dataset is successfully downloaded.
+        The dataset is successfully downloaded.
 
     2. View the content of the dataset and find the missing code block, and then insert it into the **Car.ts** file and press `Ctrl+S` to save the changes.
 1. Redeploy the API.
