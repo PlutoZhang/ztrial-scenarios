@@ -9,9 +9,8 @@
     - [**Result**](#result)
     - [**Next step**](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-    - [**Procedure**]
-    - [**Result**]
-    - [**Next step**]
+    - [**Procedure**](#procedure-1)
+    - [**Result**](#results)
 5. [Next Steps](#next-steps)
 6. [Go deeper with Zowe](#go-deeper-with-zowe)
 ## Overview
@@ -198,9 +197,9 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 **Results**  
     Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
 
-# Next Steps#
+# Next Steps
 Thanks for your time in exploring the Zowe scenarios!
-# Go deeper with Zowe#
+# Go deeper with Zowe
 Zowe is an open source project that is created to host technologies that benefit the Z platform from all members of the Z community, including Integrated Software Vendors, System Integrators, and z/OS consumers.
 
 Zowe, like Mac or Windows, comes with a set of APIs and OS capabilities that applications build on and also includes some applications out of the box.
