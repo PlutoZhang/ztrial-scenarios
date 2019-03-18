@@ -2,12 +2,12 @@
 
 1. [Overview](#overview)
 2. [Extend the Zowe API](#step-1-extend-the-zowe-api)
-   - [**Procedure**](#procedure)
-   - [**Next step**](#next-step)
+   - [Procedure](#procedure)
+   - [Next step](#next-step)
  3. [Extending Zowe Application Framework](#step-2-extending-zowe-application-framework)
-    - [**Procedure**](#procedure-1)
+    - [Procedure](#procedure-1)
     - [Result](#result)
-    - [**Next step**](#next-step-1)
+    - [Next step](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
         
 
@@ -29,7 +29,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
 <!--Requirements on the client system: VSCode, npm-->
 
-### **Procedure**
+### Procedure
 
 1. Visit the Swagger doc.
 
@@ -89,7 +89,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
     >**Questions:** Should users also go to API Catalog to verify that it's working?
 
-### **Next step**
+### Next step
 In the next step, a sample application that uses the sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
 
 ## Step 2: Extending Zowe Application Framework
@@ -98,7 +98,7 @@ In this step, you will combine some provided code snippets with the skeleton cod
 
 <!--Requirements on the client system: We need to -->
 
-### **Procedure**
+### Procedure
 
 1. Locate and test the React application.
     1. Start Firefox.
@@ -151,7 +151,7 @@ In this step, you will combine some provided code snippets with the skeleton cod
 ### Result
 Congratulations! You added the missing values, deployed the changes, and verified that the application works correctly.
 
-### **Next step**
+### Next step
 
 In the next step, You will work on a Zowe CLI plug-in based on the same Node.js API.
 
