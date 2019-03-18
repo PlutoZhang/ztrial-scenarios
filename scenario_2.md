@@ -9,7 +9,7 @@
     - [**Result**](#result)
     - [**Next step**](#next-step-1)
 4. [Extending Zowe CLI](#step-3-extending-zowe-cli)
-    - [**Procedure**](#procedure-2)
+    - [**Procedure**]()
     - [**Results**](#results)
 5. [Next Steps](#next-steps)
 6. [Go deeper with Zowe](#go-deeper-with-zowe)
@@ -195,7 +195,8 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
         >**To be done:** more details and screenshots to be added.
 
 ## **Results**  
-    Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
+
+Congratulations! You added the missing feature of the API, redeployed the API, and verified that the CLI plug-in works correctly with this API.
 
 # Next Steps
 Thanks for your time in exploring the Zowe scenarios!
