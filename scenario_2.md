@@ -24,7 +24,7 @@ In this scenario, you will learn how to extend Zowe to add your own API or appli
 
 No previous knowledge of Zowe is needed but some knowledge of API and command line will be helpful. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by extending the API.
 
-## Step 1: Extend the Zowe API
+## Step 1: Extending the Zowe API
 
 In this step, you will add the missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works.
 
