@@ -1,0 +1,90 @@
+{
+  "productName": "Zowe",
+  "productIdentifier": "images/product-icons/zowe_logo.png",
+  "productHelpUrl": "https://zowe.github.io/docs-site/latest/",
+  "wizExecuteOnStart": "Run this at the start of the wizard",
+  "scenarios": [
+  {
+    "id": "Getting familiar with Zowe",
+    "enabled": true,
+    "name": "xxx",
+    "title": "xxx",
+    "minutes": 30,
+    "steps": [
+      "Log in to the Zowe Desktop"
+      "Query JES jobs and viewing related status in JES Explorer"
+      "Use TN3270 in Zowe Desktop to view the job"
+      "Edit a data set in MVS Explorer"
+      "Use the Zowe CLI to edit a data set" 
+      "View the data set changes in MVS Explorer"],
+    "products": [
+      {
+        "name": "Zowe",
+        "identifier": "images/product-icons/zowe_logo.png"
+      },
+      {
+        "name": "",
+        "identifier": "images/product-icons/logo.png"
+      }
+    ],
+    "guide": "C:\\zTrial\\doc\\scenarios\\zowe\\zowe_intro\\1_overview.html",
+    "processes": [{
+      "location": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "arguments": [
+        "--window-position=%WINDOW_X%,%WINDOW_Y%",
+        "--window-size=%WINDOW_WIDTH%,%WINDOW_HEIGHT%",
+        "-url",
+        "https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html"
+      ]
+    }
+   ]
+  },
+  {
+    "id": "zowe_extend",
+    "enabled": true,
+    "name": "Extend Zowe",
+    "title": "Extend Zowe",
+    "minutes": 10,
+    "steps": [
+      "Extend the Zowe API"
+      "Extend Zowe Application Framework"
+      "Extend Zowe CLI"],
+    "products": [
+      {
+        "name": "Zowe",
+        "identifier": "images/product-icons/zowe_logo.png"
+      },
+      {
+      "name": "other icons",
+      "identifier": "images/product-icons/othericons_logo.svg"
+    }],
+    "guide": "C:\\zTrial\\doc\\scenarios\\zowe\\zowe_extend\\1_overview.html",
+    "processes": [{
+      "location": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "arguments": [
+        "--window-position=%WINDOW_X%,%WINDOW_Y%",
+        "--window-size=%WINDOW_WIDTH%,%WINDOW_HEIGHT%",
+        "-url",
+        "TBD, the environment of the sceanrio 2"
+      ]
+    }
+   ]
+  }
+  ],
+  "relatedTools": [
+    {
+    "id": "Zowe",
+    "name": "Zowe",
+    "identifier": "images/product-icons/zowe_logo.png",
+    "description": "one-sentence intro",
+    "url": "https://zowe.github.io/docs-site/latest/"
+  },
+    {
+    "id": "",
+    "name": "",
+    "identifier": "images/product-icons/other_logo.svg",
+    "description": "xxx",
+    "url": "xxx"
+  }
+  ]
+}
