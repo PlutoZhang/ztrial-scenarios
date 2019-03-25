@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>Querying JES jobs and viewing related status in JES Explorer</title>
+<shortdesc>Use the Job Entry Subsystem (JES) Explorer to query JES jobs with filters and view the
+related status.</shortdesc>
+    <taskbody>
+<context id="context_ncv_221_1hb"/>
+<steps id="steps_uqv_f21_1hb">
+<step><cmd>Click the Start menu on Zowe Desktop.</cmd><info>
+<p><image href="images/2-1.png" width="250" id="image_j2l_s21_1hb">
+<alt>the start menu of Zowe desktop</alt>
+</image></p>
+</info></step>
+<step>
+<cmd>Scroll down to find the JES Explorer icon and click to open it.</cmd>
+<info>The JES Explorer is displayed.</info>
+</step>
+<step>
+<cmd>Click the <uicontrol>Job Filters</uicontrol> column to expand the filter criteria. You can
+filter jobs on various criteria by Owner, Prefix, Job ID, and Status. By default, the jobs are
+filtered by Owner.</cmd>
+<info>
+<p><image href="images/2-2.png" width="200" id="image_emn_x21_1hb">
+<alt>Job filters in JES</alt>
+</image></p>
+</info>
+</step>
+<step>
+<cmd>To query the jobs starting with ZOWE and in an active status, enter
+<userinput>ZOWE*</userinput> in the <uicontrol>Prefix</uicontrol> field and select
+<uicontrol>ACTIVE</uicontrol> from the <uicontrol>Status</uicontrol> drop-down list, and click
+<uicontrol>APPLY</uicontrol>.</cmd>
+<info>
+<note>Wildcard is supported. Valid wildcard characters are asterisk (*), percent sign (%), and
+question mark (?).</note>
+<image href="images/zowe-jes-filter.png" width="300"/></info>
+</step>
+<step>
+<cmd>From the job filter results, click the job
+<uicontrol>ZOWECRF:STC01414[ACTIVE]</uicontrol><!--Check this job ID when Windows environment is up and running-->.</cmd>
+<info>The data sets for this job are listed.</info>
+</step>
+<step><cmd> Click <uicontrol>JESJCL</uicontrol> to open the JESJCL data set.</cmd><info>The contents
+of this data set are displayed. You can also select other data sets to view their contents. <note
+type="tip">You can hover over the text to display a hover help window.<p><image
+href="images/2-3.png" width="400" id="image_pvr_z21_1hb">
+<alt>hover help</alt>
+</image></p></note></info></step>
+</steps>
+<result id="result_sb4_4mt_zgb">You used the JES Explorer to query the JES jobs with filters and
+viewed the related steps, files, and status.</result>
+<postreq id="postreq_gt3_cf1_1hb">Next, you'll use the TN3270 application plug-in in Zowe Desktop to
+view the same job that you viewed in this task.</postreq>
+    </taskbody>
+</task><?tm 1542784744457 5 Db2 ?>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>View the data set changes in <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer</title>
+<shortdesc>Use the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer to view the data set changes in the previous step.</shortdesc>
+    <taskbody>
+<steps id="steps_dq4_ss1_1hb">
+<step><cmd>Click the <tm trademark="MVS" tmtype="tm">MVS</tm> explorer application icon from the taskbar.</cmd></step>
+<step>
+<cmd>Locate and click the data set member <codeph>TSTRADM.SMPE.JCL</codeph> and check the changes
+you just made by using Zowe CLI.</cmd>
+</step>
+</steps>
+<postreq id="postreq_tc5_ws1_1hb">Congratulations! Your edits take effect.</postreq>
+    </taskbody>
+</task><?tm 1553072986892 3 MVS ?>

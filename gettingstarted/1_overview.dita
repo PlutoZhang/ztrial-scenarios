@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="part1_ims" xml:lang="en-us">
+    <title>Overview</title>
+    <shortdesc>Zowe offers modern interfaces that enables you to interact with <tm trademark="z/OS" tmtype="reg">z/OS</tm> in a way that is similar to what you experience on cloud platforms today. Like Mac or <tm trademark="Windows" tmtype="tm">Windows</tm>, Zowe comes with a set of APIs and OS capabilities that applications build on and includes some applications out of the box.</shortdesc>
+    <conbody>
+<image href="images/zowe-architecture.png" id="image_j2m_53t_zgb" alt="Zowe architecture" width="500" placement="break">
+<alt>Screen capture that shows the high level Zowe architecture</alt>
+</image>
+<p>This scenario walks you through the Zowe interfaces including the Zowe Desktop and Zowe CLI
+through several simple tasks to help you get familiar with Zowe.</p>
+<ul>
+<li>If you are new to Zowe, start with this scenario to explore the base Zowe features and
+functions.</li>
+<li>If you are already familiar with Zowe interfaces and capabilities, you can skip this scenario
+and directly go to the <xref href="../Zowe_Extend/1_overview.dita">Extending Zowe</xref>  scenario
+which guides you to extend Zowe by creating your own APIs and applications.</li>
+</ul>
+<p>This scenario guides you through the steps in roughly 30 minutes. By the end of the session,
+you’ll know how to:<ul>
+<li>Log in to the Zowe Desktop</li>
+<li>View and edit data sets by using the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer</li>
+<li>Query jobs with filters and view the related status by using the JES Explorer</li>
+<li>View jobs by using TN3270 in the Zowe Desktop</li>
+<li>Edit data sets and upload to mainframe by using Zowe Command Line Interface (CLI)</li>
+</ul></p>
+<p>As an introductory scenario, no previous knowledge of Zowe is needed. Please wait a moment while
+your development environment loads (this takes a minute or so). When it loads, get started by
+logging in to the Zowe Desktop.</p>
+<!--<p>If you haven't started the scenario, complete the following steps: 1. Double-click Z Trial Wizard.exe on the desktop. 1. In the Z Trial Program window, select the scenario that you want and click **Explore scenario**. 1. In the pop-up window, click **Start scenario**</p>-->
+</conbody>
+</concept><?tm 1553072986344 3 z/OS||Windows||MVS ?>

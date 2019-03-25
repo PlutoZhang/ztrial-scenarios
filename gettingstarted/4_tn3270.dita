@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>Using TN3270 in Zowe Desktop to view the job</title>
+<shortdesc>You will use the TN3270 application plug-in to view the same job that you filtered out in
+the previous task. </shortdesc>
+    <taskbody>
+<context id="context_ncv_221_1hb"> Zowe not only provides new modern applications to interact with <tm trademark="z/OS" tmtype="reg">z/OS</tm> but also integrates traditional tool TN3270 that you are familiar with. This TN3270 application plug-in provides a 3270 connection to the mainframe on which the Zowe Application Server runs.</context>
+<steps id="steps_vfc_sg1_1hb">
+<step>
+<cmd>From the taskbar at the bottom of the Zowe Desktop, click the TN3270 icon to open the TN3270
+application plug-in.</cmd>
+<info>
+<p><image href="images/3-1.png" width="400" id="image_sdg_4h1_1hb" placement="inline">
+<alt>TN3270 application plug-in</alt>
+</image></p>
+<p>The TN3270 panel is displayed which offers selections to access various mainframe services.</p>
+</info>
+<info><image href="images/zowe-tn3270-welcome.png" width="500" placement="break" /></info>
+<!--The next step needs update to match the real environment. The service name and the user name will change. Old step: To connect to the MVS3BTS MVS service, enter MVS3BTSO and press enter.-->
+</step>
+<step>
+<cmd>Enter the following command and press enter to log on to TSO.</cmd>
+<info>
+<codeblock>LOGON TSTRADM</codeblock>
+</info>
+<!--What's the user id and password here?-->
+</step>
+<step>
+<cmd>On the <uicontrol>TSO/E LOGON</uicontrol> panel, enter the password
+<userinput>TSTRADM</userinput> in the <uicontrol>Password</uicontrol> field and press enter.</cmd>
+<info>You successfully log on to TSO. <p><image href="images/zowe-tn3270-logon.png" width="500" placement="inline" /></p></info>
+</step>
+<step>
+<cmd>To start ISPF, enter <userinput>ISPF</userinput> and press enter. The <uicontrol>ISPF Primary
+Option Menu</uicontrol> is displayed.</cmd>
+</step>
+<step>
+<cmd>To use SDSF to view output from a job, type <userinput>S</userinput> at the
+<uicontrol>Option</uicontrol> prompt and press enter.</cmd>
+<info>
+<p><image href="images/3-2.png" width="200" id="image_mt5_rh1_1hb" placement="inline">
+<alt>command to view job output</alt>
+</image></p>
+</info>
+</step>
+<step>
+<cmd>To view the jobs in an active status, type <userinput>DA</userinput> at the command input
+prompt and press enter. </cmd>
+<info>The jobs that are running are displayed.</info>
+</step>
+<step>
+<cmd>To query the jobs starting with <filepath>ZOWECRF</filepath>, type <userinput>PREFIX
+ZOWECRF</userinput> at the command input prompt and press enter. The jobs that are both in an active
+status and start with <filepath>ZOWECRF</filepath> are displayed.</cmd>
+</step>
+<step>
+<cmd>To view the contents of the job, type <userinput>S</userinput> next to the jobname
+<filepath>ZOWECRF</filepath> and press enter.</cmd>
+<info>
+<p><image href="images/3-3.png" width="200" id="image_e2g_wh1_1hb" placement="inline">
+<alt>Command to view the job contents</alt>
+</image></p>
+</info>
+</step>
+</steps>
+<postreq id="postreq_oj3_fh1_1hb">In the next step, you will use the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer to make changes to a data set.</postreq>
+    </taskbody>
+</task><?tm 1553072986601 2 z/OS||MVS ?>

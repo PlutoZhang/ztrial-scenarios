@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>Using the Zowe CLI to edit a data set</title>
+<shortdesc>Use Zowe CLI to download the data set that you edited using <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer in the previous step, make changes to it, and upload the changes to mainframe.</shortdesc>
+    <taskbody>
+<context id="context_ncv_221_1hb">Zowe CLI is a command-line interface that allows you to interact with <tm trademark="z/OS" tmtype="reg">z/OS</tm> from a variety of other platforms, such as cloud or distributed systems, to submit jobs, issue TSO and <tm trademark="z/OS" tmtype="reg">z/OS</tm> console commands, integrate <tm trademark="z/OS" tmtype="reg">z/OS</tm> actions into scripts, and produce responses as JSON documents. With this extensible and scriptable interface, you can tie in mainframes to distributed DevOps pipelines and build in automation.</context>
+<steps id="steps_qqm_pq1_1hb">
+<step><cmd>Launch the Command Prompt.</cmd><substeps id="substeps_dkp_5q1_1hb">
+<substep><cmd>Click the <uicontrol>Windows</uicontrol> logo in the bottom-left corner of the
+screen.</cmd></substep>
+<substep>
+<cmd>Inside the <uicontrol>Search</uicontrol> field, enter <userinput>comman</userinput> or
+<userinput>cmd</userinput>. Then, click or tap on the Command Prompt result.</cmd>
+</substep>
+</substeps></step>
+<step>
+<cmd>To list the data sets of <filepath>TSTRADM</filepath>, enter the following command: </cmd>
+<info>
+<codeblock>zowe zos-files list data-set "TSTRADM.*"</codeblock>
+<p>The following data sets are listed. <!--(to add a screen capture for the command result.)-->
+</p>
+</info>
+</step>
+<step>
+<cmd>To download all the data set members of <filepath>TSTRADM.SMPE.JCL</filepath>, enter the
+following command: </cmd>
+<info>
+<codeblock>zowe zos-files download all-members "TSTRADM.SMPE.JCL"</codeblock>
+<p>The message "Data set downloaded successfully" indicates that the data set members are
+downloaded. </p>
+</info>
+</step>
+<step>
+<cmd>Use the text editor to open the data set member named <filepath>APPLY1</filepath> by entering
+the following command: </cmd>
+<info>
+<codeblock>code TSTRADM/SMPE/JCL/APPLY1.JCL</codeblock> The file opens in an editor.</info>
+</step>
+<step>
+<cmd>Change <codeph>Job 1</codeph> to <codeph>Job 2</codeph> and save your edits.</cmd>
+</step>
+<step>
+<cmd>Open the command prompt again and upload your changes to mainframe by entering the following
+command: </cmd>
+<info>
+<codeblock>zowe zos-files upload file-to-data-set TSTRADM/SMPE/JCL/APPLY1.JCL "TSTRADM.SMPE.JCL"</codeblock>
+<p>The message <codeph>Data set is uploaded successfully</codeph> indicates that you’ve successfully
+uploaded your changes.</p>
+</info>
+</step>
+</steps>
+<result id="result_kbs_fh1_1hb">Congratulations! You’ve used the Zowe CLI to edit a data set member
+and upload the changes to mainframe.</result>
+<postreq id="postreq_l5y_sr1_1hb">You will open the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer again to view the updates that you made to the data set in this procedure.</postreq>
+    </taskbody>
+</task><?tm 1553072986855 5 z/OS||MVS ?>

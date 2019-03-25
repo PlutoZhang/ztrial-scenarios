@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+<title>Getting familiar with Zowe</title>
+<topichead collection-type="sequence">
+<topicref href="1_overview.dita" navtitle="Zowe overview"/>
+<topicref href="2_login.dita" navtitle="Logging in to the Zowe Desktop"/>
+<topicref href="3_jes.dita" navtitle="Querying JES jobs and viewing related status in JES Explorer"/>
+<topicref href="4_tn3270.dita" navtitle="Using TN3270 in Zowe Desktop to view the job"/>
+<topicref href="5_mvs_edit.dita" navtitle="Editing a data set in MVS Explorer"/>
+<topicref href="6_cli.dita" navtitle="Using the Zowe CLI to edit JCL and upload to mainframe"/>
+<topicref href="7_mvs_view.dita" navtitle="View the data set changes in MVS Explorer"/>
+<topicref href="8_next_steps.dita" navtitle="Next steps"/>
+</topichead>
+</map>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="part1" xml:lang="en-us">
+<title>Next steps</title>
+<shortdesc>Ready to become a Zowe extender? Try to explore how you could extend Zowe to create your
+own APIs and applications.</shortdesc>
+<conbody>
+<section>
+<title>Go deeper with Zowe</title>
+<p>Enjoyed this scenario? In under 30 minutes, you have used the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer to and Zowe CLI to edit the same data set member, and used the JES Explorer and TN3270 to query the same JES job with filters, all without leaving Zowe. Now that you’re familiar with Zowe components, why not try to learn more about the project and the value it delivers. Zowe also contains a lot more application plug-ins in both Zowe Desktop and Zowe CLI. For more information, see the following resources: <ul>
+<li><xref href="https://www.openmainframeproject.org/projects/zowe" format="html" scope="external">Zowe on Open Mainframe Project</xref></li>
+<li><xref href="https://zowe.org/" format="html" scope="external">Zowe community site</xref></li>
+<li><xref href="https://zowe.github.io/docs-site/" format="html" scope="external">Zowe documentation
+site</xref></li>
+</ul></p>
+</section>
+<section>
+<title>Try the Extending Zowe scenario</title>
+<p>You can add your own application plug-ins to Zowe. See how easy it is to extend Zowe by trying
+the Extending Zowe scenario.</p>
+</section>
+<!--section>
+<title>Did you enjoy your z Trial experience so far? Let us know. </title>
+<p>NPS Capture here.</p></section-->
+</conbody>
+</concept><?tm 1553072986957 1 MVS ?>

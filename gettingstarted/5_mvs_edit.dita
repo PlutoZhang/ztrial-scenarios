@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>Editing a data set in <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer</title>
+<shortdesc>Use the <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer to edit a data set member and save the changes.</shortdesc>
+    <taskbody>
+        <context>
+<p>The <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer view allows you to browse the <tm trademark="MVS" tmtype="tm">MVS</tm> file system by creating filters against data set names.</p>
+</context>
+<steps id="steps_kwd_wc1_1hb">
+<step><cmd>Click the Start menu on Zowe Desktop.</cmd></step>
+<step>
+<cmd>Scroll down to find the <uicontrol>MVS Explorer</uicontrol> icon. Right-click and select
+<uicontrol>Pin to taskbar</uicontrol> to pin this application to the desktop for later use.</cmd>
+</step>
+<step>
+<cmd>Click the <uicontrol>MVS Explorer</uicontrol> icon on the task bar.</cmd>
+<info>The <tm trademark="MVS" tmtype="tm">MVS</tm> Explorer opens. The <uicontrol>Filter</uicontrol> field is pre-filled with the filter
+string <codeph>TRTRADM</codeph>. All the data sets matching this filter are displayed. You can
+expand a data set name and see the members in it.</info>
+<info>
+<p><image href="images/zowe-mvs-filter.png" width="300" placement="inline">
+<alt>The filter in MVS Explorer</alt>
+</image></p>
+</info>
+</step>
+<step>
+<cmd>Locate and click the data set member <codeph>APPLY1</codeph> in
+<codeph>TSTRADM.SMPE.JCL</codeph>.</cmd>
+<info>
+<p><image href="images/zowe-mvs-dataset-locate.png" width="300" id="image_w5n_nd1_1hb" placement="inline">
+<alt>The location of the data set member</alt>
+</image></p>
+</info>
+</step>
+<step>
+<cmd>Edit the data set by adding <userinput>NOTIFY=TSTRADM</userinput>.</cmd>
+<info>
+<p><image href="images/zowe-mvs-dataset-edit.png" width="600" placement="inline" /></p>
+</info>
+</step>
+<step>
+<cmd>Click <b>SAVE</b> to save your edits.</cmd>
+</step>
+</steps>
+<result id="result_sb4_4mt_zgb">Your edits are saved!</result>
+<postreq id="postreq_pdd_qmt_zgb">Next, you’ll use Zowe CLI to view and add another change to the
+same data set.</postreq>
+    </taskbody>
+</task><?tm 1553072986686 5 MVS ?>

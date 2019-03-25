@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ims_create_api" xml:lang="en-us">
+<title>Logging in to the Zowe Desktop</title>
+    <shortdesc>Access and navigate the Zowe Desktop to view the Zowe applications.</shortdesc>
+    <taskbody>
+        <context>You will use the Firefox browser to enter the provided URL to log in to Zowe
+Desktop.</context>
+        <steps>
+<step><cmd>In the taskbar, click the icon of Firefox to start the browser.</cmd></step>
+<step>
+<cmd>Enter the following URL in the address bar to access the login page:
+<userinput>https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html</userinput><!--Need to test this URL in the zTrial environment.--></cmd>
+</step>
+<step><cmd>On the login page of the Zowe Desktop, enter your mainframe credentials.</cmd><info>
+<ul id="ul_hzf_njt_zgb">
+<li><uicontrol>Username</uicontrol>: <userinput>TSTRADM</userinput></li>
+<li><uicontrol>Password</uicontrol>: <userinput>TSTRADM</userinput></li>
+</ul>
+<image href="images/zowe-desktop-login.png" width="300" id="image_kh2_fd1_1hb" placement="break">
+<alt>Zowe Desktop login page</alt>
+</image>
+</info></step>
+<step>
+<cmd>Press Enter.</cmd>
+</step>
+</steps>
+<result>Upon authentication of your user name and password, the Zowe desktop opens.<p>Several
+applications are pinned to the taskbar. Click the Start menu and you will see a list of applications
+that are installed by default. You can pin other applications to the taskbar by right-clicking the
+application icon and selecting <uicontrol>Pin to taskbar</uicontrol>.</p><p>
+<image href="images/2-4.png" id="image_zxt_gc1_1hb" width="400" alt="Zowe desktop introduction"
+placement="break"/>
+</p></result>
+<postreq id="postreq_pdd_qmt_zgb">
+<p>You will use the JES Explorer to query the jobs with filters and view the related status.</p>
+</postreq>
+    </taskbody>
+</task><?tm 1542784744457 5 Db2 ?>
