@@ -7,27 +7,21 @@
 5. [Next Steps](#next-steps)
 6. [Go deeper with Zowe](#go-deeper-with-zowe)
 
-> (Internal) Requirements on the client/Windows system: 
-> - **Prepare the source file folders (API, UI, CLI)** and upload to the Windows image. A certain file in each folder will have missing code blocks and comment that users need to insert the code blocks.
-> - Need to install **Visual Studio Code** on the Windows image. 
-> - **npm** is required to run the test command.
-
 ## Overview
 
-In this scenario, you will learn how to extend Zowe to add your own API or application. This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
+In this scenario, you will learn how to extend Zowe by adding new features in the sample Zowe API and applications and deploying the change. This scenario guides you through the steps in roughly 30 minutes. By the end of the session, you'll know how to:
 
-- Extend the API by adding a REST API to the API Mediation Layer
-- Extend Zowe Web UI by creating and deploying an application plug-in on Zowe Desktop
+- Extend the API by adding a new feature to a REST API in the API Mediation Layer
+- Extend Zowe Application Framework by adding a new feature to an application plug-in on the Zowe Desktop
 - Extend Zowe CLI by creating a Zowe CLI plug-in to access the API
 
 No previous knowledge of Zowe is needed but some knowledge of API and command line will be helpful. Please wait a moment while your development environment loads (this takes a minute or so). When it loads, get started by extending the API.
 
 ## Step 1: Extending the Zowe API
 
-In this step, you will add the missing code to expose an API in API Medidation Layer and then access your API service endpoints to ensure that it works.
+In this step, you will add a new feature in an API in the Zowe API Medidation Layer and then access your API service endpoints to ensure that it works.
 
-The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API which has some missing features will be running in the API Catalog of the API Mediation Layer. You will view the current API, add the missing code for the feature, redeploy it and then test that the API service endpoint works.
-
+The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API will be running in the API Catalog of the API Mediation Layer. You will view the current API, add the code for a new feature, redeploy the API, and then test that the API service endpoint works.
 
 ### Procedure
 
