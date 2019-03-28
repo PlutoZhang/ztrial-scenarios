@@ -25,74 +25,90 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
 ### Procedure
 
-1. View the service information and API documentation in the API Catalog.
+1. Develop custom API
     1. Start Firefox.
-    1. In the address field, enter the following URL to access the Zowe Desktop.
-        ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
-    1. Enter the following username and password.
-        - User name: TSTRADM
-        - Password: TSTRADM
+    1. Open Sample API Project in Visual Studio Code
+        Open windows explorer, and go to folder C:\Users\Administrator\Documents\
+        Right click> Open with Code
+    1. Run project locally
+       Open terminal - View>Terminal
+       npm install
+       npm start
+    1. Access local urls
+       Open Firefox
+       All accounts - `http://localhost:18000/accounts`
+       Single account detail - `http://localhost:18000/accounts/2`
+       All cars associted with account - `http://localhost:18000/accounts/2/cars`
+      
+    1. Enter `npm test`. You will see that one test fails.
 
-         The Zowe Desktop opens.
-    1. Click the Start menu on the lower eft corner of the Zowe Desktop and scroll down to find the API Catalog application. Click to open it. 
-    1. Enter the following credentials to log in to the API Catalog. 
-        - User name: TBD
-        - Password: TBD
-    1. Enter the following URL in the address field.  
-       ```http://localhost:3000/accounts/1/cars```
+        <img src="./images/scenario2-api-test-fail.png" width="200">
 
-       The following error message is displayed, which indicates that the API edpoint is not working.
+        This is because there are missing code in the configuration file. Next, let's locate the file to add the missing code.
 
-       <img src="./images/scenario2-api-test-error.png" width="200">
+    1. Add missing feature
+       Go back to opened project in vscode
+       Go to file **accountsCars.route.js**
 
-    <!--Questions:** Is it the doc in the API Catalog? How can users access that, by logging in to the API Catalog and click the API Catalog app? Will this Node.js API be prebuilt in zTrial so users can access? Which Swagger doc should users open?-->
+        <img src="./images/scenario2-api-folder-locate.png" width="200">
 
-1. Open Visual Studio Code from the desktop.
-    >**Questions:** How can users open VSCode in the zTrial Windows image? Think that will need to be preinstalled. We need to clarify the path to access VSCode in zTrial here.
+        You will see that the code for a feature is missing in this file.
 
-1. Open the terminal by using the **View** > **Terminal** menu command. The terminal is opened at the bottom of the editor window.
-1. Enter `npm start`.
-1. Enter `npm test`. You will see that one test fails.
+        <img src="./images/scenario2-missing-code-file.png" width="300">
 
-    <img src="./images/scenario2-api-test-fail.png" width="200">
+        Next, let's fetch the missing code and add it to this file.
 
-    This is because there are missing code in the configuration file. Next, let's locate the file to add the missing code.
+        Insert the following code to the file and press `Ctrl+S` to save the changes.
+  
+        ```
+        router.route('/cars')
+        .get(accountsCarsController.getAll);
 
-1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
+        router.route('/cars/:_id')
+        .get(accountsCarsController.get);
+        ```
+        <img src="./images/scenario2-missing-code-insert.png" width="300">
+        
+     1. Restart the project locally using terminal
+        Press `ctrl+c` in terminal to stop the project
+        Use `npm start` to restart the project
+        
+        
+     1. Access newly added path in browser
+       Open Firefox
+       All cars - `http://localhost:18000/cars`
+       Single car detail - `http://localhost:18000/car/1`
 
-    <img src="./images/scenario2-api-folder-locate.png" width="200">
-
-    You will see that the code for a feature is missing in this file.
-
-    <img src="./images/scenario2-missing-code-file.png" width="300">
-
-    Next, let's fetch the missing code and add it to this file.
-
-1. Insert the following code to the file and press `Ctrl+S` to save the changes.
-    >**Questions:** Where should users find the missing code? Currently we just put it here so users can copy and paste. This might also be the quickest way to get the code.
-
-    ```
-    router.route('/cars')
-    .get(accountsCarsController.getAll);
-
-    router.route('/cars/:_id')
-    .get(accountsCarsController.get);
-    ```
-    <img src="./images/scenario2-missing-code-insert.png" width="300">
-
-1. Redeploy the API.
-    >**Questions:** How to do this? Need more clarification here.
-
-1. In the TERMINAL panel, enter the `npm start` command.
-1. Open the API Catalog in Zowe Desktop again and re-enter the following URL in the address field.
-
-    ```http://localhost:3000/accounts/1/cars```
-
-    You should get the following response, which indicates that you can access the API endpoints now.
-
-    <img src="./images/scenario2-api-test-success.png" width="350">
-
-
+1. Redeploy the API, to see the changes on zowe server
+   
+   1. Open the browser, try accessing same API running on zowe server
+       Open Firefox
+       All accounts - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts`
+       Single account detail - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/2`
+       All cars associted with account - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/2/cars`
+       
+   1. New paths we added are not deployed to zowe yet
+       All cars - `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+       Single car detail - `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1`
+       these path should not work yet
+       
+    1. Redeploy changes to server
+       In terminal, 
+       `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
+       Enter Password: TSTRADM
+    1. Restart ZOWE 
+       ```
+       ssh TSTRADM@10.149.60.146
+       >Enter Password - TSTRADM
+       cd /u/zowe/ibmuser/1.0.1/scripts
+       ./zowe-stop.sh
+       ./zowe-start.sh
+       ```
+     1. Try accessing newly deployed API again in browser
+       These paths should work now  in firefox
+       All cars - `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+       Single car detail - `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1`
+       
 ### Next step
 In the next step, a sample application that uses this sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
 
