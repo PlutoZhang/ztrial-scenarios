@@ -82,26 +82,24 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
         Similarly, you can enter the URL `http://localhost:18000/cars` to get the infomation about all cars and the URL `http://localhost:18000/car/1` to get the information about the single car details.  
          >**TBD:** to add a screeshot.
 
-Now you succefully add the missing feature locally. Next, you'll redeploy this API. 
+   Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server. 
 
-1. Redeploy the API, to see the changes on zowe server
-   
-   1. Open the browser, try accessing same API running on zowe server
-       Open Firefox
-       All accounts - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts`
-       Single account detail - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/2`
-       All cars associted with account - `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/2/cars`
+1. Redeploy this API and see the changes on zowe server.
+    1. Open the browser, access the same API running on the zowe server.
        
-   1. New paths we added are not deployed to zowe yet
-       All cars - `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
-       Single car detail - `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1`
-       these path should not work yet
+       Open Firefox and enter the following URL in the address field to get the information about all cars. 
+          `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+          >**TBD:** to add a screeshot.
+          
+          You could see that the new paths you added are not deployed to the Zowe server yet.
        
-    1. Redeploy changes to server
-       In terminal, 
-       `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
-       Enter Password: TSTRADM
-    1. Restart ZOWE 
+    2. Redeploy the updated sample API node files to the Zowe server.
+      
+       1. From the Taskbar in the Desktop, click the PowerShell icon to open PowerShell. 
+       2. Enter the following command to upload the updated sample files to the Zowe server. 
+         `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
+       3. Enter password: TSTRADM.
+    3. Restart the sample
        ```
        ssh TSTRADM@10.149.60.146
        >Enter Password - TSTRADM
