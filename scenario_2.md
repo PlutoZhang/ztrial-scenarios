@@ -57,7 +57,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
             <img src="./images/scenario2-missing-code-file.png" width="300">
 
-        2. Next, let's fetch the missing code and add it to this file.
+        2. Next, fetch the missing code and add it to this file.
            Insert the following code to the file and press `Ctrl+S` to save the changes.
   
            ```
@@ -91,7 +91,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
           >**TBD:** to add a screeshot.
           
-          You could see that the new paths you added are not deployed to the Zowe server yet.
+          You could see that the new paths you added locally are not deployed to the Zowe server yet.
        
     2. Redeploy the updated sample API node files to the Zowe server.
       
@@ -99,7 +99,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        2. Enter the following command to upload the updated sample files to the Zowe server. 
          `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
        3. Enter password: TSTRADM.
-    3. Restart the sample
+    3. Restart the sample. 
        ```
        ssh TSTRADM@10.149.60.146
        >Enter Password - TSTRADM
@@ -107,10 +107,18 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        ./zowe-stop.sh
        ./zowe-start.sh
        ```
-     1. Try accessing newly deployed API again in browser
-       These paths should work now  in firefox
-       All cars - `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
-       Single car detail - `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1`
+        >**TBD:** To be replaced. Acoording to Vijay's advice, we will not restart the whole Zowe server. Nakul and Craig will investigate if we could write a piece of script to implement a clickable window application.
+     
+     1. Access the newly deployed API again in Firefox.
+         
+         Enter the following URL in the address field: 
+         `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+          >**TBD:** to add a screeshot.
+          
+          It works now and you can see the information about all cars. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1` to get the information about the single car details. 
+          
+### Results
+You successfully added the missing feature to the sample node API and redeployed to the Zowe server. 
        
 ### Next step
 In the next step, a sample application that uses this sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
