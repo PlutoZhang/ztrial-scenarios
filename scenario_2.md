@@ -25,59 +25,64 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
 ### Procedure
 
-1. Develop custom API
-    1. Start Firefox.
-    1. Open Sample API Project in Visual Studio Code
-        Open windows explorer, and go to folder C:\Users\Administrator\Documents\
-        Right click> Open with Code
-    1. Run project locally
-       Open terminal - View>Terminal
-       npm install
-       npm start
-    1. Access local urls
-       Open Firefox
-       All accounts - `http://localhost:18000/accounts`
-       Single account detail - `http://localhost:18000/accounts/2`
-       All cars associted with account - `http://localhost:18000/accounts/2/cars`
-      
-    1. Enter `npm test`. You will see that one test fails.
+1. Develop custom API. 
+    1. Open the sample API project in Visual Studio Code (VSCode).
+       1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
+         >**TBD:** to add a screeshot of the taskbar to ellustrate.  
+       2. Right click the folder named sample-node-api and select **Open with Code**.
+    1. Run the sample API project in the VSCode terminal. 
+       1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command. 
+       Below the editor region, the terminal panel is started in the current working directory.
+       2. In the terminal panel, enter `npm install`.
+       >**TBD:** to add a screeshot of the command result. 
+       3. Enter `npm start`.
+       >**TBD:** to add one senetence of the command result. 
+    1. Access local urls.
+       1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
+       2. Enter the following URL in the address field to get the information about all accounts. 
+       `http://localhost:18000/accounts`
+       The following error message is displayed, which indicates that the API edpoint is not working.
+       >**TBD:** to add a screenshot. 
+    1. Enter `npm test` in the VSCode terminal. You will see that one test fails.
 
         <img src="./images/scenario2-api-test-fail.png" width="200">
 
         This is because there are missing code in the configuration file. Next, let's locate the file to add the missing code.
 
-    1. Add missing feature
-       Go back to opened project in vscode
-       Go to file **accountsCars.route.js**
+    1. Add the missing feature into the sample API node project.
+       1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
+            <img src="./images/scenario2-api-folder-locate.png" width="200">
 
-        <img src="./images/scenario2-api-folder-locate.png" width="200">
+            You will see that the code for a feature is missing in this file.
 
-        You will see that the code for a feature is missing in this file.
+            <img src="./images/scenario2-missing-code-file.png" width="300">
 
-        <img src="./images/scenario2-missing-code-file.png" width="300">
-
-        Next, let's fetch the missing code and add it to this file.
-
-        Insert the following code to the file and press `Ctrl+S` to save the changes.
+        2. Next, let's fetch the missing code and add it to this file.
+           Insert the following code to the file and press `Ctrl+S` to save the changes.
   
-        ```
-        router.route('/cars')
-        .get(accountsCarsController.getAll);
+           ```
+           router.route('/cars')
+           .get(accountsCarsController.getAll);
 
-        router.route('/cars/:_id')
-        .get(accountsCarsController.get);
-        ```
-        <img src="./images/scenario2-missing-code-insert.png" width="300">
+           router.route('/cars/:_id')
+           .get(accountsCarsController.get);
+           ```
+            <img src="./images/scenario2-missing-code-insert.png" width="300">
         
-     1. Restart the project locally using terminal
-        Press `ctrl+c` in terminal to stop the project
-        Use `npm start` to restart the project
+       3. Restart the project in the terminal.
+          1. Press `ctrl+c` in the terminal to stop the project.
+          2. Use `npm start` to restart the project.
         
+     1. Access the newly added path in the Firefox browser.
         
-     1. Access newly added path in browser
-       Open Firefox
-       All cars - `http://localhost:18000/cars`
-       Single car detail - `http://localhost:18000/car/1`
+        Open Firefox and enter the following URL in the address field to get the information about all accounts. 
+           `http://localhost:18000/accounts`
+         >**TBD:** to add a screeshot.
+            
+        Similarly, you can enter the URL `http://localhost:18000/cars` to get the infomation about all cars and the URL `http://localhost:18000/car/1` to get the information about the single car details.  
+         >**TBD:** to add a screeshot.
+
+Now you succefully add the missing feature locally. Next, you'll redeploy this API. 
 
 1. Redeploy the API, to see the changes on zowe server
    
