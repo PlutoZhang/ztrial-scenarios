@@ -37,29 +37,29 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           Below the editor region, the terminal panel is started in the current working directory.
        2. In the terminal panel, enter `npm install`.
            
-           <img src="./images/scenario2-npm-install.png" width="300">
+           <img src="./images/scenario2-npm-install.png" width="500">
        3. Enter `npm start`.
           
-          <img src="./images/scenario2-npm-start.png" width="300">
+          <img src="./images/scenario2-npm-start.png" width="500">
     1. Access local urls.
        1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
        2. Enter the following URL in the address field to get the information about all accounts. 
        `http://localhost:18000/accounts`
        The following error message is displayed, which indicates that the API edpoint is not working.
-       <img src="./images/scenario2-api-test-error.png" width="300">
+       <img src="./images/scenario2-api-test-error.png" width="500">
     1. Enter `npm test` in the VSCode terminal. You will see that one test fails.
 
-        <img src="./images/scenario2-api-test-fail.png" width="200">
+        <img src="./images/scenario2-api-test-fail.png" width="500">
 
         This is because there are missing code in the configuration file. Next, let's locate the file to add the missing code.
 
     1. Add the missing feature into the sample API node project.
        1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
-            <img src="./images/scenario2-api-folder-locate.png" width="200">
+            <img src="./images/scenario2-api-folder-locate.png" width="300">
 
             You will see that the code for a feature is missing in this file.
 
-            <img src="./images/scenario2-missing-code-file.png" width="300">
+            <img src="./images/scenario2-missing-code-file.png" width="500">
 
         2. Next, fetch the missing code and add it to this file.
            Insert the following code to the file and press `Ctrl+S` to save the changes.
@@ -71,7 +71,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            router.route('/cars/:_id')
            .get(accountsCarsController.get);
            ```
-            <img src="./images/scenario2-missing-code-insert.png" width="300">
+            <img src="./images/scenario2-missing-code-insert.png" width="500">
         
        3. Restart the project in the terminal.
           1. Press `ctrl+c` in the terminal to stop the project.
@@ -98,7 +98,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        Open Firefox and enter the following URL in the address field to get the information about all cars. 
           `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
           
-          <img src="./images/scenario2-server-api-not-working.png" width="300">
+          <img src="./images/scenario2-server-api-not-working.png" width="500">
           
           You could see that the new paths you added locally are not deployed to the Zowe server yet.
        
