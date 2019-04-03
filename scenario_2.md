@@ -85,7 +85,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
    Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server. 
 
 1. Redeploy this API and see the changes on zowe server.
-    1. Open the browser, access the same API running on the zowe server.
+    1. Open the Firefox browser, access the same API running on the zowe server.
        
        Open Firefox and enter the following URL in the address field to get the information about all cars. 
           `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
@@ -125,22 +125,21 @@ In the next step, a sample application that uses this sample API is deployed on 
 
 ## Step 2: Extending Zowe Application Framework
 
-In this step, you will combine some provided code snippets with the skeleton code to build a sample React application that works on the Zowe Desktop.
+In this step, you will combine some provided code snippets with the skeleton code to build a Sample React application that works on the Zowe Desktop.
 
 ### Procedure
 
-1. Locate and test the React application.
-    1. Start Firefox.
-    1. In the address field, enter the following URL to access the Zowe Desktop.
+1. Locate and test the Sample React application.
+    1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
-    1. Enter the following username and password.
+    1. Enter the following username and password to log in.
         - User name: TSTRADM
         - Password: TSTRADM
 
          The Zowe Desktop opens.
-    1. Click the Start menu and scroll down to locate the React application. Right-click on the React application and select **Pin to taskbar** for later use.
-    1. Click to open the React app from the taskbar.  
-        You can click through the links and you will see that some function is not working. This is because there are missing values in the configuration file of this application.
+    1. In the Zowe desktop, click the Start menu and scroll down to locate the React Sample application. Right-click on the React Sample application and select **Pin to taskbar** for later use.
+    1. Click to open the React Sample application from the taskbar.  
+        You could click through the links and you will see that some function is not working. This is because there are missing values in the configuration file of this application.
 
         <img src="./images/scenario2-ui-react-app.png" width="200">
 
