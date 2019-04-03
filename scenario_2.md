@@ -28,21 +28,22 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 1. Develop custom API. 
     1. Open the sample API project in Visual Studio Code (VSCode).
        1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
-         >**TBD:** to add a screeshot of the taskbar to ellustrate.  
        2. Right click the folder named sample-node-api and select **Open with Code**.
+           <img src="./images/scenario2-sample-open.png" width="300">
     1. Run the sample API project in the VSCode terminal. 
        1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command. 
+       <img src="./images/scenario2-vscode-terminal.png" width="300">
        Below the editor region, the terminal panel is started in the current working directory.
        2. In the terminal panel, enter `npm install`.
-       >**TBD:** to add a screeshot of the command result. 
+       <img src="./images/scenario2-npm-install.png" width="300">
        3. Enter `npm start`.
-       >**TBD:** to add one senetence of the command result. 
+       <img src="./images/scenario2-npm-start.png" width="300">
     1. Access local urls.
        1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
        2. Enter the following URL in the address field to get the information about all accounts. 
        `http://localhost:18000/accounts`
        The following error message is displayed, which indicates that the API edpoint is not working.
-       >**TBD:** to add a screenshot. 
+       <img src="./images/scenario2-api-not-working.png" width="300">
     1. Enter `npm test` in the VSCode terminal. You will see that one test fails.
 
         <img src="./images/scenario2-api-test-fail.png" width="200">
@@ -77,10 +78,11 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
         
         Open Firefox and enter the following URL in the address field to get the information about all accounts. 
            `http://localhost:18000/accounts`
-         >**TBD:** to add a screeshot.
+         <img src="./images/scenario2-api-working.png" width="300">
             
         Similarly, you can enter the URL `http://localhost:18000/cars` to get the infomation about all cars and the URL `http://localhost:18000/car/1` to get the information about the single car details.  
-         >**TBD:** to add a screeshot.
+         <img src="./images/scenario2-api-cars.png" width="300">
+         <img src="./images/scenario2-api-car.png" width="300">
 
    Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server. 
 
@@ -89,7 +91,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        
        Open Firefox and enter the following URL in the address field to get the information about all cars. 
           `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
-          >**TBD:** to add a screeshot.
+          <img src="./images/scenario2-server-api-not-working.png" width="300">
           
           You could see that the new paths you added locally are not deployed to the Zowe server yet.
        
