@@ -25,25 +25,25 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
 ### Procedure
 
-1. Develop custom API. 
+1. Develop custom API.
     1. Open the sample API project in Visual Studio Code (VSCode).
        1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
        2. Right click the folder named sample-node-api and select **Open with Code**.
            <img src="./images/scenario2-sample-open.png" width="300">
-    1. Run the sample API project in the VSCode terminal. 
-       1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command. 
+    1. Run the sample API project in the VSCode terminal.
+       1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command.
            <img src="./images/scenario2-vscode-terminal.png" width="300">
-          
+
           Below the editor region, the terminal panel is started in the current working directory.
        2. In the terminal panel, enter `npm install`.
-           
+
            <img src="./images/scenario2-npm-install.png" width="500">
        3. Enter `npm start`.
-          
+
           <img src="./images/scenario2-npm-start.png" width="500">
     1. Access local urls.
        1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
-       2. Enter the following URL in the address field to get the information about all accounts. 
+       2. Enter the following URL in the address field to get the information about all accounts.
        `http://localhost:18000/accounts`
        The following error message is displayed, which indicates that the API edpoint is not working.
        <img src="./images/scenario2-api-test-error.png" width="500">
@@ -63,7 +63,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
         2. Next, fetch the missing code and add it to this file.
            Insert the following code to the file and press `Ctrl+S` to save the changes.
-  
+
            ```
            router.route('/cars')
            .get(accountsCarsController.getAll);
@@ -72,43 +72,43 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            .get(accountsCarsController.get);
            ```
             <img src="./images/scenario2-missing-code-insert.png" width="500">
-        
+
        3. Restart the project in the terminal.
           1. Press `ctrl+c` in the terminal to stop the project.
           2. Use `npm start` to restart the project.
-        
+
      1. Access the newly added path in the Firefox browser.
-        
-        Open Firefox and enter the following URL in the address field to get the information about all accounts. 
+
+        Open Firefox and enter the following URL in the address field to get the information about all accounts.
            `http://localhost:18000/accounts`
-         
+
           <img src="./images/scenario2-api-working.png" width="300">
-            
+
         Similarly, you can enter the URL `http://localhost:18000/cars` to get the infomation about all cars and the URL `http://localhost:18000/car/1` to get the information about the single car details.  
-         
+
          <img src="./images/scenario2-api-cars.png" width="500">
-         
+
          <img src="./images/scenario2-api-car.png" width="500">
 
-   Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server. 
+   Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server.
 
 1. Redeploy this API and see the changes on zowe server.
     1. Open the Firefox browser, access the same API running on the zowe server.
-       
-       Open Firefox and enter the following URL in the address field to get the information about all cars. 
+
+       Open Firefox and enter the following URL in the address field to get the information about all cars.
           `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
-          
+
           <img src="./images/scenario2-server-api-not-working.png" width="500">
-          
+
           You could see that the new paths you added locally are not deployed to the Zowe server yet.
-       
+
     2. Redeploy the updated sample API node files to the Zowe server.
-      
-       1. From the Taskbar in the Desktop, click the PowerShell icon to open PowerShell. 
-       2. Enter the following command to upload the updated sample files to the Zowe server. 
+
+       1. From the Taskbar in the Desktop, click the PowerShell icon to open PowerShell.
+       2. Enter the following command to upload the updated sample files to the Zowe server.
          `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
        3. Enter password: TSTRADM.
-    3. Restart the sample. 
+    3. Restart the sample.
        ```
        ssh TSTRADM@10.149.60.146
        >Enter Password - TSTRADM
@@ -117,18 +117,18 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        ./zowe-start.sh
        ```
         >**TBD:** To be replaced. Acoording to Vijay's advice, we will not restart the whole Zowe server. Nakul and Craig will investigate if we could write a piece of script to implement a clickable window application.
-     
+
      1. Access the newly deployed API again in Firefox.
-         
-         Enter the following URL in the address field: 
+
+         Enter the following URL in the address field:
          `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
           >**TBD:** to add a screeshot.
-          
-          It works now and you can see the information about all cars. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1` to get the information about the single car details. 
-          
+
+          It works now and you can see the information about all cars. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1` to get the information about the single car details.
+
 ### Results
-You successfully added the missing feature to the sample node API and redeployed to the Zowe server. 
-       
+You successfully added the missing feature to the sample node API and redeployed to the Zowe server.
+
 ### Next step
 In the next step, a sample application that uses this sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
 
@@ -137,45 +137,64 @@ In the next step, a sample application that uses this sample API is deployed on 
 In this step, you will combine some provided code snippets with the skeleton code to build a Sample React application that works on the Zowe Desktop.
 
 ### Procedure
+1. Open the sample Zowe Application Framework project in VSCode.
+   1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
+   2. Right click the folder named zlux and select **Open with Code**.
+       <img src="./images/scenario2-zlux-open.png" width="300">
+1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
+  1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command.
+  <img src="./images/scenario2-vscode-terminal.png" width="300">
 
-1. Locate and test the Sample React application.
-    1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
+    Below the editor region, the terminal panel is started in the current working directory.
+  1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel:
+  ```
+  cd webClient
+  ```
+  1. Enter `npm install`.
+
+     <img src="./images/scenario2-zlux-install.png" width="500">     
+  1. Enter the following command to set the environment variable:
+  ```
+  export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zlux\\zlux-app-manager\\virtual-desktop
+  ```
+  1. Enter `npm run build` to run the build.
+     A folder named _web_ is created in the root directory _sample-trial-app_.
+  1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
+    1. Enter the following command:
+     ```
+scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+    ```
+      2. Enter the password. The password is _tstradm_.
+  The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
+1. Open and test the Trial Sample application in the Zowe desktop.
+  1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
-    1. Enter the following username and password to log in.
+  1. Enter the following username and password to log in.
         - User name: TSTRADM
         - Password: TSTRADM
 
          The Zowe Desktop opens.
-    1. In the Zowe desktop, click the Start menu and scroll down to locate the React Sample application. Right-click on the React Sample application and select **Pin to taskbar** for later use.
-    1. Click to open the React Sample application from the taskbar.  
-        You could click through the links and you will see that some function is not working. This is because there are missing values in the configuration file of this application.
+  1. In the Zowe desktop, click the Start menu and locate the _Trial Sample_ application. Right-click on the _Trial Sample_ application and select **Pin to taskbar** for later use.
+  1. Click to open the _Trial Sample_ application from the taskbar.
 
-        <img src="./images/scenario2-ui-react-app.png" width="200">
+     In this application, click **Accounts** and you could see that the values of the **Name** column is missing. This because of some missing values in the configuration file of this application.
 
-        Next, let's test this application using the VSCode terminal.
-    1. Open the VSCode terminal.
-    1. Click **File** > **Open Folder** to open the `sample-trial-react-app` folder.
-        >**Notes/Comments:** Craig - I think we will need to get the folder uploaded to the windows machine, along with a few others. I will add a separate branch in each repository for CLI, UI and API. This branch will have missing code blocks.
-    1. Enter the `npm test` command. You will see that the test fails.
-2. Add the missing code.
-    1. In VSCode Explorer, click **src** > **Cars.js**. This file contains the missing values.
+      <img src="./images/scenario2-ui-trial-app.png" width="200">
+
+      Next, you'll add the missing code snippet to the proper file using VSCode.
+
+1. Uncomment the missing code in the _Accountlist.js_ file.
+    1. In VSCode Explorer, click **webClient** > **src** > **Accountlist.js**. This file contains the missing values.
 
         <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
-        You will see that the code for a feature is missing in this file.
+        You will see that the code for the user profile details is commented out in this file.
 
-        >**Comment:** Need to determine the file and the missing code for users to add. Add a screenshot later.
+    2. Uncomment this code block and press **Ctrl+S** to save the change.
 
-        Next, let's fetch the missing code to be added.
 
-        >**Comment/questions:** Consider documenting the missing code for users to copy/paste instead of guiding them to use MVS to retrieve the missing code here. Users in this scenario should already be familiar with MVS.
+1. Redeploy the changes.
 
-    1. Insert the following code to the configuration file and press `Ctrl+S` to save the changes.
-
-        >**Comment:** Add the code here and add a screenshot to show the correct location.
-
-3. Redeploy the changes.
-     >**Questions:** Need more details here about how to redeploy.
 
 4.  Verify that the React application works correctly now.
     1. From the taskbar, open the React application.
@@ -213,7 +232,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 1. Download the missing code and insert to the **Car.ts** file.
     1. To get the missing code snippet, use the Zowe CLI plugin to download. In the terminal panel, enter the following command:  
          >**To be done:the command to be added`  
-    
+
         The dataset is successfully downloaded.
 
     2. View the content of the dataset and find the missing code block, and then insert it into the **Car.ts** file and press `Ctrl+S` to save the changes.
