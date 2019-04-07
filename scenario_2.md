@@ -162,7 +162,7 @@ In this step, you will add some provided code snippets with the existing code to
        ```
        export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
        ```
-       <img src="./images/scenario2-zlux-env-variable.png" width="500">
+       <img src="./images/scenario2-zlux-env-variable.png" width="600">
     1. Enter `npm run build` to run the build.
        A folder named _web_ is created in the root directory _sample-trial-app_.
        <img src="./images/scenario2-zlux-web.png" width="150">
@@ -198,11 +198,11 @@ In this step, you will add some provided code snippets with the existing code to
            <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
            You will see that the code for the user name details is commented out in command line 77 - 79.
-           <img src="./images/scenario2-zlux-comment-out.png" width="500">
+           <img src="./images/scenario2-zlux-comment-out.png" width="600">
 
         1. Uncomment this code snippet and press **Ctrl+S** to save the change.
            
-           <img src="./images/scenario2-zlux-uncomment.png" width="500">
+           <img src="./images/scenario2-zlux-uncomment.png" width="600">
 
     1. In the terminal, enter the following command to reset the environment variable:
        ```
