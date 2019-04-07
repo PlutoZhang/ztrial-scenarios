@@ -157,9 +157,10 @@ In this step, you will add some provided code snippets with the existing code to
 
        <img src="./images/scenario2-zlux-install.png" width="500">     
     1. Enter the following command to set the environment variable:
+       
        ```
        export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
-      ```
+       ```
     1. Enter `npm run build` to run the build.
        A folder named _web_ is created in the root directory _sample-trial-app_.
     1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
@@ -190,9 +191,9 @@ In this step, you will add some provided code snippets with the existing code to
 
         <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
-        You will see that the code for the user name details is commented out in this file.
+          You will see that the code for the user name details is commented out in this file.
 
-       1. Uncomment this code snippet and press **Ctrl+S** to save the change.
+        1. Uncomment this code snippet and press **Ctrl+S** to save the change.
 
     1. In the terminal, enter the following command to reset the environment variable:
        ```
@@ -219,10 +220,8 @@ https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html
     - Password: TSTRADM
       The Zowe Desktop opens.
 -------------------    
-
     1. In the Zowe desktop, click to open the _Trial Sample_ application from the taskbar.
     2. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
-
        You could also click on any name to get its detailed information.
 
 ### Result
