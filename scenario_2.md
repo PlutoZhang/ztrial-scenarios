@@ -141,7 +141,7 @@ In this step, you will add some provided code snippets with the existing code to
     1. Open the sample Zowe Application Framework project in VSCode.
         1. Click on the Files Explorer icon in the taskbar to open the Windows Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario2`.
         2. Right click the folder named zlux and select **Open with Code**.
-       <img src="./images/scenario2-zlux-open.png" width="300">
+           <img src="./images/scenario2-zlux-open.png" width="300">
     1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
         1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
 
@@ -165,6 +165,7 @@ In this step, you will add some provided code snippets with the existing code to
        <img src="./images/scenario2-zlux-env-variable.png" width="600">
     1. Enter `npm run build` to run the build.
        A folder named _web_ is created in the root directory _sample-trial-app_.
+       
        <img src="./images/scenario2-zlux-web.png" width="150">
     1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
       1. Enter the following command:
@@ -212,9 +213,9 @@ In this step, you will add some provided code snippets with the existing code to
        The folder named _web_ is updated in the root directory _sample-trial-app_.
     1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
        1. Enter the following command:
-       ```
-       scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
-       ```
+          ```
+          scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+          ```
        2. Enter the password. The password is _tstradm_.
           The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 1. Verify that the React application works correctly now.    
