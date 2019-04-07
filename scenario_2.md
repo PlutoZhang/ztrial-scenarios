@@ -145,12 +145,11 @@ In this step, you will add some provided code snippets with the existing code to
     1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
     1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command.
     <img src="./images/scenario2-vscode-terminal.png" width="300">
-
        Below the editor region, the terminal panel is started in the current working directory.
     1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel:
-    ```
-    cd webClient
-    ```
+       ```
+       cd webClient
+       ```
     1. Enter `npm install`.
 
        <img src="./images/scenario2-zlux-install.png" width="500">     
