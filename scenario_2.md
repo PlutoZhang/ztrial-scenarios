@@ -208,20 +208,24 @@ In this step, you will add some provided code snippets with the existing code to
        ```
        2. Enter the password. The password is _tstradm_.
           The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
-1. Verify that the React application works correctly now.    
--------------------------------    
-  **(Optional)** If you exited the Zowe Desktop in the Firefox browser, you must fist log in.    
-    1. Open Firefox and enter the following URL to access the Zowe Desktop in the address field.    
+1. Verify that the React application works correctly now.   
+
+---
+
+**(Optional)** If you exited the Zowe Desktop in the Firefox browser, you must fist log in.    
+  1. Open Firefox and enter the following URL to access the Zowe Desktop in the address field.    
        ```
        https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html
        ```
-    1. Enter the following username and password to log in.
-       - User name: TSTRADM
-       - Password: TSTRADM
-       The Zowe Desktop opens.
--------------------
-  1. In the Zowe desktop, click to open the _Trial Sample_ application from the taskbar.
-  2. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
+  1. Enter the following username and password to log in.
+     - User name: TSTRADM
+     - Password: TSTRADM
+     The Zowe Desktop opens.  
+     
+--- 
+
+   1. In the Zowe desktop, click to open the _Trial Sample_ application from the taskbar.
+   2. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
        You could also click on any name to get its detailed information.
 
 ### Result
