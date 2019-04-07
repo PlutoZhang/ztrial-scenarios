@@ -134,18 +134,19 @@ In the next step, a sample application that uses this sample API is deployed on 
 
 ## Step 2: Extending Zowe Application Framework
 
-In this step, you will combine some provided code snippets with the skeleton code to build a Sample React application that works on the Zowe Desktop.
+In this step, you will add some provided code snippets with the existing code to build a Trial Sample application that works fully on the Zowe Desktop.
 
 ### Procedure
-1. Open the sample Zowe Application Framework project in VSCode.
-   1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
+1. Build and test the Trial Sample application in Zowe Desktop.
+  1. Open the sample Zowe Application Framework project in VSCode.
+  1. Click on the Windows Explorer icon in the taskbar to open the Windows Explorer, and go to this folder C:\Users\Administrator\Documents\
    2. Right click the folder named zlux and select **Open with Code**.
        <img src="./images/scenario2-zlux-open.png" width="300">
-1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
+  1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
   1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command.
   <img src="./images/scenario2-vscode-terminal.png" width="300">
 
-    Below the editor region, the terminal panel is started in the current working directory.
+     Below the editor region, the terminal panel is started in the current working directory.
   1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel:
   ```
   cd webClient
@@ -155,7 +156,7 @@ In this step, you will combine some provided code snippets with the skeleton cod
      <img src="./images/scenario2-zlux-install.png" width="500">     
   1. Enter the following command to set the environment variable:
   ```
-  export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zlux\\zlux-app-manager\\virtual-desktop
+  export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
   ```
   1. Enter `npm run build` to run the build.
      A folder named _web_ is created in the root directory _sample-trial-app_.
@@ -177,35 +178,53 @@ scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
   1. In the Zowe desktop, click the Start menu and locate the _Trial Sample_ application. Right-click on the _Trial Sample_ application and select **Pin to taskbar** for later use.
   1. Click to open the _Trial Sample_ application from the taskbar.
 
-     In this application, click **Accounts** and you could see that the values of the **Name** column is missing. This because of some missing values in the configuration file of this application.
+     In this application, click **Accounts** and you could see that the values of the **Name** column are missing. This because of some missing values in the configuration file of this application.
 
       <img src="./images/scenario2-ui-trial-app.png" width="200">
 
-      Next, you'll add the missing code snippet to the proper file using VSCode.
-
-1. Uncomment the missing code in the _Accountlist.js_ file.
-    1. In VSCode Explorer, click **webClient** > **src** > **Accountlist.js**. This file contains the missing values.
+1. Add the missing code snippet and redeploy the changes.
+    1. Uncomment the missing code snippet in the _Accountlist.js_ file.
+        1. In VSCode Explorer, click **zlux** > **sample-trial-app** > **webClient** > **src** > **Accountlist.js**. This file contains the missing values.
 
         <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
-        You will see that the code for the user profile details is commented out in this file.
+        You will see that the code for the user name details is commented out in this file.
 
-    2. Uncomment this code block and press **Ctrl+S** to save the change.
+    1. Uncomment this code snippet and press **Ctrl+S** to save the change.
 
+    1. In the terminal, enter the following command to reset the environment variable:
+    ```
+    export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
+    ```
+    1.  enter `npm run build` to run the build.
+       The folder named _web_ is updated in the root directory _sample-trial-app_.
+    1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
+      1. Enter the following command:
+       ```
+    scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+      ```
+        2. Enter the password. The password is _tstradm_.
+    The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
+1. Verify that the React application works correctly now.    
+-------------------------------    
+  **(Optional)** If you exited the Zowe Desktop in the Firefox browser, you must fist log in.    
+1. Open Firefox and enter the following URL to access the Zowe Desktop in the address field.    
+```
+https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html
+```
+1. Enter the following username and password to log in.
+    - User name: TSTRADM
+    - Password: TSTRADM
+      The Zowe Desktop opens.
+-------------------    
 
-1. Redeploy the changes.
+  1. In the Zowe desktop, click to open the _Trial Sample_ application from the taskbar.
+  2. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
 
-
-4.  Verify that the React application works correctly now.
-    1. From the taskbar, open the React application.
-    1. Verify that the previously failed page works correctly now.
-
-         >**Comments/Notes:**  Need to design the story and error details here and in previous step. For example, a certain account cannot be retrieved?
-
-    1. Open VSCode terminal and enter `npm test` to check the result.
+  You could also click on any name to get its detailed information.
 
 ### Result
-Congratulations! You added the missing values, deployed the changes, and verified that the application works correctly.
+Congratulations! You added the missing values to the Trial Sample application based on React Sample, deployed the changes, and verified that this application works correctly.
 
 ### Next step
 
