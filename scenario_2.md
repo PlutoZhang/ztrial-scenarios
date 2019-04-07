@@ -153,10 +153,10 @@ In this step, you will add some provided code snippets with the existing code to
            ```
            cd zlux/sample-trial-app/webClient
            ```
-           <img src="./images/scenario2-zlux-webclient.png" width="500">
+           <img src="./images/scenario2-zlux-webclient.png" width="600">
     1. Enter `npm install`.
 
-       <img src="./images/scenario2-zlux-npm-install.png" width="600">     
+       <img src="./images/scenario2-zlux-npm-install.png" width="800">     
     1. Enter the following command to set the environment variable:
 
        ```
@@ -165,7 +165,7 @@ In this step, you will add some provided code snippets with the existing code to
        <img src="./images/scenario2-zlux-env-variable.png" width="500">
     1. Enter `npm run build` to run the build.
        A folder named _web_ is created in the root directory _sample-trial-app_.
-       <img src="./images/scenario2-zlux-web.png" width="200">
+       <img src="./images/scenario2-zlux-web.png" width="150">
     1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
       1. Enter the following command:
          ```
@@ -198,11 +198,11 @@ In this step, you will add some provided code snippets with the existing code to
            <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
            You will see that the code for the user name details is commented out in command line 77 - 79.
-           <img src="./images/scenario2-zlux-comment-out.png" width="400">
+           <img src="./images/scenario2-zlux-comment-out.png" width="500">
 
         1. Uncomment this code snippet and press **Ctrl+S** to save the change.
            
-           <img src="./images/scenario2-zlux-uncomment.png" width="400">
+           <img src="./images/scenario2-zlux-uncomment.png" width="500">
 
     1. In the terminal, enter the following command to reset the environment variable:
        ```
