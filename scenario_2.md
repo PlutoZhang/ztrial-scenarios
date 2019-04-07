@@ -153,25 +153,25 @@ In this step, you will add some provided code snippets with the existing code to
            ```
            cd zlux/sample-trial-app/webClient
            ```
-           <img src="./images/scenario2-zlux-webclient.png" width="300">
+           <img src="./images/scenario2-zlux-webclient.png" width="500">
     1. Enter `npm install`.
 
-       <img src="./images/scenario2-zlux-install.png" width="500">     
+       <img src="./images/scenario2-zlux-npm-install.png" width="600">     
     1. Enter the following command to set the environment variable:
 
        ```
        export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
        ```
-       <img src="./images/scenario2-zlux-env-variable.png" width="300">
+       <img src="./images/scenario2-zlux-env-variable.png" width="500">
     1. Enter `npm run build` to run the build.
        A folder named _web_ is created in the root directory _sample-trial-app_.
-       <img src="./images/scenario2-zlux-web.png" width="500">
+       <img src="./images/scenario2-zlux-web.png" width="200">
     1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
       1. Enter the following command:
          ```
          scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
          ```
-         <img src="./images/scenario2-zlux-scp.png" width="300">
+         <img src="./images/scenario2-zlux-scp.png" width="500">
       2. Enter the password. The password is _tstradm_.
          The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 1. Open and test the Trial Sample application in the Zowe desktop.
@@ -183,24 +183,26 @@ In this step, you will add some provided code snippets with the existing code to
 
        The Zowe Desktop opens.
     1. In the Zowe desktop, click the Start menu and locate the _Trial Sample_ application. Right-click on the _Trial Sample_ application and select **Pin to taskbar** for later use.
-       <img src="./images/scenario2-zlux-sample-icon.png" width="300">
+        
+        <img src="./images/scenario2-zlux-sample-icon.png" width="300">
     1. Click to open the _Trial Sample_ application from the taskbar.
 
        In this application, click **Accounts** and you could see that the values of the **Name** column are missing. This because of some missing values in the configuration file of this application.
 
-       <img src="./images/scenario2-zlux-sample-missing.png" width="300">
+       <img src="./images/scenario2-zlux-sample-missing.png" width="500">
 
 1. Add the missing code snippet and redeploy the changes.
     1. Uncomment the missing code snippet in the _Accountlist.js_ file.
         1. In VSCode Explorer, click **zlux** > **sample-trial-app** > **webClient** > **src** > **Accountlist.js**. This file _Accountlist.js_ contains the missing values.
 
-        <img src="./images/scenario2-ui-config-file-locate.png" width="200">
+           <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
-          You will see that the code for the user name details is commented out in command line 77 - 79.
-          <img src="./images/scenario2-zlux-comment-out.png" width="200">
+           You will see that the code for the user name details is commented out in command line 77 - 79.
+           <img src="./images/scenario2-zlux-comment-out.png" width="400">
 
         1. Uncomment this code snippet and press **Ctrl+S** to save the change.
-           <img src="./images/scenario2-zlux-uncomment.png" width="200">
+           
+           <img src="./images/scenario2-zlux-uncomment.png" width="400">
 
     1. In the terminal, enter the following command to reset the environment variable:
        ```
@@ -218,13 +220,16 @@ In this step, you will add some provided code snippets with the existing code to
 1. Verify that the React application works correctly now.    
   1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
      A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop.
-     <img src="./images/scenario2-zlux-leave-page.png" width="200">
+     
+     <img src="./images/scenario2-zlux-leave-page.png" width="400">
   1. In the Zowe desktop, click to reopen the _Trial Sample_ application from the taskbar.
   1. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
-     <img src="./images/scenario2-zlux-sample-display.png" width="200">
+     
+     <img src="./images/scenario2-zlux-sample-display.png" width="500">
 
      You could also click on any name to get its detailed information.
-     <img src="./images/scenario2-zlux-sample-name-detail.png" width="200">
+     
+     <img src="./images/scenario2-zlux-sample-name-detail.png" width="500">
 ### Result
 Congratulations! You added the missing values to the Trial Sample application based on React Sample, deployed the changes, and verified that this application works correctly.
 
