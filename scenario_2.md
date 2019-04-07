@@ -212,12 +212,12 @@ In this step, you will add some provided code snippets with the existing code to
     1.  enter `npm run build` to run the build.
        The folder named _web_ is updated in the root directory _sample-trial-app_.
     1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
-       1. Enter the following command:
-          ```
-          scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
-          ```
-       2. Enter the password. The password is _tstradm_.
-          The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
+        1. Enter the following command:
+           ```
+           scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+           ```
+        2. Enter the password. The password is _tstradm_.
+           The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 1. Verify that the React application works correctly now.    
     1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
        A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop.
