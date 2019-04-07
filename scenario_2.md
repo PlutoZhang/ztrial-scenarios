@@ -221,7 +221,7 @@ https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html
   1. In the Zowe desktop, click to open the _Trial Sample_ application from the taskbar.
   2. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
 
-  You could also click on any name to get its detailed information.
+     You could also click on any name to get its detailed information.
 
 ### Result
 Congratulations! You added the missing values to the Trial Sample application based on React Sample, deployed the changes, and verified that this application works correctly.
