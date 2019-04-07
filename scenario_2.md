@@ -168,13 +168,13 @@ In this step, you will add some provided code snippets with the existing code to
        
        <img src="./images/scenario2-zlux-web.png" width="150">
     1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
-      1. Enter the following command:
-         ```
-         scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
-         ```
-         <img src="./images/scenario2-zlux-scp.png" width="500">
-      2. Enter the password. The password is _tstradm_.
-         The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
+        1. Enter the following command:
+           ```
+           scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+           ```
+            <img src="./images/scenario2-zlux-scp.png" width="500">
+         2. Enter the password. The password is _tstradm_.
+            The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 1. Open and test the Trial Sample application in the Zowe desktop.
     1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
@@ -209,7 +209,7 @@ In this step, you will add some provided code snippets with the existing code to
        ```
        export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
        ```
-    1.  enter `npm run build` to run the build.
+    1. Enter `npm run build` to run the build.
        The folder named _web_ is updated in the root directory _sample-trial-app_.
     1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
         1. Enter the following command:
