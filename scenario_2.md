@@ -218,18 +218,18 @@ In this step, you will add some provided code snippets with the existing code to
        2. Enter the password. The password is _tstradm_.
           The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 1. Verify that the React application works correctly now.    
-  1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
-     A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop.
+    1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
+       A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop.
      
-     <img src="./images/scenario2-zlux-leave-page.png" width="400">
-  1. In the Zowe desktop, click to reopen the _Trial Sample_ application from the taskbar.
-  1. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
+       <img src="./images/scenario2-zlux-leave-page.png" width="400">
+    1. In the Zowe desktop, click to reopen the _Trial Sample_ application from the taskbar.
+    1. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
      
-     <img src="./images/scenario2-zlux-sample-display.png" width="500">
+        <img src="./images/scenario2-zlux-sample-display.png" width="500">
 
-     You could also click on any name to get its detailed information.
+        You could also click on any name to get its detailed information.
      
-     <img src="./images/scenario2-zlux-sample-name-detail.png" width="500">
+        <img src="./images/scenario2-zlux-sample-name-detail.png" width="500">
 ### Result
 Congratulations! You added the missing values to the Trial Sample application based on React Sample, deployed the changes, and verified that this application works correctly.
 
