@@ -94,7 +94,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           1. Press `ctrl+c` in the terminal to stop the running project.
           1. Run the `npm test` command to check that the failed tests are fixed.
           
-              <img src="./images/scenario2-server-npm-test.png" width="500">
+              <img src="./images/scenario2-server-npm-test.png" width="700">
               
               You will see that all the tests are passed. 
           1. Run the `npm start` command to restart the project.
