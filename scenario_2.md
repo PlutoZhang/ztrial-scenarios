@@ -171,7 +171,7 @@ In this step, you will add some provided code snippets with the existing code to
 
 ### Procedure
 
-1. Build and test the Trial Sample application in Zowe Desktop.
+1. **Build and test the Trial Sample application in Zowe Desktop.**
 
     1. Open the sample Zowe Application Framework project in VS Code.
 
@@ -219,7 +219,7 @@ In this step, you will add some provided code snippets with the existing code to
        
           <img src="./images/scenario2-zlux-web.png" width="150">
 
-1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server. 
+1. **Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.** 
    1. Enter the following command:
 
       ```
@@ -234,7 +234,7 @@ In this step, you will add some provided code snippets with the existing code to
 
       <img src="./images/scenario2-enter-password.png" width="500">
 
-1. Open and test the Trial Sample application in the Zowe Desktop.
+1. **Open and test the Trial Sample application in the Zowe Desktop.**
 
     1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
@@ -253,7 +253,7 @@ In this step, you will add some provided code snippets with the existing code to
 
        <img src="./images/scenario2-zlux-sample-missing.png" width="500">
 
-1. Add the missing code snippet and redeploy the changes.
+1. **Add the missing code snippet and redeploy the changes.**
     1. Uncomment the missing code snippet in the _Accountlist.js_ file.
         1. In VS Code Explorer, click **zlux** > **sample-trial-app** > **webClient** > **src** > **Accountlist.js**. This file _Accountlist.js_ contains the missing values.
 
@@ -276,7 +276,7 @@ In this step, you will add some provided code snippets with the existing code to
         2. Enter the password. The password is **tstradm**.
            The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
 
-1. Verify that the Trial Sample application works correctly now. 
+1. **Verify that the Trial Sample application works correctly now.**
     1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
        A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop. When prompted for the password to log in to Zowe Desktop, enter **TSTRADM**.
      
