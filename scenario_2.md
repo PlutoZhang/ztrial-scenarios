@@ -141,6 +141,7 @@ In this step, you will add some provided code snippets with the existing code to
     1. Open the sample Zowe Application Framework project in VSCode.
         1. Click on the Files Explorer icon in the taskbar to open the Windows Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario2`.
         2. Right click the folder named zlux and select **Open with Code**.
+           
            <img src="./images/scenario2-zlux-open.png" width="300">
     1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
         1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
