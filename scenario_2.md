@@ -137,72 +137,106 @@ In the next step, a sample application that uses this sample API is deployed on 
 In this step, you will add some provided code snippets with the existing code to build a Trial Sample application that works fully on the Zowe Desktop.
 
 ### Procedure
-1. Build and test the Trial Sample application in Zowe Desktop.
-    1. Open the sample Zowe Application Framework project in VSCode.
-        1. Click on the Files Explorer icon in the taskbar to open the Windows Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario2`.
-        2. Right click the folder named zlux and select **Open with Code**.
-           
-           <img src="./images/scenario2-zlux-open.png" width="300">
-    1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
-        1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
 
-           <img src="./images/scenario2-vscode-terminal.png" width="300">   
+1. Build and test the Trial Sample application in Zowe Desktop.
+
+    1. Open the sample Zowe Application Framework project in VS Code.
+
+        1. Click on the File Explorer icon in the Windows taskbar to open the Windows Explorer.
+
+           <img src="./images/scenario2-open-windows-explorer.png" width="100">
+
+        1.  Go to folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2` which contains the source code for the sample project.
+
+         <img src="./images/scenario2-ui-locate-folder.png" width="400">
+
+        1. Right click the folder named **part-02-UI** and select **Open with Code** to open the folder in VS Code.
+           
+           <img src="./images/scenario2-zlux-open.png" width="200">
+
+    1. Run the sample project in the VS Code terminal.
+
+        1. In VS Code, from the Menu bar, click **View** > **Terminal** to open the terminal.
+
+           <img src="./images/scenario2-vscode-terminal.png" width="200">   
 
            Below the editor region, the terminal panel is started in the current working directory.
 
-        1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel:
+           <img src="./images/scenario2-ui-terminal-opened.png" width="500">
+
+        1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel and press Enter:
            ```
            cd zlux/sample-trial-app/webClient
            ```
-           <img src="./images/scenario2-zlux-webclient.png" width="600">
-    1. Enter `npm install`.
+           <img src="./images/scenario2-zlux-webclient.png" width="500">
 
-       <img src="./images/scenario2-zlux-npm-install.png" width="800">     
-    1. Enter the following command to set the environment variable:
+        1. Issue the `npm install` command and press Enter to install the sample project. Wait for about one minute for the process to complete.
 
-       ```
-       export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
-       ```
-       <img src="./images/scenario2-zlux-env-variable.png" width="600">
-    1. Enter `npm run build` to run the build.
-       A folder named _web_ is created in the root directory _sample-trial-app_.
+           <img src="./images/scenario2-zlux-npm-install.png" width="800"> 
        
-       <img src="./images/scenario2-zlux-web.png" width="150">
-    1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server.
-        1. Enter the following command:
-           ```
-           scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
-           ```
-            <img src="./images/scenario2-zlux-scp.png" width="500">
-         2. Enter the password. The password is _tstradm_.
-            The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
-1. Open and test the Trial Sample application in the Zowe desktop.
+           When complete, you will see messages similar to the following ones. No action is required here.
+       
+           <img src="./images/scenario2-ui-install-complete.png" width="800">
+       
+       1. Enter the following command to set the environment variable:
+
+          ```
+          export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
+          ```
+          <img src="./images/scenario2-zlux-env-variable.png" width="600">
+
+       1. Enter the `npm run build` command to run the build. The build completes within seconds. 
+
+          <img src="./images/scenario2-npm-run-build.png" width="500">
+
+          A folder named _web_ is created in the root directory _sample-trial-app_.
+       
+          <img src="./images/scenario2-zlux-web.png" width="150">
+
+1. Transfer the files from the _web_ folder to the Trial Application folder on the Zowe server. 
+   1. Enter the following command:
+
+      ```
+      scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
+      ```
+            
+      <img src="./images/scenario2-zlux-scp.png" width="500">
+
+   2. Enter the password. The password is **tstradm**.
+
+      The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
+
+      <img src="./images/scenario2-enter-password.png" width="500">
+
+1. Open and test the Trial Sample application in the Zowe Desktop.
+
     1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
     1. Enter the following username and password to log in.
-       - User name: TSTRADM
-       - Password: TSTRADM
+       - User name: **TSTRADM**
+       - Password: **TSTRADM**
 
        The Zowe Desktop opens.
-    1. In the Zowe desktop, click the Start menu and locate the _Trial Sample_ application. Right-click on the _Trial Sample_ application and select **Pin to taskbar** for later use.
-        
-        <img src="./images/scenario2-zlux-sample-icon.png" width="300">
-    1. Click to open the _Trial Sample_ application from the taskbar.
 
-       In this application, click **Accounts** and you could see that the values of the **Name** column are missing. This because of some missing values in the configuration file of this application.
+    1. In the Zowe desktop, click the Start menu and locate the _Trial Sample_ application. Right-click on the **Trial Sample** application and select **Pin to taskbar** for later use.
+        
+        <img src="./images/scenario2-zlux-sample-icon.png" width="200">
+    1. Click to open the **Trial Sample** application from the taskbar.
+
+       In this application, click **Accounts** and you will see that the values of the **Name** column are missing. This is because of some missing values in the configuration file of this application.
 
        <img src="./images/scenario2-zlux-sample-missing.png" width="500">
 
 1. Add the missing code snippet and redeploy the changes.
     1. Uncomment the missing code snippet in the _Accountlist.js_ file.
-        1. In VSCode Explorer, click **zlux** > **sample-trial-app** > **webClient** > **src** > **Accountlist.js**. This file _Accountlist.js_ contains the missing values.
+        1. In VS Code Explorer, click **zlux** > **sample-trial-app** > **webClient** > **src** > **Accountlist.js**. This file _Accountlist.js_ contains the missing values.
 
            <img src="./images/scenario2-ui-config-file-locate.png" width="200">
 
            You will see that the code for the user name details is commented out in command line 77 - 79.
            <img src="./images/scenario2-zlux-comment-out.png" width="600">
 
-        1. Uncomment this code snippet and press **Ctrl+S** to save the change.
+        1. Uncomment this code snippet by removing the **/*** and ***/** signs at the beginning and the end. Then, press **Ctrl+S** to save the change.
            
            <img src="./images/scenario2-zlux-uncomment.png" width="600">
 
@@ -217,23 +251,26 @@ In this step, you will add some provided code snippets with the existing code to
            ```
            scp -P 2022 -r ../web tstradm@10.149.60.146:/zaas1/zowe/1.0.0/sample-trial-app
            ```
-        2. Enter the password. The password is _tstradm_.
+        2. Enter the password. The password is **tstradm**.
            The files _icon.png_, _mian.js_, and _main.js.map_ are securely copied to the folder _sample-trial-app_ on the Zowe server.
-1. Verify that the React application works correctly now.    
+
+1. Verify that the Trial Sample application works correctly now. 
     1. In the Firefox browser, press `F5` to refresh the Zowe Desktop page.
-       A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop.
+       A pop-up box is opened to ask for your confirmation to leave. Click **Leave Page** to refresh the Zowe Desktop. When prompted for the password to log in to Zowe Desktop, enter **TSTRADM**.
      
        <img src="./images/scenario2-zlux-leave-page.png" width="400">
-    1. In the Zowe desktop, click to reopen the _Trial Sample_ application from the taskbar.
-    1. In this application, click **Accounts** and you could see that the values of the **Name** column are displayed.
+
+    1. In the Zowe Desktop, click to reopen the **Trial Sample** application from the taskbar.
+    1. In this application, click **Accounts** and you will see that the values of the **Name** column are displayed.
      
         <img src="./images/scenario2-zlux-sample-display.png" width="500">
 
-        You could also click on any name to get its detailed information.
+        You can also click on any name to get its detailed information.
      
         <img src="./images/scenario2-zlux-sample-name-detail.png" width="500">
+
 ### Result
-Congratulations! You added the missing values to the Trial Sample application based on React Sample, deployed the changes, and verified that this application works correctly.
+Congratulations! You added the missing values to the Trial Sample application, deployed the changes, and verified that this application works correctly.
 
 ### Next step
 
