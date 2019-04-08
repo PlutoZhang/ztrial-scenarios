@@ -138,26 +138,31 @@ In this step, you will add some provided code snippets with the existing code to
 
 ### Procedure
 1. Build and test the Trial Sample application in Zowe Desktop.
-    1. Open the sample Zowe Application Framework project in VSCode.
-        1. Click on the Files Explorer icon in the taskbar to open the Windows Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario2`.
-        2. Right click the folder named zlux and select **Open with Code**.
+    1. Open the sample Zowe Application Framework project in VS Code.
+        1. Click on the Files Explorer icon in the taskbar to open the Windows Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`.
+        2. Right click the folder named *part-02-UI* and select **Open with Code** to open the folder in VS Code.
            
            <img src="./images/scenario2-zlux-open.png" width="300">
     1. Run the sample project in the VSCode terminal and upload the missing files to the sample application on the Zowe server.
-        1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
+        1. In VS Code, from the Menu bar, open the terminal by using the **View** > **Terminal** menu command.
 
            <img src="./images/scenario2-vscode-terminal.png" width="300">   
 
            Below the editor region, the terminal panel is started in the current working directory.
 
-        1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel:
+        1. Change the current working directory to _webClient_ by issuing the following command in the terminal panel and press Enter:
            ```
            cd zlux/sample-trial-app/webClient
            ```
            <img src="./images/scenario2-zlux-webclient.png" width="600">
-    1. Enter `npm install`.
+    1. Enter the `npm install` command and press Enter to install the sample project. Wait for about one minute for the process to complete.
 
-       <img src="./images/scenario2-zlux-npm-install.png" width="800">     
+       <img src="./images/scenario2-zlux-npm-install.png" width="800"> 
+       
+       When complete, you will see messages similar to the following ones.
+       
+       <img src="./images/scenario2-ui-install-complete.png" width="800">
+       
     1. Enter the following command to set the environment variable:
 
        ```
