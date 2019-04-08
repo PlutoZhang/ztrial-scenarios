@@ -57,12 +57,15 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            <img src="./images/scenario2-api-test-accounts.png" width="500">
            
        1. To get the detailed information about one specific account, for example, account 0, enter the following URL in the address field.
-          `https://localhost:18000/accounts/0'
+          
+          `https://localhost:18000/accounts/0`
           
            <img src="./images/scenario2-api-test-account.png" width="500">
            
        1. To get the information about all the cars owned by one specific account, for example, by account 0, enter the following URL in the address field.
+          
           `https://localhost:18000/accounts/0/cars`
+          
           The following error message is displayed, which indicates that this API endpoint is not working.
            
            <img src="./images/scenario2-api-test-cars-fail.png" width="500">
@@ -99,7 +102,8 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
      1. Access the newly added API routes in the Firefox browser.
 
         Open Firefox and enter the following URL in the address field to get the information about all the cars owned by account 0.
-           `https://localhost:18000/accounts/0/cars`
+           
+        `https://localhost:18000/accounts/0/cars`
 
           <img src="./images/scenario2-api-working.png" width="300">
           
@@ -118,7 +122,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        
        `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars`
 
-         <img src="./images/scenario2-server-api-not-working.png" width="500">
+         <img src="./images/scenario2-server-api-not-working.png" width="600">
 
         You can see that the new routes you added locally are not deployed to the Zowe server yet.
 
@@ -127,7 +131,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        2. Enter the following command to upload the updated sample files to the Zowe server.
          `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
          
-           <img src="./images/scenario2-server-api-update.png" width="500">
+           <img src="./images/scenario2-server-api-update.png" width="600">
          
        3. Enter password **TSTRADM**.
     1. Restart the sample API on the Zowe server.
@@ -135,7 +139,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           
           `ssh -p 2022 tstradm@10.149.60.146`
       
-           <img src="./images/scenario2-server-login.png" width="500">
+           <img src="./images/scenario2-server-login.png" width="600">
        
         1. Enter password **TSTRADM**.
         1. Go to the sample application scripts folder by running the following command.
