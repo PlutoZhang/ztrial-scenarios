@@ -127,7 +127,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
        2. Enter the following command to upload the updated sample files to the Zowe server.
          `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
          
-         <img src="./images/scenario2-server-api-update.png" width="500">
+           <img src="./images/scenario2-server-api-update.png" width="500">
          
        3. Enter password **TSTRADM**.
     1. Restart the sample API on the Zowe server.
