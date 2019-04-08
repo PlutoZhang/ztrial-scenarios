@@ -82,7 +82,11 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
        3. Restart the project in the terminal.
           1. Press `ctrl+c` in the terminal to stop the running project.
-          2. Run the `npm start` command to restart the project.
+          1. Run the `npm test` command to check that the failed tests are fixed.
+          
+              <img src="./images/scenario2-server-npm-test.png" width="500">
+              You will see that all the tests are passed. 
+          1. Run the `npm start` command to restart the project.
 
      1. Access the newly added API routes in the Firefox browser.
 
@@ -97,39 +101,44 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
    Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server.
 
-1. Redeploy this API and see the changes on zowe server.
-    1. Open the Firefox browser, access the same API running on the zowe server.
+1. Redeploy this API to the Zowe server and view the changes.
+    1. Open Firefox and access the same API running on the zowe server.
 
-       Open Firefox and enter the following URL in the address field to get the information about all cars.
-          `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+       Open the Firefox browser and enter the following URL in the address field to get the information about all the cars owned by account 0.
+          `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars`
 
           <img src="./images/scenario2-server-api-not-working.png" width="500">
 
-          You could see that the new paths you added locally are not deployed to the Zowe server yet.
+          You can see that the new routes you added locally are not deployed to the Zowe server yet.
 
-    2. Redeploy the updated sample API node files to the Zowe server.
-
-       1. From the Taskbar in the Desktop, click the PowerShell icon to open PowerShell.
+    1. Redeploy the updated sample API node files to the Zowe server.
+       1. In the VSCode terminal panel, press `ctrl+c` to stop the running project.
        2. Enter the following command to upload the updated sample files to the Zowe server.
-         `scp -r server TSTRADM@10.149.60.146::/u/zowe/ibmuser/1.0.1/sample-node-api/server`
-       3. Enter password: TSTRADM.
-    3. Restart the sample.
-       ```
-       ssh TSTRADM@10.149.60.146
-       >Enter Password - TSTRADM
-       cd /u/zowe/ibmuser/1.0.1/scripts
-       ./zowe-stop.sh
-       ./zowe-start.sh
-       ```
-        >**TBD:** To be replaced. Acoording to Vijay's advice, we will not restart the whole Zowe server. Nakul and Craig will investigate if we could write a piece of script to implement a clickable window application.
-
-     1. Access the newly deployed API again in Firefox.
-
-         Enter the following URL in the address field:
-         `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
-          >**TBD:** to add a screeshot.
-
-          It works now and you can see the information about all cars. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/cars/1` to get the information about the single car details.
+         `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
+         
+         <img src="./images/scenario2-server-api-update.png" width="500">
+       3. Enter password **TSTRADM**.
+    1. Restart the sample API on the Zowe server.
+       1. Enter the following ssh command and press Enter to log in to the Zowe server.  
+       `ssh -p 2022 tstradm@10.149.60.146`
+      
+       
+       <img src="./images/scenario2-server-login.png" width="500">
+        1. Enter password **TSTRADM**.
+        1. Go to the sample application scripts folder by running the following command.
+           `cd /zaas1/zowe/1.0.0/sample-node-api/scripts`
+        1. Restart the sample application scripts by running the following command.
+           `Restart-sample-node-api.sh`
+           Wait for about one minute for the process to complete. When you see the following command prompt, the sample API on the Zowe server is restarted. 
+           
+           <img src="./images/scenario2-server-api-restarted.png" width="400">
+     1. Access the redeployed API again in the Firefox browser. Enter the following URL in the address field:
+        `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
+         
+         <img src="./images/scenario2-server-cars-correct.png" width="400">
+        It works now and you can see the information about all cars as the same as you see locally. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars/1` to get the information about car 1 owned by account 0.
+        
+        <img src="./images/scenario2-server-car-correct.png" width="400">
 
 ### Results
 You successfully added the missing feature to the sample node API and redeployed to the Zowe server.
