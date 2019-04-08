@@ -185,7 +185,7 @@ In this step, you will add some provided code snippets with the existing code to
 
         1.  Go to folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2` which contains the source code for the sample project.
 
-         <img src="./images/scenario2-ui-locate-folder.png" width="400">
+            <img src="./images/scenario2-ui-locate-folder.png" width="400">
 
         1. Right click the folder named **part-02-UI** and select **Open with Code** to open the folder in VS Code.
            
