@@ -27,57 +27,62 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
 1. Develop custom API.
     1. Open the sample API project in Visual Studio Code (VSCode).
-       1. Click on the Files Explorer icon in the taskbar to open the Files Explorer, and go to this folder C:\Users\Administrator\Documents\
+       1. Click on the Files Explorer icon in the taskbar to open the Files Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`. 
        2. Right click the folder named sample-node-api and select **Open with Code**.
            <img src="./images/scenario2-sample-open.png" width="300">
     1. Run the sample API project in the VSCode terminal.
-       1. In VSCode, from the Menu Bar, open the terminal by using the View > Terminal menu command.
+       1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
            <img src="./images/scenario2-vscode-terminal.png" width="300">
 
           Below the editor region, the terminal panel is started in the current working directory.
-       2. In the terminal panel, enter `npm install`.
+       1. In the termianl panel, change the current working directory to _sample-node-api_ by issuing the following command in the terminal panel:
+           ```
+           cd sample-node-api
+           ```
+       2. Issue the `npm install` command and press Enter to install the sample application.
 
            <img src="./images/scenario2-npm-install.png" width="500">
-       3. Enter `npm start`.
+       3. Issue the `npm start` command and press Enter to start the sample application on the node server. 
 
           <img src="./images/scenario2-npm-start.png" width="500">
-    1. Access local urls.
+    1. Access local URLs.
        1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
-       2. Enter the following URL in the address field to get the information about all accounts.
-       `http://localhost:18000/accounts`
-       The following error message is displayed, which indicates that the API edpoint is not working.
-       <img src="./images/scenario2-api-test-error.png" width="500">
-    1. Enter `npm test` in the VSCode terminal. You will see that one test fails.
+       1. Enter the following URL in the address field to get the information about all accounts.
+       `https://localhost:18000/accounts`
+       All the accounts 0, 1, 2, 3, and 4 are displayed. 
+       
+       <img src="./images/scenario2-api-test-accounts.png" width="500">
+       1. To get the detailed information about one specific account, for example, account 0, enter the following URL in the address field.
+          `https://localhost:18000/accounts/0'
+          
+           <img src="./images/scenario2-api-test-account.png" width="500">
+       1. To get the information about all the cars owned by one specific account, for example, by account 0, enter the following URL in the address field.
+          `https://localhost:18000/accounts/0/cars`
+          The following error message is displayed, which indicates that this API endpoint is not working.
+           
+           <img src="./images/scenario2-api-test-cars-fail.png" width="500">
+    1. Back to the terminal panel in VSCode, press `Ctrl+c` to stop the running application.  
+    1. Enter `npm test` in the VSCode terminal. You will see that three tests fail.
 
         <img src="./images/scenario2-api-test-fail.png" width="500">
-
-        This is because there are missing code in the configuration file. Next, let's locate the file to add the missing code.
+       This is caused by a piece of missing code in the configuration file. Next, let's locate the file to add the missing code.
 
     1. Add the missing feature into the sample API node project.
        1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
             <img src="./images/scenario2-api-folder-locate.png" width="300">
 
-            You will see that the code for a feature is missing in this file.
+            You will see that the code for two routes is commented out in command line 11 - 15.
 
             <img src="./images/scenario2-missing-code-file.png" width="500">
 
-        2. Next, fetch the missing code and add it to this file.
-           Insert the following code to the file and press `Ctrl+S` to save the changes.
-
-           ```
-           router.route('/cars')
-           .get(accountsCarsController.getAll);
-
-           router.route('/cars/:_id')
-           .get(accountsCarsController.get);
-           ```
+        2. Uncomment this code snippet by removing the /* and */ signs at the beginning and the end. Then, press Ctrl+S to save the change.
             <img src="./images/scenario2-missing-code-insert.png" width="500">
 
        3. Restart the project in the terminal.
-          1. Press `ctrl+c` in the terminal to stop the project.
-          2. Use `npm start` to restart the project.
+          1. Press `ctrl+c` in the terminal to stop the running project.
+          2. Run the `npm start` command to restart the project.
 
-     1. Access the newly added path in the Firefox browser.
+     1. Access the newly added API routes in the Firefox browser.
 
         Open Firefox and enter the following URL in the address field to get the information about all accounts.
            `http://localhost:18000/accounts`
