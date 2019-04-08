@@ -69,13 +69,15 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
     1. Add the missing feature into the sample API node project.
        1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
+       
             <img src="./images/scenario2-api-folder-locate.png" width="300">
 
             You will see that the code for two routes is commented out in command line 11 - 15.
 
             <img src="./images/scenario2-missing-code-file.png" width="500">
 
-        2. Uncomment this code snippet by removing the /* and */ signs at the beginning and the end. Then, press Ctrl+S to save the change.
+        2. Uncomment this code snippet by removing the **/*** and ***/** signs at the beginning and the end. Then, press Ctrl+S to save the change.
+        
             <img src="./images/scenario2-missing-code-insert.png" width="500">
 
        3. Restart the project in the terminal.
@@ -84,14 +86,12 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
      1. Access the newly added API routes in the Firefox browser.
 
-        Open Firefox and enter the following URL in the address field to get the information about all accounts.
-           `http://localhost:18000/accounts`
+        Open Firefox and enter the following URL in the address field to get the information about all the cars owned by account 0.
+           `https://localhost:18000/accounts/0/cars`
 
           <img src="./images/scenario2-api-working.png" width="300">
-
-        Similarly, you can enter the URL `http://localhost:18000/cars` to get the infomation about all cars and the URL `http://localhost:18000/car/1` to get the information about the single car details.  
-
-         <img src="./images/scenario2-api-cars.png" width="500">
+          You can see that account 0 owns two cars.
+          To get the information about one specific car, for example, the car with id 1, enter the URL `https://localhost:18000/accounts/0/cars/1`.  
 
          <img src="./images/scenario2-api-car.png" width="500">
 
