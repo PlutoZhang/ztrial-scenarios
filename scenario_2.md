@@ -152,16 +152,16 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            
            Wait for about one minute for the process to complete. When you see the following command prompt, the sample API on the Zowe server is restarted. 
            
-           <img src="./images/scenario2-server-api-restarted.png" width="400">
+           <img src="./images/scenario2-server-api-restarted.png" width="600">
            
      1. Access the redeployed API again in the Firefox browser. Enter the following URL in the address field:
         `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
          
-         <img src="./images/scenario2-server-cars-correct.png" width="400">
+         <img src="./images/scenario2-server-cars-correct.png" width="600">
         
         It works now and you can see the information about all cars as the same as you see locally. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars/1` to get the information about car 1 owned by account 0.
         
-        <img src="./images/scenario2-server-car-correct.png" width="400">
+        <img src="./images/scenario2-server-car-correct.png" width="600">
 
 ### Results
 You successfully added the missing feature to the sample node API and redeployed to the Zowe server.
