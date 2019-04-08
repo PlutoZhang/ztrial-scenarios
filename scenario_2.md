@@ -191,13 +191,6 @@ In this step, you will add some provided code snippets with the existing code to
            When complete, you will see messages similar to the following ones. No action is required here.
        
            <img src="./images/scenario2-ui-install-complete.png" width="800">
-       
-       1. Enter the following command to set the environment variable:
-
-          ```
-          export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
-          ```
-          <img src="./images/scenario2-zlux-env-variable.png" width="600">
 
        1. Enter the `npm run build` command to run the build. The build completes within seconds. 
 
@@ -253,11 +246,7 @@ In this step, you will add some provided code snippets with the existing code to
         1. Uncomment this code snippet by removing the **/*** and ***/** signs at the beginning and the end. Then, press **Ctrl+S** to save the change.
            
            <img src="./images/scenario2-zlux-uncomment.png" width="600">
-
-    1. In the terminal, enter the following command to reset the environment variable:
-       ```
-       export MVD_DESKTOP_DIR=C:\\Users\\Administrator\\Documents\\zowe-trial-scenario-2\\part-02-ui\\zlux\\zlux-app-manager\\virtual-desktop
-       ```
+           
     1. Enter `npm run build` to run the build.
        The folder named _web_ is updated in the root directory _sample-trial-app_.
     1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
