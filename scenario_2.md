@@ -29,10 +29,12 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
     1. Open the sample API project in Visual Studio Code (VSCode).
        1. Click on the Files Explorer icon in the taskbar to open the Files Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`. 
        2. Right click the folder named sample-node-api and select **Open with Code**.
+       
            <img src="./images/scenario2-sample-open.png" width="300">
     1. Run the sample API project in the VSCode terminal.
        1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
-           <img src="./images/scenario2-vscode-terminal.png" width="300">
+          
+          <img src="./images/scenario2-vscode-terminal.png" width="300">
 
           Below the editor region, the terminal panel is started in the current working directory.
        1. In the termianl panel, change the current working directory to _sample-node-api_ by issuing the following command in the terminal panel:
@@ -41,30 +43,35 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            ```
        2. Issue the `npm install` command and press Enter to install the sample application.
 
-           <img src="./images/scenario2-npm-install.png" width="500">
+           <img src="./images/scenario2-npm-install.png" width="600">
        3. Issue the `npm start` command and press Enter to start the sample application on the node server. 
 
-          <img src="./images/scenario2-npm-start.png" width="500">
+          <img src="./images/scenario2-npm-start.png" width="600">
     1. Access local URLs.
        1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
        1. Enter the following URL in the address field to get the information about all accounts.
-       `https://localhost:18000/accounts`
-       All the accounts 0, 1, 2, 3, and 4 are displayed. 
+          `https://localhost:18000/accounts`
+          
+           All the accounts 0, 1, 2, 3, and 4 are displayed. 
        
-       <img src="./images/scenario2-api-test-accounts.png" width="500">
+           <img src="./images/scenario2-api-test-accounts.png" width="500">
+           
        1. To get the detailed information about one specific account, for example, account 0, enter the following URL in the address field.
           `https://localhost:18000/accounts/0'
           
            <img src="./images/scenario2-api-test-account.png" width="500">
+           
        1. To get the information about all the cars owned by one specific account, for example, by account 0, enter the following URL in the address field.
           `https://localhost:18000/accounts/0/cars`
           The following error message is displayed, which indicates that this API endpoint is not working.
            
            <img src="./images/scenario2-api-test-cars-fail.png" width="500">
+           
     1. Back to the terminal panel in VSCode, press `Ctrl+c` to stop the running application.  
     1. Enter `npm test` in the VSCode terminal. You will see that three tests fail.
 
-        <img src="./images/scenario2-api-test-fail.png" width="500">
+        <img src="./images/scenario2-api-test-fail.png" width="200">
+        
        This is caused by a piece of missing code in the configuration file. Next, let's locate the file to add the missing code.
 
     1. Add the missing feature into the sample API node project.
@@ -85,6 +92,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           1. Run the `npm test` command to check that the failed tests are fixed.
           
               <img src="./images/scenario2-server-npm-test.png" width="500">
+              
               You will see that all the tests are passed. 
           1. Run the `npm start` command to restart the project.
 
@@ -94,7 +102,9 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            `https://localhost:18000/accounts/0/cars`
 
           <img src="./images/scenario2-api-working.png" width="300">
+          
           You can see that account 0 owns two cars.
+          
           To get the information about one specific car, for example, the car with id 1, enter the URL `https://localhost:18000/accounts/0/cars/1`.  
 
          <img src="./images/scenario2-api-car.png" width="500">
@@ -105,11 +115,12 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
     1. Open Firefox and access the same API running on the zowe server.
 
        Open the Firefox browser and enter the following URL in the address field to get the information about all the cars owned by account 0.
-          `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars`
+       
+       `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars`
 
-          <img src="./images/scenario2-server-api-not-working.png" width="500">
+         <img src="./images/scenario2-server-api-not-working.png" width="500">
 
-          You can see that the new routes you added locally are not deployed to the Zowe server yet.
+        You can see that the new routes you added locally are not deployed to the Zowe server yet.
 
     1. Redeploy the updated sample API node files to the Zowe server.
        1. In the VSCode terminal panel, press `ctrl+c` to stop the running project.
@@ -117,25 +128,33 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
          `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
          
          <img src="./images/scenario2-server-api-update.png" width="500">
+         
        3. Enter password **TSTRADM**.
     1. Restart the sample API on the Zowe server.
        1. Enter the following ssh command and press Enter to log in to the Zowe server.  
-       `ssh -p 2022 tstradm@10.149.60.146`
+          
+          `ssh -p 2022 tstradm@10.149.60.146`
       
+           <img src="./images/scenario2-server-login.png" width="500">
        
-       <img src="./images/scenario2-server-login.png" width="500">
         1. Enter password **TSTRADM**.
         1. Go to the sample application scripts folder by running the following command.
+        
            `cd /zaas1/zowe/1.0.0/sample-node-api/scripts`
+           
         1. Restart the sample application scripts by running the following command.
+        
            `Restart-sample-node-api.sh`
+           
            Wait for about one minute for the process to complete. When you see the following command prompt, the sample API on the Zowe server is restarted. 
            
            <img src="./images/scenario2-server-api-restarted.png" width="400">
+           
      1. Access the redeployed API again in the Firefox browser. Enter the following URL in the address field:
         `https://10.149.60.146:7554/api/v1/sample-node-api/cars`
          
          <img src="./images/scenario2-server-cars-correct.png" width="400">
+        
         It works now and you can see the information about all cars as the same as you see locally. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars/1` to get the information about car 1 owned by account 0.
         
         <img src="./images/scenario2-server-car-correct.png" width="400">
