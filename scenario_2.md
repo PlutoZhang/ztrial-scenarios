@@ -28,7 +28,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 1. Develop custom API.
     1. Open the sample API project in Visual Studio Code (VSCode).
        1. Click on the Files Explorer icon in the taskbar to open the Files Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`. 
-       2. Right click the folder named part1-01-API and select **Open with Code**.
+       2. Right click the folder named part-01-API and select **Open with Code**.
        
            <img src="./images/scenario2-sample-open.png" width="300">
     1. Run the sample API project in the VSCode terminal.
