@@ -338,7 +338,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
        **Note**: During the whole process, you can always issue `zowe` or `zowe -help` in the terminal panel to view the top-level descriptions.
 
-    1. Change the current working directory to SAMPLE-CLI-PLUGIN by issuing the following command in the terminal panel and press Enter:
+    1. Change the current working directory to sample-cli-plugin by issuing the following command in the terminal panel and press Enter:
        ```
        cd sample-cli-plugin
        ```
