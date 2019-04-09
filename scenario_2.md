@@ -336,13 +336,13 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
        Below the editor region, the terminal panel is started in the current working directory.
 
-       **Note**: During the whole process, you can always issue `zowe` or `zowe -help` in the terminal panel to view the top-level descriptions.
-
     1. Change the current working directory to sample-cli-plugin by issuing the following command in the terminal panel and press Enter:
        ```
        cd sample-cli-plugin
        ```
        <img src="./images/scenario3-cli-terminal.png" width="500">
+       
+       **Note**: During the whole process, you can always issue `zowe` or `zowe -help` in the terminal panel to view the top-level descriptions.
     1. Enter the following command to install the sample CLI plug-in.
 
         `npm run installPlugin`
