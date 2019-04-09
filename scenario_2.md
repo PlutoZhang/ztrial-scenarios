@@ -393,7 +393,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
        You can find two files, GetCars.definition.ts and GetCars.handler.ts in this directory, which both miss a piece of code snippet.
        
-       <img src="./images/scenario3-cli-get-cars.png" width="500">
+       <img src="./images/scenario3-cli-get-cars.png" width="300">
 
           1. Double-click GetCars.definition.ts to open its contents.
 
@@ -432,7 +432,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
    zowe zTrialPlugin accounts get-cars --acountId all --counts true
    ```
 
-    <img src="./images/scenario3-cli-cars-counts-true.png" width="500">
+    <img src="./images/scenario3-cli-cars-counts-true.png" width="600">
 
     You can also try to get the information about the number of cars associated with a single account, for example, account 3, by enter the following command:
 
@@ -440,7 +440,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     zowe zTrialPlugin accounts get-cars --acountId 3 --counts true
     ```
 
-     <img src="./images/scenario3-cli-car-counts-true.png" width="500">
+     <img src="./images/scenario3-cli-car-counts-true.png" width="600">
 
 ### **Results**  
 
