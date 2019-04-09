@@ -314,8 +314,6 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
 ### **Procedure**
 
-### **Procedure**
-
 1. Open the sample CLI plug-in project in VS Code.
 
     1. Click on the File Explorer icon in the Windows taskbar to open the File Explorer.
@@ -338,7 +336,6 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
        Below the editor region, the terminal panel is started in the current working directory.
 
-       <img src="./images/scenario2-ui-terminal-opened.png" width="500">
        **Note**: During the whole process, you can always issue `zowe` or `zowe -help` in the terminal panel to view the top-level descriptions.
 
     1. Change the current working directory to SAMPLE-CLI-PLUGIN by issuing the following command in the terminal panel and press Enter:
@@ -351,9 +348,10 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
         `npm run installPlugin`
 
         <img src="./images/scenario3-cli-npm-install.png" width="500">
-      Wait for about 30 seconds for the process to complete. When you see the following command line, the sample CLI plug-in is installed.
+       
+       Wait for about 30 seconds for the process to complete. When you see the following command line, the sample CLI plug-in is installed.
 
-       <img src="./images/scenario3-cli-npm-installed.png" width="500">
+        <img src="./images/scenario3-cli-npm-installed.png" width="500">
 
     1. To view all the installed plug-ins, enter the following command and press Enter.
        `zowe plugins list`
@@ -368,7 +366,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
        <img src="./images/scenario3-cli-ztrialplugin.png" width="500">
 
        For example, enter the `zowe zTrialPlugin accounts get-accounts` command to search for the information about all cars; enter the `zowe zTrialPlugin accounts get-account 1` command to search for the information about a single account with id 1.
-    1. To get the formation about the cars associated with a single account or all accounts, use `--acountId id or all`.
+   1. To get the formation about the cars associated with a single account or all accounts, use `--acountId id or all`.
       1. To get the information about all accounts and their cars, enter the following command.
 
            `zowe zTrialPlugin accounts get-cars --acountId all`
@@ -380,18 +378,20 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
             <img src="./images/scenario3-cli-account-3.png" width="500">
 
-    1.To get the information about the number of the cars associated with all the accounts, enter the following command.
-       ```
-       zowe zTrialPlugin accounts get-cars --acountId all --counts true
-       ```
+   1. To get the information about the number of the cars associated with all the accounts, enter the following command.
+      
+      ```
+      zowe zTrialPlugin accounts get-cars --acountId all --counts true
+      ```
 
-       <img src="./images/scenario3-cli-fail.png" width="500">
+      <img src="./images/scenario3-cli-fail.png" width="500">
 
        You can see that this command failed due to improper syntax. Next, let's locate the files to add the code.
-      1.Add the missing feature into the sample CLI plug-in project.
-          1. Open the Explorer tab of VS Code and then click **sample-cli-plugin** > **src** > **cli** > **accounts** > **GetCars**.
+1. Add the missing feature into the sample CLI plug-in project.
+    1. Open the Explorer tab of VS Code and then click **sample-cli-plugin** > **src** > **cli** > **accounts** > **GetCars**.
 
-          You can find two files, GetCars.definition.ts and GetCars.handler.ts in this directory, which both miss a piece of code snippet.
+       You can find two files, GetCars.definition.ts and GetCars.handler.ts in this directory, which both miss a piece of code snippet.
+       
            <img src="./images/scenario3-cli-get-cars.png" width="500">
 
           1. Double-click GetCars.definition.ts to open its contents.
@@ -410,25 +410,27 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
               <img src="./images/scenario3-cli-handler-down.png" width="500">
 
-           1. Uncomment this code snippet by removing the /* and */ signs at the beginning and the end. Then, press Ctrl+S to save the change.
+          1. Uncomment this code snippet by removing the /* and */ signs at the beginning and the end. Then, press Ctrl+S to save the change.
 
                <img src="./images/scenario3-cli-handler-on.png" width="500">
-      1. Reinstall the sample CLI plug-in by entering the following command.
+1. Reinstall the sample CLI plug-in by entering the following command.
           `npm run installPlugin`
 
           <img src="./images/scenario3-cli-npm-install.png" width="500">
 
-         Wait for about 30 seconds for the process to complete. When you see the following command line, the sample CLI plug-in is reinstalled.
+   Wait for about 30 seconds for the process to complete. When you see the following command line, the sample CLI plug-in is reinstalled.
 
-         <img src="./images/scenario3-cli-npm-installed.png" width="500">
+    <img src="./images/scenario3-cli-npm-installed.png" width="500">
+    
 1. Verify that the commands for cars counting works correctly now.
 
    Back to the terminal panel, enter the following command to view the number of cars associated with all the accounts.
-      ```
-      zowe zTrialPlugin accounts get-cars --acountId all --counts true
-      ```
+      
+   ```
+   zowe zTrialPlugin accounts get-cars --acountId all --counts true
+   ```
 
-      <img src="./images/scenario3-cli-cars-counts-true.png" width="500">
+    <img src="./images/scenario3-cli-cars-counts-true.png" width="500">
 
     You can also try to get the information about the number of cars associated with a single account, for example, account 3, by enter the following command:
 
@@ -436,7 +438,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
     zowe zTrialPlugin accounts get-cars --acountId 3 --counts true
     ```
 
-      <img src="./images/scenario3-cli-car-counts-true.png" width="500">
+     <img src="./images/scenario3-cli-car-counts-true.png" width="500">
 
 ### **Results**  
 
