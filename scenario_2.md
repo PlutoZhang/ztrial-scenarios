@@ -374,6 +374,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
             <img src="./images/scenario3-cli-account-all.png" width="500">
 
       1.  To get the information about account 3 and its cars, enter the following command.
+            
             `zowe zTrialPlugin accounts get-cars --acountId 3`
 
             <img src="./images/scenario3-cli-account-3.png" width="500">
@@ -392,7 +393,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
        You can find two files, GetCars.definition.ts and GetCars.handler.ts in this directory, which both miss a piece of code snippet.
        
-           <img src="./images/scenario3-cli-get-cars.png" width="500">
+       <img src="./images/scenario3-cli-get-cars.png" width="500">
 
           1. Double-click GetCars.definition.ts to open its contents.
 
@@ -414,9 +415,10 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
                <img src="./images/scenario3-cli-handler-on.png" width="500">
 1. Reinstall the sample CLI plug-in by entering the following command.
-          `npm run installPlugin`
+   
+   `npm run installPlugin`
 
-          <img src="./images/scenario3-cli-npm-install.png" width="500">
+    <img src="./images/scenario3-cli-npm-install.png" width="500">
 
    Wait for about 30 seconds for the process to complete. When you see the following command line, the sample CLI plug-in is reinstalled.
 
