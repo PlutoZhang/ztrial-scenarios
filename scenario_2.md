@@ -19,36 +19,36 @@ No previous knowledge of Zowe is needed but some knowledge of API and command li
 
 ## Step 1: Extending the Zowe API
 
-In this step, you will add a new feature in an API in the Zowe API Medidation Layer and then access your API service endpoints to ensure that it works.
+In this step, you will add a new feature in an API in the Zowe API Mediation Layer and then access your API service endpoints to ensure that it works.
 
-The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API will be running in the API Catalog of the API Mediation Layer. You will view the current API, add the code for a new feature, redeploy the API, and then test that the API service endpoint works.
+The sample API used in this step is a Node.js API for finding cars and accounts for a dealership. This API will run in the API Catalog of the API Mediation Layer. You will view the current API, add the code for a new feature, redeploy the API, and then test that the API service endpoint works.
 
 ### Procedure
 
 1. Develop custom API.
-    1. Open the sample API project in Visual Studio Code (VSCode).
-       1. Click on the Files Explorer icon in the taskbar to open the Files Explorer, and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`. 
-       2. Right click the folder named part-01-API and select **Open with Code**.
+    1. Open the sample API project in Visual Studio Code (VS Code).
+       1. Click the File Explorer icon in the taskbar and go to this folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2` that contains the source code for the sample API project.
+       2. Right-click the folder that is named **part-01-API** and select **Open with Code**.
        
            <img src="./images/scenario2-sample-open.png" width="300">
-    1. Run the sample API project in the VSCode terminal.
-       1. In VSCode, from the Menu Bar, open the terminal by using the **View** > **Terminal** menu command.
+    1. Run the sample API project in the VS Code terminal.
+       1. In VS Code, from the menu bar, open the terminal by using the **View** > **Terminal** menu command.
           
-          <img src="./images/scenario2-vscode-terminal.png" width="300">
+          <img src="./images/scenario2-vscode-terminal.png" width="200">
 
           Below the editor region, the terminal panel is started in the current working directory.
-       1. In the termianl panel, change the current working directory to _sample-node-api_ by issuing the following command in the terminal panel:
+       1. In the terminal panel, change the current working directory to _sample-node-api_ by issuing the following command in the terminal panel:
            ```
            cd sample-node-api
            ```
-       2. Issue the `npm install` command and press Enter to install the sample application.
+       2. Issue the `npm install` command and press Enter to install the sample API.
 
            <img src="./images/scenario2-npm-install.png" width="600">
-       3. Issue the `npm start` command and press Enter to start the sample application on the node server. 
+       3. Issue the `npm start` command and press Enter to start the sample API on the node server. 
 
           <img src="./images/scenario2-npm-start.png" width="600">
     1. Access local URLs.
-       1. From the Taskbar in the Desktop, click the Firefox icon to open Firefox.
+       1. From the taskbar, click the Firefox icon to open Firefox.
        1. Enter the following URL in the address field to get the information about all accounts.
           `https://localhost:18000/accounts`
           
@@ -62,41 +62,44 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
           
            <img src="./images/scenario2-api-test-account.png" width="500">
            
-       1. To get the information about all the cars owned by one specific account, for example, by account 0, enter the following URL in the address field.
+       1. To get the information about all the cars that are owned by one specific account, for example, by account 0, enter the following URL in the address field.
           
           `https://localhost:18000/accounts/0/cars`
           
           The following error message is displayed, which indicates that this API endpoint is not working.
            
            <img src="./images/scenario2-api-test-cars-fail.png" width="500">
+
+           Next, let's test this API and modify the code to make it work.
            
-    1. Back to the terminal panel in VSCode, press `Ctrl+c` to stop the running application.  
-    1. Enter `npm test` in the VSCode terminal. You will see that three tests fail.
+    1. Back to the terminal panel in VS Code, press `Ctrl+C` to stop the running application.  
+    1. Enter `npm test` in the VS Code terminal. You will see that three tests fail.
 
         <img src="./images/scenario2-api-test-fail.png" width="200">
         
-       This is caused by a piece of missing code in the configuration file. Next, let's locate the file to add the missing code.
+       This is caused by a piece of missing code in the configuration file. Next, let's locate the file to add the code.
 
     1. Add the missing feature into the sample API node project.
-       1. Open the Explorer tab of VSCode and then click **SAMPLE-NODE-API** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file is displayed.
+
+       1. Open the Explorer tab of VS Code and then click **sample-node-api** > **server** > **routes** > **accountsCars.route.js**. The contents of the **accountsCars.route.js** file are displayed.
        
-            <img src="./images/scenario2-api-folder-locate.png" width="300">
+            <img src="./images/scenario2-api-folder-locate.png" width="200">
 
-            You will see that the code for two routes is commented out in command line 11 - 15.
+            You will see that the code for two routes is commented out in line 11 - 15.
 
-            <img src="./images/scenario2-missing-code-file.png" width="500">
+            <img src="./images/scenario2-missing-code-file.png" width="300">
 
-        2. Uncomment this code snippet by removing the **/*** and ***/** signs at the beginning and the end. Then, press Ctrl+S to save the change.
+        2. Uncomment this code snippet by removing the **/*** and ***/** signs at the beginning and the end. Then, press `Ctrl+S` to save the change.
         
-            <img src="./images/scenario2-missing-code-insert.png" width="500">
+            <img src="./images/scenario2-missing-code-insert.png" width="400">
 
        3. Restart the project in the terminal.
-          1. Press `ctrl+c` in the terminal to stop the running project.
+          1. Press `Ctrl+C` in the terminal to stop the running project.
           1. Run the `npm test` command to check that the failed tests are fixed.
           
               <img src="./images/scenario2-server-npm-test.png" width="700">
               
-              You will see that all the tests are passed. 
+              You will see that all the tests passed. 
           1. Run the `npm start` command to restart the project.
 
      1. Access the newly added API routes in the Firefox browser.
@@ -113,7 +116,7 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
 
          <img src="./images/scenario2-api-car.png" width="500">
 
-   Now you succefully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server.
+   Now you successfully add the missing feature locally. Next, you'll redeploy this API and see the changes on the Zowe server.
 
 1. Redeploy this API to the Zowe server and view the changes.
     1. Open Firefox and access the same API running on the zowe server.
@@ -127,9 +130,10 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
         You can see that the new routes you added locally are not deployed to the Zowe server yet.
 
     1. Redeploy the updated sample API node files to the Zowe server.
-       1. In the VSCode terminal panel, press `ctrl+c` to stop the running project.
+       1. In the VS Code terminal panel, press `ctrl+c` to stop the running project.
        2. Enter the following command to upload the updated sample files to the Zowe server.
-         `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
+
+          `scp -P 2022 -r server tstradm@10.149.60.146::/zaas1/zowe/1.0.0/sample-node-api`
          
            <img src="./images/scenario2-server-api-update.png" width="600">
          
@@ -148,9 +152,9 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
            
         1. Restart the sample application scripts by running the following command.
         
-           `Restart-sample-node-api.sh`
+           `restart-sample-node-api.sh`
            
-           Wait for about one minute for the process to complete. When you see the following command prompt, the sample API on the Zowe server is restarted. 
+           Wait for about 1 minute for the process to complete. When you see the following command line, the sample API on the Zowe server is restarted. 
            
            <img src="./images/scenario2-server-api-restarted.png" width="600">
            
@@ -159,12 +163,12 @@ The sample API used in this step is a Node.js API for finding cars and accounts 
          
          <img src="./images/scenario2-server-cars-correct.png" width="600">
         
-        It works now and you can see the information about all cars as the same as you see locally. You can aslo try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars/1` to get the information about car 1 owned by account 0.
+        It works now and you can see the information about all cars as the same as you see locally. You can also try this URL `https://10.149.60.146:7554/api/v1/sample-node-api/accounts/0/cars/1` to get the information about car 1 owned by account 0.
         
         <img src="./images/scenario2-server-car-correct.png" width="600">
 
 ### Results
-You successfully added the missing feature to the sample node API and redeployed to the Zowe server.
+You successfully added the missing feature to the sample node API and redeployed the API to the Zowe server.
 
 ### Next step
 In the next step, a sample application that uses this sample API is deployed on the Zowe Desktop. Similar to what you did in this step, you will add some missing features to make that application work to get experience with Zowe Web UI development.
@@ -179,21 +183,21 @@ In this step, you will add some provided code snippets with the existing code to
 
     1. Open the sample Zowe Application Framework project in VS Code.
 
-        1. Click on the File Explorer icon in the Windows taskbar to open the Windows Explorer.
+        1. Click the File Explorer icon in the Windows taskbar to open the Windows Explorer.
 
            <img src="./images/scenario2-open-windows-explorer.png" width="100">
 
-        1.  Go to folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2` which contains the source code for the sample project.
+        1.  Go to folder `C:\Users\Administrator\Documents\zowe-trial-scenario-2`, which contains the source code for the sample project.
 
             <img src="./images/scenario2-ui-locate-folder.png" width="400">
 
-        1. Right click the folder named **part-02-UI** and select **Open with Code** to open the folder in VS Code.
+        1. Right-click the folder that is named **part-02-UI** and select **Open with Code** to open the folder in VS Code.
            
            <img src="./images/scenario2-zlux-open.png" width="200">
 
     1. Run the sample project in the VS Code terminal.
 
-        1. In VS Code, from the Menu bar, click **View** > **Terminal** to open the terminal.
+        1. In VS Code, from the menu bar, click **View** > **Terminal** to open the terminal.
 
            <img src="./images/scenario2-vscode-terminal.png" width="200">   
 
@@ -219,7 +223,7 @@ In this step, you will add some provided code snippets with the existing code to
 
           <img src="./images/scenario2-npm-run-build.png" width="500">
 
-          A folder named _web_ is created in the root directory _sample-trial-app_.
+          A folder that is named _web_ is created in the root directory _sample-trial-app_.
        
           <img src="./images/scenario2-zlux-web.png" width="150">
 
@@ -242,7 +246,7 @@ In this step, you will add some provided code snippets with the existing code to
 
     1. Start Firefox and enter the following URL to access the Zowe Desktop in the address field.
         ```https://10.149.60.146:8544/ZLUX/plugins/org.zowe.zlux.bootstrap/web/index.html```
-    1. Enter the following username and password to log in.
+    1. Enter the following user name and password to log in.
        - User name: **TSTRADM**
        - Password: **TSTRADM**
 
@@ -271,7 +275,7 @@ In this step, you will add some provided code snippets with the existing code to
            <img src="./images/scenario2-zlux-uncomment.png" width="600">
            
     1. Enter `npm run build` to run the build.
-       The folder named _web_ is updated in the root directory _sample-trial-app_.
+       The folder that is named _web_ is updated in the root directory _sample-trial-app_.
     1. Transfer the updated files from the _web_ folder to the Trial Application folder on the Zowe server.
         1. Enter the following command:
            ```
@@ -310,7 +314,7 @@ You will extend an existing Zowe CLI plug-in by introducing the Node.js programm
 
 ### **Procedure**
 1. Open Visual Studio Code from the desktop.
-1. From the **Menu Bar**, open the terminal by using the **View** > **Terminal** menu command.  
+1. From the menu bar, open the terminal by using the **View** > **Terminal** menu command.  
     Below the editor region, the terminal panel is started in the current working directory, **ZTRIAL-CLI**.
 1. Run the following CLI command to check whether the data set _average-horse-power_ can be accessed.  
     `zowe ztrial-plugin cars average-horse-power`  
